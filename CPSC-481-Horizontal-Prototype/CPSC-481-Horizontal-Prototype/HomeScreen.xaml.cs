@@ -23,5 +23,11 @@ namespace CPSC_481_Horizontal_Prototype
         {
             InitializeComponent();
         }
+
+        private void btn_addTab_Click(object sender, RoutedEventArgs e)
+        {
+            AddTab a = new AddTab();
+            a.Show();
+        }
     }
 }

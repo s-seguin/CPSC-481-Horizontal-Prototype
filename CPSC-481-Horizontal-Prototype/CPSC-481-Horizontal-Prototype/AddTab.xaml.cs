@@ -22,6 +22,18 @@ namespace CPSC_481_Horizontal_Prototype
         public AddTab()
         {
             InitializeComponent();
+            this.Height = SystemParameters.PrimaryScreenHeight / 2;
+            this.Width = SystemParameters.PrimaryScreenWidth / 2;
+        }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //do nothing yet
+        }
+
+        private void btn_cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

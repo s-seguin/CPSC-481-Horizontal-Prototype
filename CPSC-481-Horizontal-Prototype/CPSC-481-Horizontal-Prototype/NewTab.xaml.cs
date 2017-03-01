@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CPSC_481_Horizontal_Prototype
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for NewTab.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class NewTab : Window
     {
-        public MainWindow()
+        public NewTab()
         {
             InitializeComponent();
         }

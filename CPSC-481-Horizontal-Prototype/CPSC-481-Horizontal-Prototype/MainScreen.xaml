@@ -1,4 +1,4 @@
-﻿<Window x:Name="SpecialsScreen1" x:Class="CPSC_481_Horizontal_Prototype.SpecialsScreen"
+﻿<Window x:Name="mainScreen" x:Class="CPSC_481_Horizontal_Prototype.MainScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"

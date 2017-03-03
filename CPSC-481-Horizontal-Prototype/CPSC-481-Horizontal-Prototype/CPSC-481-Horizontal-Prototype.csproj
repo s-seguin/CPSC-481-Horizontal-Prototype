@@ -58,8 +58,8 @@
     <Compile Include="MenuItem_Control.xaml.cs">
       <DependentUpon>MenuItem_Control.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SpecialsScreen.xaml.cs">
-      <DependentUpon>SpecialsScreen.xaml</DependentUpon>
+    <Compile Include="MainScreen.xaml.cs">
+      <DependentUpon>MainScreen.xaml</DependentUpon>
     </Compile>
     <Page Include="AddTab.xaml">
       <SubType>Designer</SubType>
@@ -83,7 +83,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SpecialsScreen.xaml">
+    <Page Include="MainScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

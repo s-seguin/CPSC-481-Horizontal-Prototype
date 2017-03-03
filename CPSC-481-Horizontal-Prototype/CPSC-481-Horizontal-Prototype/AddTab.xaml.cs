@@ -19,9 +19,11 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class AddTab : Window
     {
+        HomeScreen homeScreen;
         public AddTab()
         {
             InitializeComponent();
+            
             this.Height = SystemParameters.PrimaryScreenHeight / 2;
             this.Width = SystemParameters.PrimaryScreenWidth / 2;
         }
@@ -38,9 +40,17 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            SpecialsScreen ss = new SpecialsScreen();
+            
+            MainScreen ss = new MainScreen();
             ss.Show();
             this.Close();
+            homeScreen.Close();
         }
+
+        public void SetHomeScreen(HomeScreen hs)
+        {
+            this.homeScreen = hs;
+        }
+            
     }
 }

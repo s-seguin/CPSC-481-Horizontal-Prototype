@@ -28,6 +28,7 @@ namespace CPSC_481_Horizontal_Prototype
         {
             AddTab a = new AddTab();
             a.Show();
+            a.SetHomeScreen(this);
         }
     }
 }

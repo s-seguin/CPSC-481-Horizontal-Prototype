@@ -17,13 +17,14 @@ namespace CPSC_481_Horizontal_Prototype
     /// <summary>
     /// Interaction logic for SpecialsScreen.xaml
     /// </summary>
-    public partial class SpecialsScreen : Window
+    public partial class MainScreen : Window
     {
-        public SpecialsScreen()
+        public MainScreen()
         {
             InitializeComponent();
             drinkItem.lbl_itemName.Content =  "Drink Up";
             drinkItem.lbl_itemPrice.Content = "$400.99";
+            drinkItem.btn_viewItem.Background = new ImageBrush();
         }
 
         private void btn_specials_Click(object sender, RoutedEventArgs e)

@@ -7,19 +7,19 @@
         mc:Ignorable="d"
 
         Title="AddTab" Height="256" Width="467" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen">
-    <Grid>
+    <Grid Background="#FF1D1D1F">
         <DockPanel HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Center" Width="346" Height="118.543">
             <WrapPanel x:Name="inner" DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10,0">
-                <Label x:Name="lbl_name"  Content="Name:&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" Width="56" Height="40" FontSize="16"/>
-                <TextBox x:Name="txtbox_name" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="268" TextChanged="textBox_TextChanged" FontSize="32"/>
+                <Label x:Name="lbl_name"  Content="Name:&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="40" FontSize="21.333" Foreground="#FF1E7052"/>
+                <TextBox x:Name="txtbox_name" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="249" TextChanged="textBox_TextChanged" FontSize="32" Background="#FF729781" BorderBrush="#FF729781"/>
             </WrapPanel>
 
             <Grid DockPanel.Dock="Bottom" Margin="13,0" VerticalAlignment="Top" Height="53">
-                <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Center" Height="48"  Width="120" Click="btn_cancel_Click" Margin="0,0,0,-16"/>
-                <Button x:Name="btn_submit" Content="Submit" HorizontalAlignment="Right" VerticalAlignment="Center" Height="48"  Width="120" Margin="0,0,0,-16"/>
+                <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Center" Height="48"  Width="120" Click="btn_cancel_Click" Margin="0,0,0,-16" Background="#FF101011" Foreground="#FF8C8D9C" BorderBrush="#FF101011" FontSize="18.667"/>
+                <Button x:Name="btn_submit" Content="Submit" HorizontalAlignment="Right" VerticalAlignment="Center" Height="48"  Width="120" Margin="0,0,0,-16" Background="#FF101011" Foreground="#FF8C8D9C" BorderBrush="#FF101011" FontSize="18.667" Click="btn_submit_Click"/>
             </Grid>
         </DockPanel>
-        <Label x:Name="lbl_title" Content="New Tab" HorizontalAlignment="Center" Margin="0,31,0,0" VerticalAlignment="Top" FontSize="24"/>
+        <Label x:Name="lbl_title" Content="New Tab" HorizontalAlignment="Center" Margin="0,31,0,0" VerticalAlignment="Top" FontSize="32" Foreground="#FF1E7052"/>
 
     </Grid>
 </Window>

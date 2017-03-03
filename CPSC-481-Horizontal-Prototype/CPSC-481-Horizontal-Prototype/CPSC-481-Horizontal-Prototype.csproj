@@ -55,6 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="MenuItem_Control.xaml.cs">
+      <DependentUpon>MenuItem_Control.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialsScreen.xaml.cs">
+      <DependentUpon>SpecialsScreen.xaml</DependentUpon>
+    </Compile>
     <Page Include="AddTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -73,6 +79,14 @@
     <Compile Include="HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="MenuItem_Control.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SpecialsScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -106,6 +120,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\logo_med.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\burger.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

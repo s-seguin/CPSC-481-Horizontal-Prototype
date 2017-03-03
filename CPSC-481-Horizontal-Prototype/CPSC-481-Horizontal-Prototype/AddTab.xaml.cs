@@ -28,11 +28,18 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //do nothing yet
+            //do nothing yet                    
         }
 
         private void btn_cancel_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void btn_submit_Click(object sender, RoutedEventArgs e)
+        {
+            SpecialsScreen ss = new SpecialsScreen();
+            ss.Show();
             this.Close();
         }
     }

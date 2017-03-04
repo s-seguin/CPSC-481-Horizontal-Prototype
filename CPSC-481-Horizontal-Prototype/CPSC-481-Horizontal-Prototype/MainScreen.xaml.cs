@@ -22,22 +22,27 @@ namespace CPSC_481_Horizontal_Prototype
         public MainScreen()
         {
             InitializeComponent();
-            drinkItem.lbl_itemName.Content =  "Drink Up";
+            Switcher.pageSwitcher = this;
+            //Switcher.Switch(new SpecialsPage());
+           /* drinkItem.lbl_itemName.Content =  "Drink Up";
             drinkItem.lbl_itemPrice.Content = "$400.99";
-            drinkItem.btn_viewItem.Background = new ImageBrush();
+            drinkItem.btn_viewItem.Background = new ImageBrush();*/
         }
 
         private void btn_specials_Click(object sender, RoutedEventArgs e)
         {
-
+            Switcher.Switch(new SpecialsPage());
+            Console.WriteLine("fuck");
         }
         private void btn_drinks_Click(object sender, RoutedEventArgs e)
         {
+            Switcher.Switch(new DrinksPage());
+            Console.WriteLine("fuck 1");
 
         }
         private void btn_food_Click(object sender, RoutedEventArgs e)
         {
-
+            Switcher.Switch(new FoodPage());
         }
         private void btn_help_Click(object sender, RoutedEventArgs e)
         {
@@ -52,6 +57,11 @@ namespace CPSC_481_Horizontal_Prototype
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
         {
             //change the tab 
+        }
+
+        internal void Navigate(UserControl nextPage)
+        {
+            this.pageHolder.Content = nextPage;
         }
     }
 }

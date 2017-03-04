@@ -72,11 +72,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         internal void Navigate(UserControl nextPage)
         {
-<<<<<<< HEAD:CPSC-481-Horizontal-Prototype/CPSC-481-Horizontal-Prototype/MainScreen.xaml.cs
-            // this.pageHolder.Content = nextPage;
-=======
             this.Page_Holder.Content = nextPage;
->>>>>>> origin/master:CPSC-481-Horizontal-Prototype/CPSC-481-Horizontal-Prototype/Screens/MainScreen.xaml.cs
         }
     }
 }

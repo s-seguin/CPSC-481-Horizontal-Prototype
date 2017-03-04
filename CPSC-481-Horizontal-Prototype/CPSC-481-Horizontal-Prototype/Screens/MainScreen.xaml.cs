@@ -24,9 +24,11 @@ namespace CPSC_481_Horizontal_Prototype
             InitializeComponent();
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
-           /* drinkItem.lbl_itemName.Content =  "Drink Up";
-            drinkItem.lbl_itemPrice.Content = "$400.99";
-            drinkItem.btn_viewItem.Background = new ImageBrush();*/
+            this.btn_specials.IsEnabled = false;
+
+            /* drinkItem.lbl_itemName.Content =  "Drink Up";
+             drinkItem.lbl_itemPrice.Content = "$400.99";
+             drinkItem.btn_viewItem.Background = new ImageBrush();*/
         }
 
         private void btn_specials_Click(object sender, RoutedEventArgs e)

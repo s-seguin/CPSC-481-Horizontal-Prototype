@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CPSC_481_Horizontal_Prototype
 {
     /// <summary>
-    /// Interaction logic for FoodPage.xaml
+    /// Interaction logic for Page_Food.xaml
     /// </summary>
-    public partial class FoodPage : UserControl
+    public partial class Page_Food : UserControl
     {
-        public FoodPage()
+        public Page_Food()
         {
             InitializeComponent();
         }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CPSC_481_Horizontal_Prototype
 {
     /// <summary>
-    /// Interaction logic for DrinksPage.xaml
+    /// Interaction logic for Page_Drinks.xaml
     /// </summary>
-    public partial class DrinksPage : UserControl
+    public partial class Page_Drinks : UserControl
     {
-        public DrinksPage()
+        public Page_Drinks()
         {
             InitializeComponent();
         }

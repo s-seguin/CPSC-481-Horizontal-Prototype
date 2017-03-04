@@ -8,7 +8,7 @@
         Title="HomeScreen" Height="768" Width="1280" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="150" Background="#FF1D1D1F">
-            <Image x:Name="logo" Height="100" Width="150" Source="Resources/Images/logo_med.png"/>
+            <Image x:Name="logo" Height="100" Width="150" Source="../Resources/Images/logo_med.png"/>
             <Button x:Name="btn_addTab" Height="55" Content="New Tab +" BorderBrush="{x:Null}" Background="#FF101011" Foreground="#FF8C8D9C" FontFamily="Segoe UI Semibold" FontSize="18.667" Click="btn_addTab_Click"/>
         </StackPanel>
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="150,0,0,0" Background="#FFD1D0DA">

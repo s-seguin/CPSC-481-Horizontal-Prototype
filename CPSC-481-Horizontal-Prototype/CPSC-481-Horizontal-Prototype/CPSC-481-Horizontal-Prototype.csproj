@@ -55,64 +55,64 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DrinksPage.xaml.cs">
-      <DependentUpon>DrinksPage.xaml</DependentUpon>
+    <Compile Include="Pages\Page_Drinks.xaml.cs">
+      <DependentUpon>Page_Drinks.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FoodPage.xaml.cs">
-      <DependentUpon>FoodPage.xaml</DependentUpon>
+    <Compile Include="Pages\Page_Food.xaml.cs">
+      <DependentUpon>Page_Food.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MenuItem_Control.xaml.cs">
+    <Compile Include="User Controls\MenuItem_Control.xaml.cs">
       <DependentUpon>MenuItem_Control.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainScreen.xaml.cs">
+    <Compile Include="Screens\MainScreen.xaml.cs">
       <DependentUpon>MainScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PageHolder.xaml.cs">
-      <DependentUpon>PageHolder.xaml</DependentUpon>
+    <Compile Include="Pages\Page_Holder.xaml.cs">
+      <DependentUpon>Page_Holder.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SpecialsPage.xaml.cs">
-      <DependentUpon>SpecialsPage.xaml</DependentUpon>
+    <Compile Include="Pages\Page_Specials.xaml.cs">
+      <DependentUpon>Page_Specials.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Switcher.cs" />
-    <Page Include="AddTab.xaml">
+    <Compile Include="Classes\Switcher.cs" />
+    <Page Include="Screens\AddTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="DrinksPage.xaml">
+    <Page Include="Pages\Page_Drinks.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="FoodPage.xaml">
+    <Page Include="Pages\Page_Food.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HomeScreen.xaml">
+    <Page Include="Screens\HomeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Compile Include="AddTab.xaml.cs">
+    <Compile Include="Screens\AddTab.xaml.cs">
       <DependentUpon>AddTab.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HomeScreen.xaml.cs">
+    <Compile Include="Screens\HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
-    <Page Include="MenuItem_Control.xaml">
+    <Page Include="User Controls\MenuItem_Control.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainScreen.xaml">
+    <Page Include="Screens\MainScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageHolder.xaml">
+    <Page Include="Pages\Page_Holder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SpecialsPage.xaml">
+    <Page Include="Pages\Page_Specials.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

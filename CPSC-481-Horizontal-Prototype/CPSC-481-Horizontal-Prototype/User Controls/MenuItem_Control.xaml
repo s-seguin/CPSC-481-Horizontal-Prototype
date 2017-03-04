@@ -9,7 +9,7 @@
     <Grid>
         <Button x:Name="btn_viewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="150">
             <Button.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="Resources/Images/burger.png"/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="../Resources/Images/burger.png"/>
             </Button.Background>
         </Button>
         <Label x:Name="lbl_itemName" Content="Item Name" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFF3B1B1"/>

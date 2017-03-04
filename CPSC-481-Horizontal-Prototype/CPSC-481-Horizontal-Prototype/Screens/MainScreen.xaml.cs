@@ -23,7 +23,7 @@ namespace CPSC_481_Horizontal_Prototype
         {
             InitializeComponent();
             Switcher.pageSwitcher = this;
-            //Switcher.Switch(new SpecialsPage());
+            Switcher.Switch(new Page_Specials());
            /* drinkItem.lbl_itemName.Content =  "Drink Up";
             drinkItem.lbl_itemPrice.Content = "$400.99";
             drinkItem.btn_viewItem.Background = new ImageBrush();*/
@@ -31,18 +31,29 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_specials_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new SpecialsPage());
-            Console.WriteLine("fuck");
+            Switcher.Switch(new Page_Specials());
+            this.btn_specials.IsEnabled = false;
+            this.btn_food.IsEnabled = true;
+            this.btn_drinks.IsEnabled = true;
+
         }
         private void btn_drinks_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new DrinksPage());
-            Console.WriteLine("fuck 1");
+            Switcher.Switch(new Page_Drinks());
+            this.btn_drinks.IsEnabled = false;
+            this.btn_food.IsEnabled = true;
+            this.btn_specials.IsEnabled = true;
 
         }
         private void btn_food_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new FoodPage());
+            Switcher.Switch(new Page_Food());
+            this.btn_food.IsEnabled = false;
+            this.btn_drinks.IsEnabled = true;
+            this.btn_specials.IsEnabled = true;
+
+
+
         }
         private void btn_help_Click(object sender, RoutedEventArgs e)
         {
@@ -61,7 +72,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         internal void Navigate(UserControl nextPage)
         {
-            this.pageHolder.Content = nextPage;
+            this.Page_Holder.Content = nextPage;
         }
     }
 }

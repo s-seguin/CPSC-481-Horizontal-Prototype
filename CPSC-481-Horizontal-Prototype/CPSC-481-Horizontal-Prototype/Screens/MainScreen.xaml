@@ -8,12 +8,12 @@
         Title="Specials" Height="768" Width="1280"  WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
     <Grid>
         <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="75" Background="#FF1D1D1F">
-            <Image x:Name="logo" Height="75" Width="75" Source="Resources/Images/logo_med.png"/>
+            <Image x:Name="logo" Height="75" Width="75" Source="../Resources/Images/logo_med.png"/>
             <Button x:Name="btn_personTab" Width="75"  Height="75" Content="S" BorderBrush="{x:Null}" Background="#FF101011" Foreground="#FF1E7052" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_changeTab_Click"/>
             <Button x:Name="btn_addTab" Width="75"  Height="75" Content="+" BorderBrush="{x:Null}" Background="#FF101011" Foreground="#FF8C8D9C" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_addTab_Click"/>
         </StackPanel>
         <Grid x:Name="main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="75,0,0,0" Background="#FFD1D0DA">
-            <local:PageHolder x:Name="pageHolder" Height="768" Width="1205" Margin="0,0,0,0"/>
+            <local:Page_Holder x:Name="Page_Holder" Height="768" Width="1205" Margin="0,0,0,0"/>
             <WrapPanel HorizontalAlignment="Left" Height="100" Margin="270,660,0,0" VerticalAlignment="Bottom" Width="420">
                 <Button x:Name="btn_specials" Content="Specials" Width="105" Height="100" Click="btn_specials_Click"/>
                 <Button x:Name="btn_drinks" Content="Drinks" Width="105" Height="100" Click="btn_drinks_Click"/>

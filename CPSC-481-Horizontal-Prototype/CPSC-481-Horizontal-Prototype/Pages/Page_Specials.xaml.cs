@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace CPSC_481_Horizontal_Prototype
 {
     /// <summary>
-    /// Interaction logic for PageHolder.xaml
+    /// Interaction logic for Page_Specials.xaml
     /// </summary>
-    public partial class PageHolder : UserControl
+    public partial class Page_Specials : UserControl
     {
-        public PageHolder()
+        public Page_Specials()
         {
             InitializeComponent();
         }

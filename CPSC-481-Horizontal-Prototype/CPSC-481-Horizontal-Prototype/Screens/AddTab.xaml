@@ -6,20 +6,29 @@
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
         mc:Ignorable="d"
 
-        Title="AddTab" Height="256" Width="467" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF1D1D1F">
-        <DockPanel HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Center" Width="346" Height="118.543">
-            <WrapPanel x:Name="inner" DockPanel.Dock="Top" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="10,0">
-                <Label x:Name="lbl_name"  Content="Name:&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" Width="75" Height="40" FontSize="21.333" Foreground="#FF1E7052"/>
-                <TextBox x:Name="txtbox_name" HorizontalAlignment="Left" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="249" TextChanged="textBox_TextChanged" FontSize="32" Background="#FF729781" BorderBrush="#FF729781"/>
-            </WrapPanel>
+        Title="AddTab" Height="250" Width="600" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF213F57">
+        <WrapPanel x:Name="input_name" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="10,0">
+            <Label x:Name="lbl_name"  Content="Name:&#xA;" HorizontalAlignment="Left" VerticalAlignment="Center" Width="75" Height="40" FontSize="21.333" Foreground="#FFE2E5E9"/>
+            <TextBox x:Name="txtbox_name" HorizontalAlignment="Right" Height="48" TextWrapping="Wrap" VerticalAlignment="Center" Width="500" TextChanged="textBox_TextChanged" FontSize="32" Background="#FFE6E5E8" BorderBrush="{x:Null}"/>
+        </WrapPanel>
 
-            <Grid DockPanel.Dock="Bottom" Margin="13,0" VerticalAlignment="Top" Height="53">
-                <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Center" Height="48"  Width="120" Click="btn_cancel_Click" Margin="0,0,0,-16" Background="#FF101011" Foreground="#FF8C8D9C" BorderBrush="#FF101011" FontSize="18.667"/>
-                <Button x:Name="btn_submit" Content="Submit" HorizontalAlignment="Right" VerticalAlignment="Center" Height="48"  Width="120" Margin="0,0,0,-16" Background="#FF101011" Foreground="#FF8C8D9C" BorderBrush="#FF101011" FontSize="18.667" Click="btn_submit_Click"/>
-            </Grid>
-        </DockPanel>
-        <Label x:Name="lbl_title" Content="New Tab" HorizontalAlignment="Center" Margin="0,31,0,0" VerticalAlignment="Top" FontSize="32" Foreground="#FF1E7052"/>
+        <Grid DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Height="53">
+            <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="48"  Width="300" Click="btn_cancel_Click"  Background="{x:Null}" Foreground="#FFEE516C" BorderBrush="{x:Null}" FontSize="18.667" RenderTransformOrigin="0.046,1.474"/>
+            <Button x:Name="btn_submit" Content="Submit" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="48"  Width="300" Background="{x:Null}" Foreground="#FF00BB97" BorderBrush="{x:Null}" FontSize="18.667" Click="btn_submit_Click"/>
+        </Grid>
+        <Label x:Name="lbl_title" Content="New Tab" HorizontalAlignment="Stretch"  HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="28" Foreground="White" FontFamily="Segoe UI Light" Background="{x:Null}"/>
+        <Separator HorizontalAlignment="Stretch" Height="100" Margin="0,152,0,-2" VerticalAlignment="Top" Background="#FF344D61"/>
+        <Separator HorizontalAlignment="Center" Height="100"  VerticalAlignment="Bottom" Width="48" RenderTransformOrigin="0.5,0.5" Background="#FF344D61" Margin="276,0,276,-26">
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
 
     </Grid>
 </Window>

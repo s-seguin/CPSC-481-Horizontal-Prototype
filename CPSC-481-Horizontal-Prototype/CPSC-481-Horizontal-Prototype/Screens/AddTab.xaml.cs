@@ -24,8 +24,8 @@ namespace CPSC_481_Horizontal_Prototype
         {
             InitializeComponent();
             
-            this.Height = SystemParameters.PrimaryScreenHeight / 2;
-            this.Width = SystemParameters.PrimaryScreenWidth / 2;
+            // this.Height = SystemParameters.PrimaryScreenHeight / 2;
+            // this.Width = SystemParameters.PrimaryScreenWidth / 2;
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)

@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
         mc:Ignorable="d"
-        Title="PaymentScreen" Height="300" Width="300">
+        Title="PaymentScreen" Height="295" Width="450" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen">
     <Grid Margin="1,0,-1,0">
-        <Label x:Name="lbl_title" Content="Payment" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="32"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="94,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="104" Width="63"><Run Text="Item 1"/><LineBreak/><Run Text="Item 2"/><LineBreak/><Run Text="Item 3"/><LineBreak/><Run Text="Item 4"/><LineBreak/><Run Text="-------------"/><LineBreak/><Run Text="Total:"/></TextBlock>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="104" Margin="173,68,0,0" TextWrapping="Wrap" Text="$20&#xD;&#xA;$12&#xD;&#xA;$13&#xD;&#xA;$14&#xD;&#xA;------&#xD;&#xA;$59" VerticalAlignment="Top" Width="44"/>
-        <Button x:Name="button" Content="Card" HorizontalAlignment="Left" Margin="37,211,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button1" Content="Cash" HorizontalAlignment="Left" Margin="193,211,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.775,0.369"/>
+        <Label x:Name="lbl_title" Content="Zachary's Tab" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18.667"/>
+        <Button x:Name="btn_close" Content="&#xE106;"  VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Height="30" FontFamily="Segoe UI Symbol" FontSize="18.667" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_close_Click"/>
+        <RadioButton x:Name="rbtn_cash" Content="Cash" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="291,207,94,0" Checked="rbtn_cash_Checked" VerticalContentAlignment="Center" FontSize="16"/>
+        <RadioButton x:Name="rbtn_card" Content="Card (Credit/Debit)" IsChecked="True" HorizontalAlignment="Center" Margin="104,207,181,0" VerticalAlignment="Top" Checked="rbtn_card_Checked" VerticalContentAlignment="Center" FontSize="16"/>
+        <Button x:Name="btn_payNow" Content="Pay Now" FontSize="18.667" Height="35" Width="150"  HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,15"/>
+        <TextBlock x:Name="tb_itemlist" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,50,0,0" Height="152" Width="240"><Run Text="1 x Burger..........................................................$12.00"/><LineBreak/><Run Text="2 x Fries................................................................$8.00"/><LineBreak/><Run Text="2 x Rickards Red.............................................$13.00"/><LineBreak/><Run Text="--------------------------------------------------"/><LineBreak/><Run Text="Subtotal.............................................................$33.00"/><LineBreak/><Run Text="--------------------------------------------------"/><LineBreak/><Run Text="Tax..........................................................................$3.50"/><LineBreak/><Run Text="--------------------------------------------------"/><LineBreak/><Run Text="Total.....................................................................$36.50"/></TextBlock>
 
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPSC_481_Horizontal_Prototype.Screens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -75,6 +76,12 @@ namespace CPSC_481_Horizontal_Prototype
         internal void Navigate(UserControl nextPage)
         {
             this.Page_Holder.Content = nextPage;
+        }
+
+        private void btn_payNow_Click(object sender, RoutedEventArgs e)
+        {
+            PaymentScreen ps = new PaymentScreen();
+            ps.Show();
         }
     }
 }

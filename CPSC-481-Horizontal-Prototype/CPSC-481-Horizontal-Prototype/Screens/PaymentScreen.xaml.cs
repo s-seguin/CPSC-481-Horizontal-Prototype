@@ -23,5 +23,20 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         {
             InitializeComponent();
         }
+
+        private void btn_close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rbtn_card_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void rbtn_cash_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

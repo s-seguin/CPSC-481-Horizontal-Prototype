@@ -26,10 +26,10 @@ namespace CPSC_481_Horizontal_Prototype
             //set tab identifier as first letter of person's name and set tab name in bottom right
             btn_personTab.Content = tabName[0];
             lbl_tabName.Content = tabName;
-            if (Convert.ToInt16(tabName) > 0 || Convert.ToInt16(tabName) <= 9)
+            /*if (Convert.ToInt16(tabName) > 0 || Convert.ToInt16(tabName) <= 9)
             {
                 lbl_tabName.Content = "Tab " + tabName;
-            } 
+            } */
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
             this.btn_specials.IsEnabled = false;
@@ -82,7 +82,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         internal void Navigate(UserControl nextPage)
         {
-            this.Page_Holder.Content = nextPage;
+            // this.Page_Holder.Content = nextPage;
         }
 
         private void btn_expandQueue_Click(object sender, RoutedEventArgs e)

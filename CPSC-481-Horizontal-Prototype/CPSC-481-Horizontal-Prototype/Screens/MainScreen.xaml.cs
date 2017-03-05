@@ -84,7 +84,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         internal void Navigate(UserControl nextPage)
         {
-            this.Page_Holder.Content = nextPage;
+           // this.Page_Holder.Content = nextPage;
         }
 
 

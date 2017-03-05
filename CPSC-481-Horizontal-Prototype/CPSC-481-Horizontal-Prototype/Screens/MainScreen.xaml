@@ -23,11 +23,6 @@
 
             </WrapPanel>
 
-            <Grid HorizontalAlignment="Right" Height="75" VerticalAlignment="Bottom" Width="300" Background="#FFE6E5E8">
-                <Label x:Name="lbl_tabName" Content="Stuart" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="200" FontSize="21"/>
-                <Label x:Name="lbl_tabTotal" Content="Total: $0.00" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="200" FontSize="21"/>
-                <Button x:Name="btn_payNow" Content="Pay Now" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="75" FontSize="21"/>
-            </Grid>
 
             <Button x:Name="btn_expandQueue" Content="&#xE014;" Width="20" Height="20" Click="btn_expandQueue_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,280,75" Background="#FFE6E5E8" FontFamily="Segoe UI Symbol"/>
 

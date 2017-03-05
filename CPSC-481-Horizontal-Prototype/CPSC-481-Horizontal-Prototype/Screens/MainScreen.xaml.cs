@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPSC_481_Horizontal_Prototype.Screens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,7 +26,8 @@ namespace CPSC_481_Horizontal_Prototype
 
             //set tab identifier as first letter of person's name and set tab name in bottom right
             btn_personTab.Content = tabName[0];
-            lbl_tabName.Content = tabName;
+
+            // lbl_tabName.Content = tabName;
             /*if (Convert.ToInt16(tabName) > 0 || Convert.ToInt16(tabName) <= 9)
             {
                 lbl_tabName.Content = "Tab " + tabName;
@@ -82,7 +84,14 @@ namespace CPSC_481_Horizontal_Prototype
 
         internal void Navigate(UserControl nextPage)
         {
-            // this.Page_Holder.Content = nextPage;
+            this.Page_Holder.Content = nextPage;
+        }
+
+
+        private void btn_payNow_Click(object sender, RoutedEventArgs e)
+        {
+            PaymentScreen ps = new PaymentScreen();
+            ps.Show();
         }
 
         private void btn_expandQueue_Click(object sender, RoutedEventArgs e)
@@ -102,6 +111,7 @@ namespace CPSC_481_Horizontal_Prototype
                 this.btn_expandQueue.Content = "\uE014";        //checvron up
                 stack_sidePanel.Visibility = Visibility.Collapsed;
             }
+
         }
     }
 }

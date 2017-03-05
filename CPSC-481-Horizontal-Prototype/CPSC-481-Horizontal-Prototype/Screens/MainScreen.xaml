@@ -14,7 +14,7 @@
             <Button x:Name="btn_addTab" Width="75" BorderThickness="0,0,0,0"  Height="75" VerticalContentAlignment="Center" Content="+" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_addTab_Click" Background="#FF00b694"/>
         </StackPanel>
         <Grid x:Name="main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="75,0,0,0" Background="#FFD1D0DA">
-            <!-- <local:Page_Holder x:Name="Page_Holder" Height="768" Width="1205" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/> -->
+            <local:Page_Holder x:Name="Page_Holder" Height="768" Width="1205" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/>
             <WrapPanel HorizontalAlignment="Left" Height="100" Margin="270,660,0,0" VerticalAlignment="Bottom" Width="420">
                 <Button x:Name="btn_specials" Content="Specials" Width="105" Height="100" Click="btn_specials_Click"/>
                 <Button x:Name="btn_drinks" Content="Drinks" Width="105" Height="100" Click="btn_drinks_Click"/>

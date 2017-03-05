@@ -8,23 +8,11 @@
                d:DesignHeight="768" d:DesignWidth="1280">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="#FFD1D0DA">
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="579" Margin="25,148,0,0" VerticalAlignment="Top" Width="1150">
-            <TabItem Header="Beer" Height="60" Width="100" FontSize="26.667">
+            <TabItem Header="Drink" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1" VerticalAlignment="Bottom">
                 <Grid Background="#FFE5E5E5" Margin="0,0,-22,0"/>
             </TabItem>
-            <TabItem Header="Wine" Height="60" Width="100" FontSize="26.667">
+            <TabItem Header="Food" Height="60" Width="100" FontSize="26.667">
                 <Grid x:Name="tab_specials" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Spirits" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1">
-                <Grid x:Name="tab_specials1" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Pop" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1">
-                <Grid x:Name="tab_specials2" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Water" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1">
-                <Grid x:Name="tab_specials3" Background="#FFE5E5E5"/>
 
             </TabItem>
         </TabControl>

@@ -19,9 +19,17 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class MainScreen : Window
     {
-        public MainScreen()
+        public MainScreen(string tabName)
         {
             InitializeComponent();
+
+            //set tab identifier as first letter of person's name and set tab name in bottom right
+            btn_personTab.Content = tabName[0];
+            lbl_tabName.Content = tabName;
+            if (Convert.ToInt16(tabName) > 0 || Convert.ToInt16(tabName) <= 9)
+            {
+                lbl_tabName.Content = "Tab " + tabName;
+            } 
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
             this.btn_specials.IsEnabled = false;
@@ -75,6 +83,25 @@ namespace CPSC_481_Horizontal_Prototype
         internal void Navigate(UserControl nextPage)
         {
             this.Page_Holder.Content = nextPage;
+        }
+
+        private void btn_expandQueue_Click(object sender, RoutedEventArgs e)
+        {
+            //expand queue when side panel is collapsed
+            if (!stack_sidePanel.IsVisible)
+            {
+                //change expand button margins
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 280, 250);
+                this.btn_expandQueue.Content = "\uE015";       //chevron down
+                stack_sidePanel.Visibility = Visibility.Visible;
+            }
+            //minimize side panel
+            else
+            {
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 280, 75);
+                this.btn_expandQueue.Content = "\uE014";        //checvron up
+                stack_sidePanel.Visibility = Visibility.Collapsed;
+            }
         }
     }
 }

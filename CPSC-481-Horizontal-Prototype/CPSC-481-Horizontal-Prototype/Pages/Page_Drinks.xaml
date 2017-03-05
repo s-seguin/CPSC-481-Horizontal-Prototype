@@ -14,20 +14,43 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Wine" Height="60" Width="100" FontSize="26.667">
+            <TabItem Header="Whiskey" Height="60" FontSize="26.667" Margin="-8,-1,-1,1">
                 <Grid x:Name="tab_wine" Background="#FFE5E5E5"/>
 
             </TabItem>
-            <TabItem Header="Spirits" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1">
+            <TabItem Header="Top Shelf" Height="60" FontSize="26.667" Margin="-6,-1,-1,1">
                 <Grid x:Name="tab_spirits" Background="#FFE5E5E5"/>
 
             </TabItem>
-            <TabItem Header="Pop" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1">
+            <TabItem Header="Cocktails" Height="60" FontSize="26.667" Margin="-4,-1,-7,1">
                 <Grid x:Name="tab_pop" Background="#FFE5E5E5"/>
 
             </TabItem>
-            <TabItem Header="Water" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1">
-                <Grid x:Name="tab_water" Background="#FFE5E5E5"/>
+            <TabItem Header="Wines" Height="60" FontSize="26.667" Margin="0,-1,-11,1">
+                <Grid x:Name="tab_water" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="63*"/>
+                        <ColumnDefinition Width="80*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Shooters" Height="60" FontSize="26.667" Margin="0,-1,-7,1">
+                <Grid x:Name="tab_water1" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="63*"/>
+                        <ColumnDefinition Width="80*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Non-Alcoholic" Height="60" FontSize="26.667" Margin="0,-1,0,1" HorizontalAlignment="Left" Width="185">
+                <Grid x:Name="tab_water2" Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="63*"/>
+                        <ColumnDefinition Width="80*"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
 
             </TabItem>
         </TabControl>

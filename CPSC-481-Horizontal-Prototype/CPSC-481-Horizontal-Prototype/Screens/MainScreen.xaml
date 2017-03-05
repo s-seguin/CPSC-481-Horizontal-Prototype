@@ -21,13 +21,20 @@
                 <Button x:Name="btn_help" Content="Help" Width="105" Height="100" Click="btn_help_Click"/>
 
             </WrapPanel>
+
+
+            <Button x:Name="btn_expandQueue" Content="&#xE014;" Width="20" Height="20" Click="btn_expandQueue_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,280,75" Background="#FFE6E5E8" FontFamily="Segoe UI Symbol"/>
             
-            <Grid HorizontalAlignment="Right" Height="75" VerticalAlignment="Bottom" Width="300" Background="White">
-                <Label x:Name="lbl_tabName" Content="Zachary" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="200" FontSize="21"/>
-                <Label x:Name="lbl_tabTotal" Content="$00.00" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="200" FontSize="21"/>
-                <Button x:Name="btn_payNow" Content="Pay Now" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="75" FontSize="21" Click="btn_payNow_Click"/>
-            </Grid>
-            <StackPanel HorizontalAlignment="Left" Height="100" Margin="897,585,0,0" VerticalAlignment="Top" Width="300"/>
+            <StackPanel x:Name="stack_sidePanel" HorizontalAlignment="Right" Height="175" Width="300" Background="#FFE6E5E8" VerticalAlignment="Bottom" Margin="0,0,0,75" Visibility="Collapsed">
+                <Label x:Name="lbl_queueItem4" Content="Coke..........................................$2.50" HorizontalContentAlignment="Left" Height="35" Width="300" FontSize="21" />
+                <Label x:Name="lbl_queueItem3" Content="Rustic Red...............................$6.50" HorizontalContentAlignment="Left" Height="35" Width="300" FontSize="21" />
+                <Label x:Name="lbl_queueItem2" Content="Maple Cream.........................$6.50" HorizontalContentAlignment="Left" Height="35" Width="300" FontSize="21" />
+                <Label x:Name="lbl_queueItem1" Content="Nut Brown...............................$6.50" HorizontalContentAlignment="Left" Height="35" Width="300" FontSize="21" />
+                <Grid HorizontalAlignment="Right" Height="35" VerticalAlignment="Bottom" Width="300" Background="White">
+                    <Label x:Name="lbl_queueTotal" Content="$22.00" HorizontalAlignment="Left" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Height="35" Width="150" FontSize="18" Background="#FFCF4F4F" BorderThickness="0,0,2,0" />
+                    <Button x:Name="lbl_submitQueue" Content="Submit Order" HorizontalAlignment="Right" VerticalAlignment="Bottom" HorizontalContentAlignment="Center" Height="35" Width="150" FontSize="21" Background="#FFE85555" BorderThickness="2,0,0,0" />
+                </Grid>
+            </StackPanel>
         </Grid>
     </Grid>
 </Window>

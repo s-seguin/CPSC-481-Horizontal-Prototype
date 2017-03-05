@@ -20,12 +20,14 @@ namespace CPSC_481_Horizontal_Prototype
     public partial class AddTab : Window
     {
         HomeScreen homeScreen;
+        private List<String> defaultTabs = new List<String> { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+
         public AddTab()
         {
             InitializeComponent();
             
-            this.Height = SystemParameters.PrimaryScreenHeight / 2;
-            this.Width = SystemParameters.PrimaryScreenWidth / 2;
+            // this.Height = SystemParameters.PrimaryScreenHeight / 2;
+            // this.Width = SystemParameters.PrimaryScreenWidth / 2;
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -40,8 +42,15 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            
-            MainScreen ss = new MainScreen();
+
+            //pass textbox input into MainScreen
+            string theText = txtbox_name.Text;
+            if (theText.Equals(""))
+            {
+                theText = defaultTabs[0];
+                defaultTabs.RemoveAt(0);
+            }
+            MainScreen ss = new MainScreen(theText);
             ss.Show();
             this.Close();
             homeScreen.Close();

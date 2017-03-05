@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="165" d:DesignWidth="165">
     <Grid>
-        <Button x:Name="btn_viewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="150">
+        <Button x:Name="btn_viewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="150" Click="btn_viewItem_Click">
             <Button.Background>
                 <ImageBrush Stretch="UniformToFill" ImageSource="../Resources/Images/burger.png"/>
             </Button.Background>

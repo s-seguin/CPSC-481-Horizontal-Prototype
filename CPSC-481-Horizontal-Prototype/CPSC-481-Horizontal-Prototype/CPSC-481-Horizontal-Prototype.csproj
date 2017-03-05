@@ -61,6 +61,12 @@
     <Compile Include="Pages\Page_Food.xaml.cs">
       <DependentUpon>Page_Food.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\ExamineItemScreen.xaml.cs">
+      <DependentUpon>ExamineItemScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\PaymentScreen.xaml.cs">
+      <DependentUpon>PaymentScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\MenuItem_Control.xaml.cs">
       <DependentUpon>MenuItem_Control.xaml</DependentUpon>
     </Compile>
@@ -86,6 +92,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Screens\ExamineItemScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Screens\HomeScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -100,6 +110,10 @@
     <Compile Include="Screens\HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="Screens\PaymentScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="User Controls\MenuItem_Control.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

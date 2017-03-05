@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPSC_481_Horizontal_Prototype.Screens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace CPSC_481_Horizontal_Prototype
         public MenuItem_Control()
         {
             InitializeComponent();
+        }
+
+        private void btn_viewItem_Click(object sender, RoutedEventArgs e)
+        {
+            ExamineItemScreen eis = new ExamineItemScreen();
+            eis.Show();
         }
     }
 }

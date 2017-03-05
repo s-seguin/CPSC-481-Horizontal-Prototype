@@ -1,5 +1,4 @@
-﻿using CPSC_481_Horizontal_Prototype.Screens;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CPSC_481_Horizontal_Prototype
+namespace CPSC_481_Horizontal_Prototype.Screens
 {
     /// <summary>
-    /// Interaction logic for Page_Drinks.xaml
+    /// Interaction logic for PaymentScreen.xaml
     /// </summary>
-    public partial class Page_Drinks : UserControl
+    public partial class PaymentScreen : Window
     {
-        public Page_Drinks()
+        public PaymentScreen()
         {
             InitializeComponent();
-        }
-
-        private void menuItem_Loaded(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }

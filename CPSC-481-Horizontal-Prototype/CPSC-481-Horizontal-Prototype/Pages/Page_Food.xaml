@@ -5,46 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
              mc:Ignorable="d" 
-               d:DesignHeight="768" d:DesignWidth="1205">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="#FFD1D0DA">
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="579" Margin="25,148,0,0" VerticalAlignment="Top" Width="1150">
-            <TabItem Header="Starters" Height="60" FontSize="25">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-22,0"/>
-            </TabItem>
-            <TabItem Header="Nachos/Platters" Height="60" FontSize="25">
-                <Grid x:Name="tab_specials" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Soups" Height="60" FontSize="25">
-                <Grid x:Name="tab_specials1" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Salads" Height="60" FontSize="25" Margin="0,-1,4,1">
-                <Grid x:Name="tab_specials2" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Burgers" Height="60" Width="100" FontSize="25" Margin="-3,-1,3,1">
-                <Grid x:Name="tab_specials3" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Sandwiches" Height="60" FontSize="26.667" Margin="-3,-1,-1,1">
-                <Grid x:Name="tab_specials4" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Entrees" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1">
-                <Grid x:Name="tab_specials5" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Flatbreads" Height="60" FontSize="26.667" Margin="0,-1,-7,1">
-                <Grid x:Name="tab_specials6" Background="#FFE5E5E5"/>
-
-            </TabItem>
-            <TabItem Header="Desserts" Height="60" FontSize="26.667" Margin="0,-1,-1,1">
-                <Grid x:Name="tab_specials7" Background="#FFE5E5E5"/>
-
-            </TabItem>
-        </TabControl>
-        <Label x:Name="lbl_food" Content="Food" HorizontalAlignment="Left" Margin="25,29,0,0" VerticalAlignment="Top" FontSize="64"/>
-
+               d:DesignHeight="965" d:DesignWidth="1820" Width="1820">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="White">
+        <Label x:Name="lbl_food" Content="Food" HorizontalAlignment="Left" Margin="25,29,0,0" VerticalAlignment="Top" FontSize="64" Background="{x:Null}" Foreground="#FF288DA7" FontFamily="Segoe UI Semibold"/>
+        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="5" Margin="25,135,0,0" VerticalAlignment="Top" Width="400"/>
+        <ScrollViewer HorizontalAlignment="Stretch" Margin="0,165,0,0" VerticalAlignment="Stretch">
+            <Label x:Name="lbl_starters" Content="Starters" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,25,0,0"/>
+        </ScrollViewer>
     </Grid>
 </UserControl>

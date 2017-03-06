@@ -5,18 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
              mc:Ignorable="d" 
-               d:DesignHeight="768" d:DesignWidth="1280">
-    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="#FFD1D0DA">
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="579" Margin="25,148,0,0" VerticalAlignment="Top" Width="1150">
-            <TabItem Header="Drink" Height="60" Width="100" FontSize="26.667" Margin="0,-1,0,1" VerticalAlignment="Bottom">
-                <Grid Background="#FFE5E5E5" Margin="0,0,-22,0"/>
-            </TabItem>
-            <TabItem Header="Food" Height="60" Width="100" FontSize="26.667">
-                <Grid x:Name="tab_specials" Background="#FFE5E5E5"/>
+               d:DesignHeight="965" d:DesignWidth="1820" Width="1820">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="White">
 
-            </TabItem>
-        </TabControl>
-        <Label x:Name="lbl_specials" Content="Specials" HorizontalAlignment="Left" Margin="25,29,0,0" VerticalAlignment="Top" FontSize="64"/>
-
+        <Label x:Name="lbl_specials" Content="Specials" HorizontalAlignment="Left" Margin="25,29,0,0" VerticalAlignment="Top" FontSize="64" Background="{x:Null}" Foreground="#FF288DA7" FontFamily="Segoe UI Semibold"/>
+        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="5" Margin="25,135,0,0" VerticalAlignment="Top" Width="400"/>
+        <ScrollViewer HorizontalAlignment="Stretch" Margin="0,165,0,0" VerticalAlignment="Stretch">
+            <Label x:Name="lbl_drinks" Content="Drinks" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,25,0,0"/>
+        </ScrollViewer>
     </Grid>
+
 </UserControl>

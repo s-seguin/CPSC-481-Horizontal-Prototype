@@ -84,7 +84,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         internal void Navigate(UserControl nextPage)
         {
-           // this.Page_Holder.Content = nextPage;
+           this.Page_Holder.Content = nextPage;
         }
 
 
@@ -100,14 +100,14 @@ namespace CPSC_481_Horizontal_Prototype
             if (!stack_sidePanel.IsVisible)
             {
                 //change expand button margins
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 280, 250);
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 356);
                 this.btn_expandQueue.Content = "\uE015";       //chevron down
                 stack_sidePanel.Visibility = Visibility.Visible;
             }
             //minimize side panel
             else
             {
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 280, 75);
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 108);
                 this.btn_expandQueue.Content = "\uE014";        //checvron up
                 stack_sidePanel.Visibility = Visibility.Collapsed;
             }

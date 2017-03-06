@@ -8,7 +8,7 @@
         Title="Specials" Height="768" Width="1280"  WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
     <Grid>
         <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="75" Background="#FF1D1D1F">
-            <Image x:Name="logo" Height="75" Width="75" Source="/;component/Resources/Images/logo_sml.png"/>
+            <Image x:Name="logo" Height="75" Width="75" Source="Images/logo_sml.png"/>
             <Button x:Name="btn_personTab" BorderThickness="0,0,0,0"  Width="75"  Height="75" Content="W" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_changeTab_Click" Background="#FF288da7"/>
             <Button x:Name="btn_personTab_2" BorderThickness="0,0,0,0"  Width="75"  Height="75" Content="S" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_changeTab_Click" Background="#FFf2ab57"/>
             <Button x:Name="btn_addTab" Width="75" BorderThickness="0,0,0,0"  Height="75" VerticalContentAlignment="Center" Content="+" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_addTab_Click" Background="#FF00b694" RenderTransformOrigin="0.547,0.727"/>
@@ -16,35 +16,10 @@
         <Grid x:Name="main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="75,0,0,0" Background="#FFD1D0DA">
             <!--<local:Page_Holder x:Name="Page_Holder" Height="768" Width="1205" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,0,0,0"/> -->
             <WrapPanel HorizontalAlignment="Center" Height="104"  VerticalAlignment="Bottom" Width="400" Margin="268,0,529,0">
-                <Button x:Name="btn_specials"  Content="" Width="100" Height="104" Click="btn_specials_Click" BorderBrush="{x:Null}" BorderThickness="0">
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Style.Triggers>
-                                <Trigger Property="IsFocused" Value="True">
-                                    <Setter Property="Background" Value="Red"/>
-                                </Trigger>
-                                <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="Green"/>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
+                <Button x:Name="btn_specials" Width="100" Height="104" Click="btn_specials_Click" BorderBrush="{x:Null}" BorderThickness="0">
                     <Button.Background>
                         <ImageBrush ImageSource="/;component/Resources/Images/btn_specials_bg.png"/>
                     </Button.Background>
-                    <!--<Button.Style>
-                        <Style TargetType="{x:Type Button}">
-                            <Style.Triggers>
-                                <Trigger Property="IsFocused" Value="True">
-                                    <Setter Property="Background">
-                                        <Setter.Value>
-                                            <ImageBrush ImageSource="/;component/Resources/Images/btn_specials-selected_bg.png"/>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>-->  
                 </Button>
                 <Button x:Name="btn_drinks" Content="Drinks" Width="100" Height="104" Click="btn_drinks_Click">
                     <Button.Style>
@@ -65,7 +40,7 @@
             <Grid HorizontalAlignment="Right" Height="75" VerticalAlignment="Bottom" Width="300" Background="#FFE6E5E8">
                 <Label x:Name="lbl_tabName" Content="Stuart" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Width="200" FontSize="21"/>
                 <Label x:Name="lbl_tabTotal" Content="Total: $0.00" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="40" Width="200" FontSize="21"/>
-                <Button x:Name="btn_payNow" Content="Pay Now" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="75" FontSize="21"/>
+                <Button x:Name="btn_payNow" Content="Pay Now" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Width="100" FontSize="21" Height="75" VerticalAlignment="Bottom" Margin="200,0,0,0" Click="btn_payNow_click"/>
             </Grid>
             <Button x:Name="btn_expandQueue" Content="&#xE014;" Width="20" Height="20" Click="btn_expandQueue_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,280,75" Background="#FFE6E5E8" FontFamily="Segoe UI Symbol"/>
 

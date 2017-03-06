@@ -38,5 +38,10 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         {
 
         }
+
+        private void btn_payNow_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

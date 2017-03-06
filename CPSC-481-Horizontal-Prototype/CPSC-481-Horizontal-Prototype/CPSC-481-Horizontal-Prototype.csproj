@@ -199,6 +199,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\btn_help_bg.png" />
+    <Resource Include="Resources\Images\btn_card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\btn_cash.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -87,8 +87,7 @@ namespace CPSC_481_Horizontal_Prototype
            this.Page_Holder.Content = nextPage;
         }
 
-
-        private void btn_payNow_Click(object sender, RoutedEventArgs e)
+        private void btn_payNow_click(object sender, RoutedEventArgs e)
         {
             PaymentScreen ps = new PaymentScreen();
             ps.Show();

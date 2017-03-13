@@ -6,13 +6,79 @@
              xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
              mc:Ignorable="d" 
                d:DesignHeight="965" d:DesignWidth="1820" Width="1820">
+
+    <UserControl.Resources>
+
+        <Style x:Key="InformButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="20px"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Margin" Value="0,0,20,0"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#FF344D61"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" 
+        				BorderThickness="0"
+        				BorderBrush="#FF344D61" 
+        				CornerRadius="7"        
+        				Background="{TemplateBinding Background}">
+                            <Grid >
+                                <ContentPresenter HorizontalAlignment="Center" 
+                                    VerticalAlignment="Center" Name="content"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="#FF4788c8" />
+                                <Setter Property="Foreground" Value="#FF4788c8" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                                            <GradientStop Color="#FFFFD190" Offset="0.35"/>
+                                            <GradientStop Color="#FF344D61" Offset="0.95"/>
+                                            <GradientStop Color="#FFFFD190" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter TargetName="content" Property="RenderTransform" >
+                                    <Setter.Value>
+                                        <TranslateTransform Y="1.0" />
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                          
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="White">
 
-        <Label x:Name="lbl_specials" Content="Specials" HorizontalAlignment="Left" Margin="25,29,0,0" VerticalAlignment="Top" FontSize="64" Background="{x:Null}" Foreground="#FF288DA7" FontFamily="Segoe UI Semibold"/>
+        <Label x:Name="lbl_specials" Content="Specials" HorizontalAlignment="Left" Margin="25,30,0,0" VerticalAlignment="Top" FontSize="64" Background="{x:Null}" Foreground="#FF288DA7" FontFamily="Segoe UI Semibold"/>
         <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="5" Margin="25,135,0,0" VerticalAlignment="Top" Width="400"/>
-        <ScrollViewer HorizontalAlignment="Stretch" Margin="0,165,0,0" VerticalAlignment="Stretch">
-            <Label x:Name="lbl_drinks" Content="Drinks" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,25,0,0"/>
+
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="35" Margin="35,150,0,0" >
+            <Button x:Name="btn_drinks" Style="{StaticResource InformButton}" Click="navButton_Click">Drinks</Button>
+            <Button x:Name="btn_food" Style="{StaticResource InformButton}" Click="navButton_Click">Food</Button>
+        </StackPanel>
+
+        <ScrollViewer x:Name="sv_specials" HorizontalAlignment="Stretch" Margin="0,190,0,0" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible">
+            <StackPanel >
+                <Label x:Name="lbl_drinks" Content="Drinks" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,25,0,0"/>
+                <Label x:Name="lbl_food" Content="Food" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,700,0,0"/>
+            </StackPanel>
+            
         </ScrollViewer>
+
     </Grid>
 
 </UserControl>

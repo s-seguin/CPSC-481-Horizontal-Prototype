@@ -24,5 +24,19 @@ namespace CPSC_481_Horizontal_Prototype
         {
             InitializeComponent();
         }
+
+        private void navButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (btn_drinks.IsFocused)
+            {
+                var point = lbl_drinks.TranslatePoint(new Point(0, 0), lbl_drinks);
+                sv_specials.ScrollToVerticalOffset(point.Y);
+            }
+            if (btn_food.IsFocused)
+            {
+                var point = lbl_food.TranslatePoint(new Point(0,0), lbl_drinks);
+                sv_specials.ScrollToVerticalOffset(point.Y);
+            }
+        }
     }
 }

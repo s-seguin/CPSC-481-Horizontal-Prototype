@@ -41,7 +41,19 @@ namespace CPSC_481_Horizontal_Prototype.Screens
 
         private void btn_payNow_Click(object sender, RoutedEventArgs e)
         {
+         
+        }
 
+        private void btn_cash_Click(object sender, RoutedEventArgs e)
+        {
+            rbtn_cash.IsChecked = true;
+            rbtn_card.IsChecked = false;
+        }
+
+        private void btn_card_Click(object sender, RoutedEventArgs e)
+        {
+            rbtn_card.IsChecked = true;
+            rbtn_cash.IsChecked = false;
         }
     }
 }

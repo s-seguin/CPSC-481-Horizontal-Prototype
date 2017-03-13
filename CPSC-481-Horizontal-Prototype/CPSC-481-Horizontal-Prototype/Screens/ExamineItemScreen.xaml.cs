@@ -22,6 +22,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         public ExamineItemScreen()
         {
             InitializeComponent();
+            btn_decrease.IsEnabled = false;
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -31,16 +32,15 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         private void btn_decrease_Click(object sender, RoutedEventArgs e)
         {
             int numItems = int.Parse(this.tb_numItems.Text);
-            if (numItems <= 0)
+            if (numItems <= 2)
             {
                 this.btn_decrease.IsEnabled = false;
             }
             else
             {
                 this.btn_decrease.IsEnabled = true;
-                numItems--;
             }
-
+            numItems--;
             this.tb_numItems.Text = numItems.ToString();
         }
 

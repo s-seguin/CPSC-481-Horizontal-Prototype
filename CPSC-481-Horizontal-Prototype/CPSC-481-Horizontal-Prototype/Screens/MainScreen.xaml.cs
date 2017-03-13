@@ -27,6 +27,8 @@ namespace CPSC_481_Horizontal_Prototype
             //set tab identifier as first letter of person's name and set tab name in bottom right
             btn_personTab.Content = tabName[0];
 
+            grid_summary.Background = btn_personTab.Background;
+
             // lbl_tabName.Content = tabName;
             /*if (Convert.ToInt16(tabName) > 0 || Convert.ToInt16(tabName) <= 9)
             {
@@ -34,42 +36,46 @@ namespace CPSC_481_Horizontal_Prototype
             } */
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
-            this.btn_specials.IsEnabled = false;
+            btn_specials.Height = 99;
 
             /* drinkItem.lbl_itemName.Content =  "Drink Up";
              drinkItem.lbl_itemPrice.Content = "$400.99";
              drinkItem.btn_viewItem.Background = new ImageBrush();*/
         }
 
-        private void btn_specials_Click(object sender, RoutedEventArgs e)
+        public void btn_nav_Click(object sender, RoutedEventArgs e)
         {
-            Switcher.Switch(new Page_Specials());
-            this.btn_specials.IsEnabled = false;
-            this.btn_food.IsEnabled = true;
-            this.btn_drinks.IsEnabled = true;
+            if (btn_specials.IsFocused)
+            {
+                Switcher.Switch(new Page_Specials());
+                btn_specials.Height = 99;
+                btn_drinks.Height = 104;
+                btn_food.Height = 104;
+            }
+            
+            else if (btn_drinks.IsFocused)
+            {
+                Switcher.Switch(new Page_Drinks());
+                btn_specials.Height = 104;
+                btn_drinks.Height = 99;
+                btn_food.Height = 104;
+            }
 
-        }
-        private void btn_drinks_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new Page_Drinks());
-            this.btn_drinks.IsEnabled = false;
-            this.btn_food.IsEnabled = true;
-            this.btn_specials.IsEnabled = true;
+            else if (btn_food.IsFocused)
+            {
+                Switcher.Switch(new Page_Food());
+                btn_specials.Height = 104;
+                btn_drinks.Height = 104;
+                btn_food.Height = 99;
+            }
 
-        }
-        private void btn_food_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new Page_Food());
-            this.btn_food.IsEnabled = false;
-            this.btn_drinks.IsEnabled = true;
-            this.btn_specials.IsEnabled = true;
-
-
-
-        }
-        private void btn_help_Click(object sender, RoutedEventArgs e)
-        {
-
+            else if (btn_help.IsFocused)
+            {
+                ExamineItemScreen eis = new ExamineItemScreen();
+                eis.Height = SystemParameters.PrimaryScreenHeight * .4;
+                eis.Width = SystemParameters.PrimaryScreenWidth * .4;
+                eis.Show();
+            }
         }
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
@@ -80,6 +86,14 @@ namespace CPSC_481_Horizontal_Prototype
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
         {
             //change the tab 
+            if (btn_personTab.IsFocused)
+            {
+                grid_summary.Background = btn_personTab.Background;
+            }
+            else if (btn_personTab_2.IsFocused)
+            {
+                grid_summary.Background = btn_personTab_2.Background;
+            }
         }
 
         internal void Navigate(UserControl nextPage)
@@ -90,7 +104,7 @@ namespace CPSC_481_Horizontal_Prototype
         private void btn_payNow_click(object sender, RoutedEventArgs e)
         {
             PaymentScreen ps = new PaymentScreen();
-            ps.Show();
+            ps.ShowDialog();
         }
 
         private void btn_expandQueue_Click(object sender, RoutedEventArgs e)
@@ -99,7 +113,7 @@ namespace CPSC_481_Horizontal_Prototype
             if (!stack_sidePanel.IsVisible)
             {
                 //change expand button margins
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 356);
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 416);
                 this.btn_expandQueue.Content = "\uE015";       //chevron down
                 stack_sidePanel.Visibility = Visibility.Visible;
             }

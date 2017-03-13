@@ -5,23 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
         mc:Ignorable="d"
-        Title="ExamineItemScreen" Height="273.879" Width="470.976" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterOwner">
-    <Grid>
-        <Label x:Name="lbl_itemName" Content="Item Name" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.576,0.093" FontSize="16"/>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="135
-               " Margin="10,41,0,0" Source="/CPSC-481-Horizontal-Prototype;component/Resources/Images/burger.png"/>
-        <Label x:Name="lbl_quantity" Height="30" Content="Quantity:" HorizontalAlignment="Left" Margin="300,191,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <TextBox x:Name="tb_numItems" HorizontalAlignment="Left" Height="30" Margin="386,191,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="37" TextChanged="textBox_TextChanged" FontSize="21.333"/>
-        <Button x:Name="btn_decrease" Content="&#xE012;" HorizontalAlignment="Left" Margin="356,191,0,0" VerticalAlignment="Top" Width="25" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Symbol" FontSize="18.667" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_decrease_Click"/>
-        <Button x:Name="btn_increase" Content="&#xE013;" HorizontalAlignment="Left" Margin="428,191,0,0" VerticalAlignment="Top" Width="25" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Symbol" FontSize="18.667" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_increase_Click"/>
-        <Button x:Name="btn_addToTray" Content="Add to tray" HorizontalAlignment="Left" Margin="300,226,0,0" VerticalAlignment="Top" Width="153" Height="30"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_addToTray_Click"/>
-        <TextBlock x:Name="tb_description" HorizontalAlignment="Left" Height="135" Margin="168,41,0,0" TextWrapping="Wrap" Text="This is a description. This is a really great piece of food. This is a description. This is a really great piece of food. This is a description. This is a really great piece of food. This is a description. This is a really great piece of food. This is a description. This is a really great piece of food. This is a description. This is a really great piece of food. This is a description." VerticalAlignment="Top" Width="272"/>
-        <Button x:Name="btn_close" Content="&#xE106;"  VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Height="30" FontFamily="Segoe UI Symbol" FontSize="18.667" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_close_Click"/>
-        <Label x:Name="lbl_sides" Content="Side:" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="16"/>
-        <ComboBox x:Name="dd_sides" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="120" Margin="10,226,0,0" SelectionChanged="dd_sides_SelectionChanged">
+        Title="ExamineItemScreen" Height="300" Width="475" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
+
+    <Viewbox Stretch="Fill" >
+    <Grid >
+        <Border BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4" >
+            <Image x:Name="image" HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="135" 
+                Margin="10,61,0,0" Source="/Resources/Images/beer.png"/>
+        </Border>
+        <Label x:Name="lbl_quantity" Height="30" Content="Quantity:" HorizontalAlignment="Left" Margin="298,216,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
+        <TextBox x:Name="tb_numItems" HorizontalAlignment="Left" Height="30" Margin="388,216,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="37" TextChanged="textBox_TextChanged" FontSize="21.333"/>
+        <Button x:Name="btn_decrease" Content="&#xE012;" HorizontalAlignment="Left" Margin="360,216,0,0" VerticalAlignment="Top" Width="25" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Symbol" FontSize="18.667" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_decrease_Click"/>
+        <Button x:Name="btn_increase" Content="&#xE013;" HorizontalAlignment="Left" Margin="429,216,0,0" VerticalAlignment="Top" Width="25" Height="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Symbol" FontSize="18.667" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_increase_Click"/>
+        <Button x:Name="btn_addToTray" Content="Add to tray" HorizontalAlignment="Left" Margin="301,252,0,0" VerticalAlignment="Top" Width="153" Height="30"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_addToTray_Click" Background="#FF00BB97" Foreground="White" FontFamily="Segoe UI Light" FontSize="14"/>
+        <TextBlock x:Name="tb_description" HorizontalAlignment="Left" Height="115" Margin="168,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus mi vel malesuada sollicitudin. Suspendisse in cursus ex. Cras placerat in diam sodales pellentesque. Nulla lacinia nunc commodo neque tristique varius. Fusce iaculis euismod mattis. In quis lacus elit. Phasellus vitae placerat mi."/>
+        <Button x:Name="btn_close" Content="&#xE10A;"  VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Height="30" FontFamily="Segoe UI Symbol" FontSize="18.667" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFEE516C" Click="btn_close_Click"/>
+        <Label x:Name="lbl_sides" Content="Side:" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="16" Visibility="Collapsed"/>
+        <ComboBox x:Name="dd_sides" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="120" Margin="10,252,0,0" SelectionChanged="dd_sides_SelectionChanged" Visibility="Collapsed">
             <ComboBoxItem IsSelected="True">Fries</ComboBoxItem>
             <ComboBoxItem>Salad</ComboBoxItem>
-        </ComboBox>
+        </ComboBox>        
+        <Label x:Name="lbl_itemName" Content="Gas Lamp - Nut Brown" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Foreground="#FF344D61" FontFamily="Segoe UI Light" FontSize="16"/>
+        <Label x:Name="lbl_itemPrice" Content="$5.25" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="82,170,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Background="#FF00BB97" Foreground="White" Width="62" Opacity="0.75"/>
+
 
     </Grid>
+    </Viewbox>
 </Window>

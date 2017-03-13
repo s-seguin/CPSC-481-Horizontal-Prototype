@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
              mc:Ignorable="d" 
-             Height="768" Width="1600">
+             Height="900" Width="1600">
     <Grid>
             
     </Grid>

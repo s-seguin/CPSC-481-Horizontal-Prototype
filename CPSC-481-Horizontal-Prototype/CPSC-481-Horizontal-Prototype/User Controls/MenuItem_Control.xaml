@@ -9,10 +9,11 @@
     <Grid>
         <Button x:Name="btn_viewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="150" Click="btn_viewItem_Click">
             <Button.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="../Resources/Images/burger.png"/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="../Resources/Images/beer.png"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lbl_itemName" Content="Item Name" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFF3B1B1"/>
-        <Label x:Name="lbl_itemPrice" Content="$00.00" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="#FF9CDA80"/>
+        <Label x:Name="lbl_itemName" Content="Gas Lamp &#10;Nut Brown" FontSize="16" FontFamily="Segoe UI Light" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF213F57" Opacity=".85" Width="130"/>
+        <Separator Width="100" Height="1" HorizontalAlignment="Left" Background="White" Margin="6,28,0,136" Opacity=".85"/>
+        <Label x:Name="lbl_itemPrice" Content="$0.00" HorizontalContentAlignment="Right" HorizontalAlignment="Right"  VerticalAlignment="Bottom" FontFamily="Segoe UI Light" Background="#FF00BB97" Foreground="White" Width="62" Opacity="0.75"/>
     </Grid>
 </UserControl>

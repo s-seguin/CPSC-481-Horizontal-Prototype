@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
         mc:Ignorable="d"
-        Title="PaymentScreen" Height="550" Width="450" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen">
+        Title="PaymentScreen" Height="550" Width="450" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
     <Grid Margin="1,0,-1,0">
-        <Label x:Name="lbl_title" Content="Zachary's Tab" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="18" Height="60" Width="450" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#FFF0ECEC" FontFamily="Segoe UI Light"/>
+        <Label x:Name="lbl_title" Content="Stuart's Tab" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="18" Height="60" Width="450" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#FFF0ECEC" FontFamily="Segoe UI Light"/>
         <Button x:Name="btn_close" Content="&#xE10A;"  VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Height="30" FontFamily="Segoe UI Symbol" FontSize="18.667" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_close_Click" Foreground="#FFEE516C"/>
 
 
@@ -40,13 +40,13 @@
             </Button.Background>
             <Label x:Name="lbl_credit" Content="Credit/Debit" FontSize="14" FontFamily="Segoe UI Light"/>
         </Button>
-        <Button x:Name="btn_payNow" Content="PAY NOW" FontSize="18" Height="35" Width="450" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="btn_payNow_Click" Background="#FF00B694" Foreground="White" FontFamily="Segoe UI Black" BorderThickness="0"/>
+        <Button x:Name="btn_payNow" Content="PAY NOW" FontSize="18" Height="50" Width="450" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="btn_payNow_Click" Background="#FF00B694" Foreground="White" FontFamily="Segoe UI Black" BorderThickness="0"/>
         <Label x:Name="lbl_quantity" Content="Quantity" HorizontalAlignment="Left" Margin="70,70,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="lbl_itemName" Content="Item Name" HorizontalAlignment="Center" Margin="188,70,188,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold"/>
         <Label x:Name="lbl_price" Content="Price" HorizontalAlignment="Right" Margin="0,70,70,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold"/>
 
 
-        <TextBlock Name="tb_quantity" HorizontalAlignment="Left" Margin="100,98,0,343" Width="Auto" Height="Auto" FontFamily="Segoe UI Light">
+        <TextBlock Name="tb_quantity" HorizontalAlignment="Left" Margin="100,98,0,332" Width="Auto" Height="Auto" FontFamily="Segoe UI Light">
             <Run Text="1"/>
             <LineBreak/>
             <LineBreak/>
@@ -59,9 +59,9 @@
             <Run Text="1"/>
         </TextBlock>
 
-        <TextBlock x:Name="tb_itemName" TextAlignment="Center" HorizontalAlignment="Center" Margin="188,100,181,335" Width="Auto" Height="Auto" FontFamily="Segoe UI Light"><Run Text="Big Pub Burger"/><LineBreak/><LineBreak/><Run Text="Rickard's Red"/><LineBreak/><LineBreak/><Run Text="Soft Drink"/><LineBreak/><LineBreak/><Run Text="Maple Cream"/></TextBlock>
+        <TextBlock x:Name="tb_itemName" TextAlignment="Center" HorizontalAlignment="Center" Margin="189,100,182,332" Width="Auto" Height="Auto" FontFamily="Segoe UI Light"><Run Text="Big Pub Burger"/><LineBreak/><LineBreak/><Run Text="Rickard's Red"/><LineBreak/><LineBreak/><Run Text="Soft Drink"/><LineBreak/><LineBreak/><Run Text="Maple Cream"/></TextBlock>
 
-        <TextBlock Name="tb_price" TextAlignment="Center" HorizontalAlignment="Right" Margin="0,100,75,341" Width="Auto" Height="Auto" FontFamily="Segoe UI Light">
+        <TextBlock Name="tb_price" TextAlignment="Center" HorizontalAlignment="Right" Margin="0,100,75,332" Width="Auto" Height="Auto" FontFamily="Segoe UI Light">
             <Run Text="$12.00"/>
             <LineBreak/>
             <LineBreak/>
@@ -79,7 +79,7 @@
         <GridSplitter x:Name="gridSplitter_Copy2" HorizontalAlignment="Center" Height="1" Margin="45,182,45,0" VerticalAlignment="Top" Width="360" Background="#FFACAAAA"/>
         <GridSplitter x:Name="gridSplitter_Copy3" HorizontalAlignment="Center" Height="1" Margin="45,214,45,0" VerticalAlignment="Top" Width="360" Background="#FFACAAAA"/>
 
-        <Label x:Name="lbl_subtotal" Content="Subtotal             $42.50" HorizontalAlignment="Right" Margin="0,289,75,236" FontFamily="Segoe UI Light"/>
+        <Label x:Name="lbl_subtotal" Content="Subtotal             $42.50" HorizontalAlignment="Right" Margin="0,289,75,234" FontFamily="Segoe UI Light"/>
         <Label x:Name="label" Content="GST               $2.13" HorizontalAlignment="Right" Margin="0,312,75,211" FontFamily="Segoe UI Light"/>
         <Label x:Name="lbl_total" Content="Total             $44.63" HorizontalAlignment="Right" Margin="0,337,75,186" FontFamily="Segoe UI Light"/>
 

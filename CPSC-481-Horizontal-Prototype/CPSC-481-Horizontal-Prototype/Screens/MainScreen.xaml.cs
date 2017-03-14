@@ -1,4 +1,5 @@
-﻿using CPSC_481_Horizontal_Prototype.Screens;
+﻿using CPSC_481_Horizontal_Prototype.Classes;
+using CPSC_481_Horizontal_Prototype.Screens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class MainScreen : Window
     {
+        public ActiveTabs allTabs { get; set; }
         public MainScreen(string tabName)
         {
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace CPSC_481_Horizontal_Prototype
              drinkItem.lbl_itemPrice.Content = "$400.99";
              drinkItem.btn_viewItem.Background = new ImageBrush();*/
         }
+
 
         public void btn_nav_Click(object sender, RoutedEventArgs e)
         {
@@ -80,7 +83,6 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)

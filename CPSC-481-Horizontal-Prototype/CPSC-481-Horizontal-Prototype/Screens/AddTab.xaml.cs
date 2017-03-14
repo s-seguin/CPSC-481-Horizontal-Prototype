@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPSC_481_Horizontal_Prototype.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,8 +27,9 @@ namespace CPSC_481_Horizontal_Prototype
         {
             InitializeComponent();
             
-            // this.Height = SystemParameters.PrimaryScreenHeight / 2;
-            // this.Width = SystemParameters.PrimaryScreenWidth / 2;
+            this.Height = SystemParameters.PrimaryScreenHeight / 2;
+            this.Width = SystemParameters.PrimaryScreenWidth / 2;
+            Console.WriteLine(this.Height + " " + this.Width);
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -45,13 +47,17 @@ namespace CPSC_481_Horizontal_Prototype
 
             //pass textbox input into MainScreen
             string theText = txtbox_name.Text;
+            UserTab tab = new UserTab(theText); //create a new user tab
+            ActiveTabs allTabs = new ActiveTabs(tab);
+
             if (theText.Equals(""))
             {
                 theText = defaultTabs[0];
                 defaultTabs.RemoveAt(0);
             }
-            MainScreen ss = new MainScreen(theText);
-            ss.Show();
+            MainScreen main = new MainScreen(theText);
+            main.Show();
+            main.allTabs = allTabs;
             this.Close();
             homeScreen.Close();
         }

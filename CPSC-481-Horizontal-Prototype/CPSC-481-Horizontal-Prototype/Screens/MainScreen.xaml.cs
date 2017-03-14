@@ -21,13 +21,25 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class MainScreen : Window
     {
+        public bool isStartup { get; private set; } = true;
         public ActiveTabs allTabs { get; set; }
-        public MainScreen(string tabName)
+        public MainScreen()
         {
+            HomeScreen hs = new HomeScreen(this);
+            hs.Show();
             InitializeComponent();
 
-            //set tab identifier as first letter of person's name and set tab name in bottom right
-            btn_personTab.Content = tabName[0];
+            this.Hide();
+        }
+
+        public void OpenWindow()
+        {
+            this.Show();
+            isStartup = false;
+
+            //set tab identifier as first letter of person's name and set tab name in bottom 
+
+            //btn_personTab.Content = tabName[0];
 
             grid_summary.Background = btn_personTab.Background;
 
@@ -44,7 +56,6 @@ namespace CPSC_481_Horizontal_Prototype
              drinkItem.lbl_itemPrice.Content = "$400.99";
              drinkItem.btn_viewItem.Background = new ImageBrush();*/
         }
-
 
         public void btn_nav_Click(object sender, RoutedEventArgs e)
         {

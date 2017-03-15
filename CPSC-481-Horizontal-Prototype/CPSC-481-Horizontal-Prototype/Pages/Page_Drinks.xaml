@@ -66,16 +66,120 @@
         <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="5" Margin="25,135,0,0" VerticalAlignment="Top" Width="400"/>
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="35" Margin="35,150,0,0" >
-            <Button Style="{StaticResource InformButton}">Beer</Button>
-            <Button Style="{StaticResource InformButton}">Whiskey</Button>
-            <Button Style="{StaticResource InformButton}">Top Shelf</Button>
-            <Button Style="{StaticResource InformButton}">Cocktails</Button>
-            <Button Style="{StaticResource InformButton}">Martinis</Button>
-            <Button Style="{StaticResource InformButton}">Wine</Button>
+            <Button  x:Name="btn_beer" Style="{StaticResource InformButton}" Click="navButton_Click">Beer</Button>
+            <Button  x:Name="btn_whiskey" Style="{StaticResource InformButton}" Click="navButton_Click">Whiskey</Button>
+            <Button  x:Name="btn_topShelf" Style="{StaticResource InformButton}" Click="navButton_Click">Top Shelf</Button>
+            <Button  x:Name="btn_cocktails" Style="{StaticResource InformButton}" Click="navButton_Click">Cocktails</Button>
+            <Button  x:Name="btn_martinis" Style="{StaticResource InformButton}" Click="navButton_Click">Martinis</Button>
+            <Button  x:Name="btn_wine" Style="{StaticResource InformButton}" Click="navButton_Click">Wine</Button>
         </StackPanel>
 
-        <ScrollViewer HorizontalAlignment="Stretch" Margin="0,195,0,0" VerticalAlignment="Stretch">
-            <Label x:Name="lbl_beer" Content="Beer" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,25,0,0"/>
+        <ScrollViewer x:Name="sv_drinks" HorizontalAlignment="Stretch" Margin="0,195,0,0" VerticalAlignment="Stretch">
+            <StackPanel >
+                <!-- Beers -->
+                <Label x:Name="header_beer" Content="Beer" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <!-- Gas Lamps -->
+                <Label x:Name="lbl_gasLamp" Content="Gas Lamp" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="gl1"/>
+                    <local:MenuItem_Control x:Name="gl2"/>
+                    <local:MenuItem_Control x:Name="gl3"/>
+                    <local:MenuItem_Control x:Name="gl4"/>
+                    <local:MenuItem_Control x:Name="gl5"/>
+                    <local:MenuItem_Control x:Name="gl6"/>
+                    <local:MenuItem_Control x:Name="gl7"/>
+                    <local:MenuItem_Control x:Name="gl8"/>
+                    <local:MenuItem_Control x:Name="gl9"/>
+                </WrapPanel>
+
+                <!-- Domestic -->
+                <Label x:Name="lbl_canadian" Content="Canadian Brewed" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="cb1"/>
+                    <local:MenuItem_Control x:Name="cb2"/>
+                    <local:MenuItem_Control x:Name="cb3"/>
+                    <local:MenuItem_Control x:Name="cb4"/>
+                    <local:MenuItem_Control x:Name="cb5"/>
+                    <local:MenuItem_Control x:Name="cb6"/>
+                    <local:MenuItem_Control x:Name="cb7"/>
+                    <local:MenuItem_Control x:Name="cb8"/>
+                    <local:MenuItem_Control x:Name="cb9"/>
+                </WrapPanel>
+
+                <!-- Of the World -->
+                <Label x:Name="lbl_ofTheWorld" Content="Of The World" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="otw1"/>
+                    <local:MenuItem_Control x:Name="otw2"/>
+                </WrapPanel>
+
+                <!-- Whiskey -->
+                <Label x:Name="header_whiskey" Content="Whiskey" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                
+                <!--Irish-->
+                <Label x:Name="lbl_irish" Content="Irish" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="irish1"/>
+                </WrapPanel>
+
+                <!--Scotch-->
+                <Label x:Name="lbl_scotch" Content="Scotch" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="scotch1"/>
+                </WrapPanel>
+
+                <!--Canadian Whiskey-->
+                <Label x:Name="lbl_cadWhiskey" Content="Canadian Whiskey" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="cadWhiskey1"/>
+                    <local:MenuItem_Control x:Name="cadWhiskey2"/>
+                    <local:MenuItem_Control x:Name="cadWhiskey3"/>
+                    <local:MenuItem_Control x:Name="cadWhiskey4"/>
+                </WrapPanel>
+
+                <!--Bourbon-->
+                <Label x:Name="lbl_bourbon" Content="Bourbon" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="bourbon1"/>
+                    <local:MenuItem_Control x:Name="bourbon2"/>
+                    <local:MenuItem_Control x:Name="bourbon3"/>
+                </WrapPanel>
+
+                <!-- Top Shelf-->
+                <Label x:Name="header_topShelf" Content="Top Shelf" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <!--Gin-->
+                <Label x:Name="lbl_gin" Content="Gin" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="gin1"/>
+                    <local:MenuItem_Control x:Name="gin2"/>
+                </WrapPanel>
+
+                <!--Rum-->
+                <Label x:Name="lbl_rum" Content="Rum" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="rum1"/>
+                    <local:MenuItem_Control x:Name="rum2"/>
+                    <local:MenuItem_Control x:Name="rum3"/>
+                    <local:MenuItem_Control x:Name="rum4"/>
+                </WrapPanel>
+
+                <!--Vodka-->
+                <Label x:Name="lbl_vodka" Content="Vodka" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
+                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
+                    <local:MenuItem_Control x:Name="vodka1"/>
+                    <local:MenuItem_Control x:Name="vodka2"/>
+                    <local:MenuItem_Control x:Name="vodka3"/>
+                </WrapPanel>
+
+                <!--Cocktails-->
+                <Label x:Name="header_cocktails" Content="Cocktails" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <!-- Martinis-->
+                <Label x:Name="header_martinis" Content="Martinis" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <!--Wines-->
+                <Label x:Name="header_wine" Content="Wine" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+            </StackPanel>
         </ScrollViewer>
+        
+   
     </Grid>
 </UserControl>

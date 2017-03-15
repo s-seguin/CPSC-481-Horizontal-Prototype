@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,15 +22,42 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class MenuItem_Control : UserControl
     {
+        String description;
+
         public MenuItem_Control()
         {
             InitializeComponent();
         }
 
-        private void btn_viewItem_Click(object sender, RoutedEventArgs e)
+        public void setDescription(string descr)
         {
-            ExamineItemScreen eis = new ExamineItemScreen();
-            eis.Show();
+            this.description = descr;
         }
+
+        public string getDesription()
+        {
+            return description;
+        }
+
+        private void btn_viewItem_Click(object sender, RoutedEventArgs e)
+        { 
+            ExamineItemScreen eis = new ExamineItemScreen();
+
+            //change item name to fit on one line
+            string temp = (String) lbl_itemName.Content;
+
+            //update name, price, description and image of template
+            eis.lbl_itemName.Content = Regex.Replace(temp, @"\n", ""); 
+            eis.lbl_itemPrice.Content = lbl_itemPrice.Content;
+            eis.tb_description.Text = this.getDesription();
+            eis.image.Source = background.ImageSource;
+
+            //change overlay dimensions
+            eis.Height = SystemParameters.PrimaryScreenHeight * .4;
+            eis.Width = SystemParameters.PrimaryScreenWidth * .4;
+            eis.ShowDialog();
+        }
+
+
     }
 }

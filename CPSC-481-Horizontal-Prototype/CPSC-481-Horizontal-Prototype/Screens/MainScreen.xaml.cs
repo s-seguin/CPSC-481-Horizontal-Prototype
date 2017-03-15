@@ -1,6 +1,7 @@
 ﻿using CPSC_481_Horizontal_Prototype.Classes;
 using CPSC_481_Horizontal_Prototype.Screens;
 using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -12,9 +13,18 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class MainScreen : Window
     {
+
+        #region Attributes
+
         private UserTab focusedTab;
         public bool isStartup { get; private set; } = true;
         public ActiveTabs allTabs { get; set; }
+        private SolidColorBrush col_tabBlue = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
+        private SolidColorBrush col_tabOrange = new SolidColorBrush(Color.FromArgb(0xFF, 0xf2, 0xab, 0x57)); //FFf2ab57
+
+        #endregion
+
+        #region Constructors
         public MainScreen()
         {
             HomeScreen hs = new HomeScreen(this);
@@ -23,7 +33,9 @@ namespace CPSC_481_Horizontal_Prototype
 
             this.Hide();
         }
+        #endregion
 
+        #region Methods
         public void OpenWindow()
         {
             this.Show();
@@ -91,10 +103,6 @@ namespace CPSC_481_Horizontal_Prototype
             AddTab at = new AddTab(this, null);
             at.ShowDialog();
             AddTabButton(allTabs.GetTabs()[allTabs.GetTabs().Count - 1]);
-           /* foreach (UserTab ut in allTabs.GetTabs())
-            {
-                Console.WriteLine(ut.ToString());
-            }*/
         }
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
@@ -129,18 +137,22 @@ namespace CPSC_481_Horizontal_Prototype
 
         private Button CreateTabButton(string userName)
         {
-            Button testButton = new Button();
-            testButton.Click += btn_changeTab_Click;
-            testButton.Width = 75;
-            testButton.Height = 75;
-            testButton.BorderBrush = null;
-            testButton.BorderThickness = new Thickness(0, 0, 0, 0);
-            testButton.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
-            testButton.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
-            testButton.Content = userName[0];
-            testButton.FontSize = 48;
-            testButton.FontFamily = new FontFamily("Segoe UI Semibold");
-            return testButton;
+            Button btn = new Button();
+            btn.Click += btn_changeTab_Click;
+            btn.Width = 75;
+            btn.Height = 75;
+            btn.BorderBrush = null;
+            btn.BorderThickness = new Thickness(0, 0, 0, 0);
+            if (allTabs.GetTabs().Count % 2 == 0)
+                btn.Background = col_tabBlue;
+            else
+                btn.Background = col_tabOrange;
+
+            btn.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
+            btn.Content = userName[0];
+            btn.FontSize = 48;
+            btn.FontFamily = new FontFamily("Segoe UI Semibold");
+            return btn;
         }
 
         internal void Navigate(UserControl nextPage)
@@ -173,5 +185,7 @@ namespace CPSC_481_Horizontal_Prototype
             }
 
         }
+
+        #endregion
     }
 }

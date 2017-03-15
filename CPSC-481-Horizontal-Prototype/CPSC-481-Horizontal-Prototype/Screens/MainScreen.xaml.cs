@@ -12,6 +12,7 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class MainScreen : Window
     {
+        private UserTab focusedTab;
         public bool isStartup { get; private set; } = true;
         public ActiveTabs allTabs { get; set; }
         public MainScreen()
@@ -28,12 +29,13 @@ namespace CPSC_481_Horizontal_Prototype
             this.Show();
             isStartup = false;
 
-            //set tab identifier as first letter of person's name and set tab name in bottom 
+            //add the first tab
+            AddTabButton(allTabs.GetTabs()[0]);
+            focusedTab = allTabs.GetTabs()[0];
 
-            //btn_personTab.Content = tabName[0];
-            PopulateTabMenu();
-
-            grid_summary.Background = btn_personTab.Background;
+            //make the thing look nice in corner
+            grid_summary.Background = focusedTab.GetTabButton().Background;
+            lbl_tabName.Content = focusedTab.ToString();
 
             // lbl_tabName.Content = tabName;
             /*if (Convert.ToInt16(tabName) > 0 || Convert.ToInt16(tabName) <= 9)
@@ -88,46 +90,47 @@ namespace CPSC_481_Horizontal_Prototype
         {
             AddTab at = new AddTab(this, null);
             at.ShowDialog();
-            foreach (UserTab ut in allTabs.GetTabs())
+            AddTabButton(allTabs.GetTabs()[allTabs.GetTabs().Count - 1]);
+           /* foreach (UserTab ut in allTabs.GetTabs())
             {
                 Console.WriteLine(ut.ToString());
-            }
+            }*/
         }
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
         {
-            //change the tab 
-            if (btn_personTab.IsFocused)
+            foreach (UserTab ut in allTabs.GetTabs())
             {
-                grid_summary.Background = btn_personTab.Background;
+                if (ut.GetTabButton().IsFocused)
+                {
+                    lbl_tabName.Content = ut.ToString();
+                    grid_summary.Background = ut.GetTabButton().Background;
+                    this.focusedTab = ut;
+
+                }
             }
-            else if (btn_personTab_2.IsFocused)
-            {
-                grid_summary.Background = btn_personTab_2.Background;
-            }
+  
         }
-
-        private void PopulateTabMenu()
+      
+        /// <summary>
+        /// Creates a tab btn in the tab panel for the given user tab
+        /// the button is store as an attribute in the usertab class
+        /// </summary>
+        /// <param name="tab">The user tab to create a button for</param>
+        private void AddTabButton(UserTab tab)
         {
-            
-            foreach (UserTab tab in allTabs.GetTabs())
-            {
-                Button btn = CreateTabButton(tab.ToString());
-                tab.SetTabButton(btn);
-                tabPanel.Children.Add(btn);
-
-            }
-            //populate the tab menu
-        }
-
-        private void UpdateTabMenu()
-        {
-            //add another user to the tab
+            Button btn = CreateTabButton(tab.ToString());
+            tab.SetTabButton(btn);
+            tabPanel.Children.Add(btn);
+            lbl_tabName.Content = tab.ToString();
+            grid_summary.Background = tab.GetTabButton().Background;
+            this.focusedTab = tab;
         }
 
         private Button CreateTabButton(string userName)
         {
             Button testButton = new Button();
+            testButton.Click += btn_changeTab_Click;
             testButton.Width = 75;
             testButton.Height = 75;
             testButton.BorderBrush = null;

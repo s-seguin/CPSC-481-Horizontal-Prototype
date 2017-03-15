@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,9 +28,16 @@ namespace CPSC_481_Horizontal_Prototype
         }
 
         private void btn_viewItem_Click(object sender, RoutedEventArgs e)
-        {
+        { 
             ExamineItemScreen eis = new ExamineItemScreen();
+            string temp = (String) lbl_itemName.Content;
+            eis.lbl_itemName.Content = Regex.Replace(temp, @"\n", ""); 
+            eis.lbl_itemPrice.Content = lbl_itemPrice.Content;
+            eis.Height = SystemParameters.PrimaryScreenHeight * .4;
+            eis.Width = SystemParameters.PrimaryScreenWidth * .4;
             eis.Show();
         }
+
+
     }
 }

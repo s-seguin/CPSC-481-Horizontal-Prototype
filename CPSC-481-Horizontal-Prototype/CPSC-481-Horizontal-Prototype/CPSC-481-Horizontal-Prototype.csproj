@@ -55,9 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Classes\ActiveTabs.cs" />
-    <Compile Include="Classes\MenuItem.cs" />
-    <Compile Include="Classes\UserTab.cs" />
     <Compile Include="Pages\Page_Drinks.xaml.cs">
       <DependentUpon>Page_Drinks.xaml</DependentUpon>
     </Compile>

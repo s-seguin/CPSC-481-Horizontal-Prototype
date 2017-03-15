@@ -94,6 +94,12 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
         {
+            AddTab at = new AddTab(this, null);
+            at.Show();
+            foreach (UserTab ut in allTabs.GetTabs())
+            {
+                Console.WriteLine(ut.ToString());
+            }
         }
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)

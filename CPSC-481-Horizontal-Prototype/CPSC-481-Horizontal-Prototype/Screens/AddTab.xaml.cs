@@ -62,7 +62,8 @@ namespace CPSC_481_Horizontal_Prototype
                 ms.allTabs = allTabs;
                 ms.OpenWindow();
                 this.Close();
-                homeScreen.Close();
+                if (homeScreen != null)
+                    homeScreen.Close();
 
             }
             else

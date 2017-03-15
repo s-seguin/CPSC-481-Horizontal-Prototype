@@ -8,12 +8,12 @@
         Title="HomeScreen" Height="768" Width="1280" WindowState="Maximized" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid Background="#FF3393AB">
         <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="150" Background="#FF122331">
-            <Image x:Name="logo" Height="100" Source="../Resources/Images/logo_med.png"/>
+            <Image x:Name="logo" Height="100" Source="/Resources/Images/logo_med.png"/>
             <Button x:Name="btn_addTab" Height="48" Width="155" Content="New Tab +" BorderBrush="{x:Null}" Background="#FF02B694" Foreground="#FFA4DDCE" FontFamily="Segoe UI Light" FontSize="18.667" Click="btn_addTab_Click"/>
         </StackPanel>
         <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="150,0,0,0">
             <Grid.Background>
-                <ImageBrush ImageSource="/;component/Resources/Images/home_background.png"/>
+                <ImageBrush ImageSource="/Resources/Images/home_background.png"/>
             </Grid.Background>
 
             <Label x:Name="lbl_date" Content="Thursday March 9th, 2017" HorizontalContentAlignment="Right" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="32" Foreground="White" FontFamily="Segoe UI Semilight" FontSize="14"/>

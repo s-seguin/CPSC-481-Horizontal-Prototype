@@ -1,4 +1,5 @@
-﻿using CPSC_481_Horizontal_Prototype.Screens;
+﻿using CPSC_481_Horizontal_Prototype.Classes;
+using CPSC_481_Horizontal_Prototype.Screens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,12 +21,25 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class MainScreen : Window
     {
-        public MainScreen(string tabName)
+        public bool isStartup { get; private set; } = true;
+        public ActiveTabs allTabs { get; set; }
+        public MainScreen()
         {
+            HomeScreen hs = new HomeScreen(this);
+            hs.Show();
             InitializeComponent();
 
-            //set tab identifier as first letter of person's name and set tab name in bottom right
-            btn_personTab.Content = tabName[0];
+            this.Hide();
+        }
+
+        public void OpenWindow()
+        {
+            this.Show();
+            isStartup = false;
+
+            //set tab identifier as first letter of person's name and set tab name in bottom 
+
+            //btn_personTab.Content = tabName[0];
 
             grid_summary.Background = btn_personTab.Background;
 
@@ -80,7 +94,6 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
         {
-
         }
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)

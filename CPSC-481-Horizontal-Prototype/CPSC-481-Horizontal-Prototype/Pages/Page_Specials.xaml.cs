@@ -23,26 +23,18 @@ namespace CPSC_481_Horizontal_Prototype
         public Page_Specials()
         {
             InitializeComponent();
-
-            ds1.lbl_itemName.Content = "Gas Lamp \nNut Brown";
-            ds1.lbl_itemPrice.Content = "$6.50";
-
-            ds2.lbl_itemName.Content = "Gas Lamp \nPlatinum Blonde";
-            ds2.lbl_itemPrice.Content = "$6.50";
-
-            ds3.lbl_itemName.Content = "Gas Lamp\nPrairie Ale";
-            ds3.lbl_itemPrice.Content = "$6.50";
         }
 
         private void navButton_Click(object sender, RoutedEventArgs e)
         {
             if (btn_drinks.IsFocused)
             {
-                sv_specials.ScrollToTop();
+                var point = lbl_drinks.TranslatePoint(new Point(0, 0), lbl_drinks);
+                sv_specials.ScrollToVerticalOffset(point.Y);
             }
-            else if (btn_food.IsFocused)
+            if (btn_food.IsFocused)
             {
-                var point = header_food.TranslatePoint(new Point(0,0), header_drinks);
+                var point = lbl_food.TranslatePoint(new Point(0,0), lbl_drinks);
                 sv_specials.ScrollToVerticalOffset(point.Y);
             }
         }

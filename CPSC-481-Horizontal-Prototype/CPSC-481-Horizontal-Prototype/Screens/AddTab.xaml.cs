@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPSC_481_Horizontal_Prototype.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +21,17 @@ namespace CPSC_481_Horizontal_Prototype
     public partial class AddTab : Window
     {
         HomeScreen homeScreen;
+        MainScreen ms;
         private List<String> defaultTabs = new List<String> { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
-        public AddTab()
+        public AddTab(MainScreen ms, HomeScreen hs)
         {
             InitializeComponent();
             
-            // this.Height = SystemParameters.PrimaryScreenHeight / 2;
-            // this.Width = SystemParameters.PrimaryScreenWidth / 2;
+            this.Height = SystemParameters.PrimaryScreenHeight / 2;
+            this.Width = SystemParameters.PrimaryScreenWidth / 2;
+            this.ms = ms;
+            this.homeScreen = hs;
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -45,20 +49,28 @@ namespace CPSC_481_Horizontal_Prototype
 
             //pass textbox input into MainScreen
             string theText = txtbox_name.Text;
+            UserTab tab = new UserTab(theText); //create a new user tab
+
             if (theText.Equals(""))
             {
                 theText = defaultTabs[0];
                 defaultTabs.RemoveAt(0);
             }
-            MainScreen ss = new MainScreen(theText);
-            ss.Show();
-            this.Close();
-            homeScreen.Close();
-        }
+            if (ms.isStartup)
+            {
+                ActiveTabs allTabs = new ActiveTabs(tab);
+                ms.allTabs = allTabs;
+                ms.OpenWindow();
+                this.Close();
+                homeScreen.Close();
 
-        public void SetHomeScreen(HomeScreen hs)
-        {
-            this.homeScreen = hs;
+            }
+            else
+            {
+                ms.allTabs.AddTab(tab);
+                this.Close();
+            }
+            
         }
             
     }

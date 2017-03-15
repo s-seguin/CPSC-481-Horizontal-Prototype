@@ -19,16 +19,17 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class HomeScreen : Window
     {
-        public HomeScreen()
+        private MainScreen ms;
+        public HomeScreen(MainScreen ms)
         {
+            this.ms = ms;
             InitializeComponent();
         }
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
         {
-            AddTab a = new AddTab();
+            AddTab a = new AddTab(ms, this);
             a.Show();
-            a.SetHomeScreen(this);
         }
     }
 }

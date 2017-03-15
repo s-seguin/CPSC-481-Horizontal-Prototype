@@ -3,15 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype" >
-    <Grid Height="165" Width="165" Margin="20">
+             xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
+             mc:Ignorable="d" 
+             d:DesignHeight="165" d:DesignWidth="165">
+    <Grid>
         <Button x:Name="btn_viewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="150" Click="btn_viewItem_Click">
             <Button.Background>
-                <ImageBrush x:Name="background" Stretch="UniformToFill" ImageSource="../Resources/Images/beer.png"/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="../Resources/Images/beer.png"/>
             </Button.Background>
         </Button>
-        <Label x:Name="lbl_itemName" Content="Label" FontSize="16" FontFamily="Segoe UI Light" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF213F57" Opacity=".85" Width="140" />
-        <Separator x:Name="separator" Width="100" Height="1" HorizontalAlignment="Left" Background="White" Margin="6,28,0,136" Opacity=".85"/>
+        <Label x:Name="lbl_itemName" Content="Gas Lamp &#10;Nut Brown" FontSize="16" FontFamily="Segoe UI Light" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF213F57" Opacity=".85" Width="130"/>
+        <Separator Width="100" Height="1" HorizontalAlignment="Left" Background="White" Margin="6,28,0,136" Opacity=".85"/>
         <Label x:Name="lbl_itemPrice" Content="$0.00" HorizontalContentAlignment="Right" HorizontalAlignment="Right"  VerticalAlignment="Bottom" FontFamily="Segoe UI Light" Background="#FF00BB97" Foreground="White" Width="62" Opacity="0.75"/>
     </Grid>
 </UserControl>

@@ -22,6 +22,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         public PaymentScreen()
         {
             InitializeComponent();
+
         }
 
         private void btn_close_Click(object sender, RoutedEventArgs e)
@@ -41,19 +42,20 @@ namespace CPSC_481_Horizontal_Prototype.Screens
 
         private void btn_payNow_Click(object sender, RoutedEventArgs e)
         {
-         
         }
 
         private void btn_cash_Click(object sender, RoutedEventArgs e)
         {
             rbtn_cash.IsChecked = true;
             rbtn_card.IsChecked = false;
+            btn_payNow.IsEnabled = true;
         }
 
         private void btn_card_Click(object sender, RoutedEventArgs e)
         {
             rbtn_card.IsChecked = true;
             rbtn_cash.IsChecked = false;
+            btn_payNow.IsEnabled = true;
         }
     }
 }

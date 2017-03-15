@@ -25,6 +25,10 @@ namespace CPSC_481_Horizontal_Prototype.Screens
             btn_decrease.IsEnabled = false;
         }
 
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        }
+
         private void btn_decrease_Click(object sender, RoutedEventArgs e)
         {
             int numItems = int.Parse(this.tb_numItems.Text);

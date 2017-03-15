@@ -52,7 +52,7 @@
                                     </Setter.Value>
                                 </Setter>
                             </Trigger>
-
+                          
 
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -60,7 +60,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-
+    
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,0" Background="White">
 
         <Label x:Name="lbl_specials" Content="Specials" HorizontalAlignment="Left" Margin="25,30,0,0" VerticalAlignment="Top" FontSize="64" Background="{x:Null}" Foreground="#FF288DA7" FontFamily="Segoe UI Semibold"/>
@@ -73,16 +73,10 @@
 
         <ScrollViewer x:Name="sv_specials" HorizontalAlignment="Stretch" Margin="0,190,0,0" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible">
             <StackPanel >
-                <Label x:Name="header_drinks" Content="Drinks" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="20,20,200,20">
-                    <local:MenuItem_Control x:Name="ds1"/>
-                    <local:MenuItem_Control x:Name="ds2"/>
-                    <local:MenuItem_Control x:Name="ds3"/>
-                    <local:MenuItem_Control />
-                    <local:MenuItem_Control />
-                </WrapPanel>
-                <Label x:Name="header_food" Content="Food" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,0,0,0"/>
+                <Label x:Name="lbl_drinks" Content="Drinks" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,25,0,0"/>
+                <Label x:Name="lbl_food" Content="Food" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,700,0,0"/>
             </StackPanel>
+            
         </ScrollViewer>
 
     </Grid>

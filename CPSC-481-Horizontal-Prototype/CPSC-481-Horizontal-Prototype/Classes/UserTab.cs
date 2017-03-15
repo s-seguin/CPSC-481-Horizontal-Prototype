@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace CPSC_481_Horizontal_Prototype.Classes
 {
@@ -12,18 +13,55 @@ namespace CPSC_481_Horizontal_Prototype.Classes
     public class UserTab
     {
         private string tabName;
-        private List<MenuItem> currentOrder = new List<MenuItem>();
+        private Dictionary<MenuItem, int> currentOrder = new Dictionary<MenuItem, int>();
+        private Dictionary<MenuItem, int> orderQueue = new Dictionary<MenuItem, int>();
         private double amountOwing;
+        private Button btn_tab;
 
         public UserTab(string tabName)
         {
             this.tabName = tabName;
         }
 
-        public void OrderItem(MenuItem item)
+        public void OrderItem(KeyValuePair<MenuItem, int> order)
         {
-            currentOrder.Add(item);
-            amountOwing += item.price;
+            if (currentOrder.ContainsKey(order.Key))
+                currentOrder[order.Key] += order.Value;
+            else
+                currentOrder.Add(order.Key, order.Value);
+
+            amountOwing += order.Key.price*currentOrder[order.Key];
+        }
+
+        public void AddToQueue(MenuItem item)
+        {
+            if (orderQueue.ContainsKey(item))
+                orderQueue[item]++;
+            else
+                orderQueue.Add(item, 1);
+        }
+
+        public void PlaceOrder()
+        {
+            foreach (KeyValuePair<MenuItem, int> order in orderQueue)
+            {
+                OrderItem(order);
+            }
+        }
+
+        override public string ToString()
+        {
+            return tabName;
+        }
+
+        public Button GetTabButton()
+        {
+            return btn_tab;
+        }
+
+        public void SetTabButton(Button btn_tab)
+        {
+            this.btn_tab = btn_tab;
         }
 
     }

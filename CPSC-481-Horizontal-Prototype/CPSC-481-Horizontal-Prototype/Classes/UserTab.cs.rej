@@ -1,0 +1,11 @@
+diff a/CPSC-481-Horizontal-Prototype/CPSC-481-Horizontal-Prototype/Classes/UserTab.cs b/CPSC-481-Horizontal-Prototype/CPSC-481-Horizontal-Prototype/Classes/UserTab.cs	(rejected hunks)
+@@ -12,8 +12,7 @@
+     public class UserTab
+     {
+         private string tabName;
+-        private Dictionary<MenuItem, int> currentOrder = new Dictionary<MenuItem, int>();
+-        private Dictionary<MenuItem, int> orderQueue = new Dictionary<MenuItem, int>();
++        private List<MenuItem> currentOrder = new List<MenuItem>();
+         private double amountOwing;
+ 
+         public UserTab(string tabName)

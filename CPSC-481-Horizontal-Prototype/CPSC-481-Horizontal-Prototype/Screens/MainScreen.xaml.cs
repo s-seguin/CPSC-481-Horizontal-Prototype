@@ -1,18 +1,9 @@
 ﻿using CPSC_481_Horizontal_Prototype.Classes;
 using CPSC_481_Horizontal_Prototype.Screens;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace CPSC_481_Horizontal_Prototype
 {
@@ -40,6 +31,7 @@ namespace CPSC_481_Horizontal_Prototype
             //set tab identifier as first letter of person's name and set tab name in bottom 
 
             //btn_personTab.Content = tabName[0];
+            PopulateTabMenu();
 
             grid_summary.Background = btn_personTab.Background;
 
@@ -113,6 +105,39 @@ namespace CPSC_481_Horizontal_Prototype
             {
                 grid_summary.Background = btn_personTab_2.Background;
             }
+        }
+
+        private void PopulateTabMenu()
+        {
+            
+            foreach (UserTab tab in allTabs.GetTabs())
+            {
+                Button btn = CreateTabButton(tab.ToString());
+                tab.SetTabButton(btn);
+                tabPanel.Children.Add(btn);
+
+            }
+            //populate the tab menu
+        }
+
+        private void UpdateTabMenu()
+        {
+            //add another user to the tab
+        }
+
+        private Button CreateTabButton(string userName)
+        {
+            Button testButton = new Button();
+            testButton.Width = 75;
+            testButton.Height = 75;
+            testButton.BorderBrush = null;
+            testButton.BorderThickness = new Thickness(0, 0, 0, 0);
+            testButton.Background = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
+            testButton.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
+            testButton.Content = userName[0];
+            testButton.FontSize = 48;
+            testButton.FontFamily = new FontFamily("Segoe UI Semibold");
+            return testButton;
         }
 
         internal void Navigate(UserControl nextPage)

@@ -91,10 +91,10 @@ namespace CPSC_481_Horizontal_Prototype
 
             else if (btn_help.IsFocused)
             {
-                ExamineItemScreen eis = new ExamineItemScreen();
-                eis.Height = SystemParameters.PrimaryScreenHeight * .4;
-                eis.Width = SystemParameters.PrimaryScreenWidth * .4;
-                eis.Show();
+                HelpScreen hs = new HelpScreen();
+                hs.Height = SystemParameters.PrimaryScreenHeight * .4;
+                hs.Width = SystemParameters.PrimaryScreenWidth * .4;
+                hs.ShowDialog();
             }
         }
 

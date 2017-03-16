@@ -14,7 +14,7 @@ namespace CPSC_481_Horizontal_Prototype.Classes
     {
         private string tabName;
         private Dictionary<MenuItem, int> currentOrder = new Dictionary<MenuItem, int>();
-        private Dictionary<MenuItem, int> orderQueue = new Dictionary<MenuItem, int>();
+        private Dictionary<MenuItem, int> orderTray = new Dictionary<MenuItem, int>();
         private double amountOwing;
         private Button btn_tab;
 
@@ -33,17 +33,17 @@ namespace CPSC_481_Horizontal_Prototype.Classes
             amountOwing += order.Key.price*currentOrder[order.Key];
         }
 
-        public void AddToQueue(MenuItem item)
+        public void AddToTray(MenuItem item)
         {
-            if (orderQueue.ContainsKey(item))
-                orderQueue[item]++;
+            if (orderTray.ContainsKey(item))
+                orderTray[item]++;
             else
-                orderQueue.Add(item, 1);
+                orderTray.Add(item, 1);
         }
 
         public void PlaceOrder()
         {
-            foreach (KeyValuePair<MenuItem, int> order in orderQueue)
+            foreach (KeyValuePair<MenuItem, int> order in orderTray)
             {
                 OrderItem(order);
             }

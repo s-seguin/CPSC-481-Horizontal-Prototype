@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using CPSC_481_Horizontal_Prototype.Classes;
 
 namespace CPSC_481_Horizontal_Prototype.Screens
 {
@@ -19,15 +20,16 @@ namespace CPSC_481_Horizontal_Prototype.Screens
     /// </summary>
     public partial class ExamineItemScreen : Window
     {
+        private MainScreen ms;
+        private Classes.MenuItem mi;
         public ExamineItemScreen()
         {
+            //this.ms = ms;
+            //this.mi = mi;
             InitializeComponent();
             btn_decrease.IsEnabled = false;
         }
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
 
         private void btn_decrease_Click(object sender, RoutedEventArgs e)
         {
@@ -54,7 +56,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
 
         private void btn_addToTray_Click(object sender, RoutedEventArgs e)
         {
-
+           // ms.focusedTab.AddToTray(mi);
         }
 
         private void dd_sides_SelectionChanged(object sender, SelectionChangedEventArgs e)

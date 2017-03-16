@@ -25,6 +25,9 @@ namespace CPSC_481_Horizontal_Prototype
         #endregion
 
         #region Constructors
+        /// <summary>
+        /// This contructor opens the first window you will see and hides the main window
+        /// </summary>
         public MainScreen()
         {
             HomeScreen hs = new HomeScreen(this);
@@ -33,9 +36,10 @@ namespace CPSC_481_Horizontal_Prototype
 
             this.Hide();
         }
-        #endregion
 
-        #region Methods
+        /// <summary>
+        /// Once the first tab has been created we draw this window
+        /// </summary>
         public void OpenWindow()
         {
             this.Show();
@@ -54,7 +58,11 @@ namespace CPSC_481_Horizontal_Prototype
             btn_specials.Height = 99;
 
         }
+        #endregion
 
+        #region Methods
+
+        #region Button Clicks
         public void btn_nav_Click(object sender, RoutedEventArgs e)
         {
             if (btn_specials.IsFocused)
@@ -118,7 +126,30 @@ namespace CPSC_481_Horizontal_Prototype
             }
   
         }
-      
+
+        private void btn_expandQueue_Click(object sender, RoutedEventArgs e)
+        {
+            //expand queue when side panel is collapsed
+            if (!stack_sidePanel.IsVisible)
+            {
+                //change expand button margins
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 416);
+                this.btn_expandQueue.Content = "\uE015";       //chevron down
+                stack_sidePanel.Visibility = Visibility.Visible;
+            }
+            //minimize side panel
+            else
+            {
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 108);
+                this.btn_expandQueue.Content = "\uE014";        //checvron up
+                stack_sidePanel.Visibility = Visibility.Collapsed;
+            }
+
+        }
+
+        #endregion
+
+        #region Helper Functions
         /// <summary>
         /// Creates a tab btn in the tab panel for the given user tab
         /// the button is store as an attribute in the usertab class
@@ -165,25 +196,9 @@ namespace CPSC_481_Horizontal_Prototype
             ps.ShowDialog();
         }
 
-        private void btn_expandQueue_Click(object sender, RoutedEventArgs e)
-        {
-            //expand queue when side panel is collapsed
-            if (!stack_sidePanel.IsVisible)
-            {
-                //change expand button margins
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 416);
-                this.btn_expandQueue.Content = "\uE015";       //chevron down
-                stack_sidePanel.Visibility = Visibility.Visible;
-            }
-            //minimize side panel
-            else
-            {
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 108);
-                this.btn_expandQueue.Content = "\uE014";        //checvron up
-                stack_sidePanel.Visibility = Visibility.Collapsed;
-            }
+        #endregion
 
-        }
+       
 
         #endregion
     }

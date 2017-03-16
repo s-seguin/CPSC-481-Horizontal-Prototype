@@ -32,6 +32,7 @@ namespace CPSC_481_Horizontal_Prototype
             this.Width = SystemParameters.PrimaryScreenWidth / 2;
             this.ms = ms;
             this.homeScreen = hs;
+            this.txtbox_name.Focus();
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)

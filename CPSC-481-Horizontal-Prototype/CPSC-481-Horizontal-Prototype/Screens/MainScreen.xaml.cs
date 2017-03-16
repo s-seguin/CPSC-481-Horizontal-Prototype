@@ -49,18 +49,10 @@ namespace CPSC_481_Horizontal_Prototype
             grid_summary.Background = focusedTab.GetTabButton().Background;
             lbl_tabName.Content = focusedTab.ToString();
 
-            // lbl_tabName.Content = tabName;
-            /*if (Convert.ToInt16(tabName) > 0 || Convert.ToInt16(tabName) <= 9)
-            {
-                lbl_tabName.Content = "Tab " + tabName;
-            } */
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
             btn_specials.Height = 99;
 
-            /* drinkItem.lbl_itemName.Content =  "Drink Up";
-             drinkItem.lbl_itemPrice.Content = "$400.99";
-             drinkItem.btn_viewItem.Background = new ImageBrush();*/
         }
 
         public void btn_nav_Click(object sender, RoutedEventArgs e)
@@ -100,9 +92,16 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
         {
-            AddTab at = new AddTab(this, null);
-            at.ShowDialog();
-            AddTabButton(allTabs.GetTabs()[allTabs.GetTabs().Count - 1]);
+            if (allTabs.GetTabs().Count < 8)
+            {
+                AddTab at = new AddTab(this, null);
+                at.ShowDialog();
+            }
+            else
+            {
+                MessageBoxResult result = MessageBox.Show("Only a maximum of 8 tabs are allowed", "Warning");
+            }
+
         }
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
@@ -125,7 +124,7 @@ namespace CPSC_481_Horizontal_Prototype
         /// the button is store as an attribute in the usertab class
         /// </summary>
         /// <param name="tab">The user tab to create a button for</param>
-        private void AddTabButton(UserTab tab)
+        public void AddTabButton(UserTab tab)
         {
             Button btn = CreateTabButton(tab.ToString());
             tab.SetTabButton(btn);

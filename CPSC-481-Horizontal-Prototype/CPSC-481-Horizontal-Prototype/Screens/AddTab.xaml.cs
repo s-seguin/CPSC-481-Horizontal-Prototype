@@ -46,16 +46,19 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
+            string theText = txtbox_name.Text;
+
+            if (theText.Equals("") || theText == null)
+            {
+                if (ms.allTabs == null)
+                    theText = "0";
+                else
+                    theText = (ms.allTabs.GetTabs().Count).ToString();
+            }
 
             //pass textbox input into MainScreen
-            string theText = txtbox_name.Text;
             UserTab tab = new UserTab(theText); //create a new user tab
 
-            if (theText.Equals(""))
-            {
-                theText = defaultTabs[0];
-                defaultTabs.RemoveAt(0);
-            }
             if (ms.isStartup)
             {
                 ActiveTabs allTabs = new ActiveTabs(tab);
@@ -68,6 +71,7 @@ namespace CPSC_481_Horizontal_Prototype
             else
             {
                 ms.allTabs.AddTab(tab);
+                ms.AddTabButton(ms.allTabs.GetTabs()[ms.allTabs.GetTabs().Count - 1]);
                 this.Close();
             }
             

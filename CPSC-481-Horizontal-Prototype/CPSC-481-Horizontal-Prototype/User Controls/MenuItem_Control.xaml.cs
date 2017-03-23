@@ -22,11 +22,24 @@ namespace CPSC_481_Horizontal_Prototype
     /// </summary>
     public partial class MenuItem_Control : UserControl
     {
-        String description;
+        String name { get; set; }
+        String price { get; set; }
+        String description { get; set; }
 
         public MenuItem_Control()
         {
             InitializeComponent();
+        }
+
+        public MenuItem_Control(string name, string price, string description, string path)
+        {
+            InitializeComponent();
+            this.lbl_itemName.Content = name;
+            this.name = name;
+            this.lbl_itemPrice.Content = price;
+            this.price = price;
+            this.description = description;
+            this.background.ImageSource = new BitmapImage(new Uri(path, UriKind.Relative));
         }
 
         public void setDescription(string descr)
@@ -36,20 +49,24 @@ namespace CPSC_481_Horizontal_Prototype
 
         public string getDesription()
         {
+            if ((this.description == null) || (this.description.Equals("")))
+            {
+                description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus mi vel malesuada sollicitudin. Suspendisse in cursus ex. Cras placerat in diam sodales pellentesque. Nulla lacinia nunc commodo neque tristique varius. Fusce iaculis euismod mattis. In quis lacus elit. Phasellus vitae placerat mi.";
+            }
             return description;
         }
 
         private void btn_viewItem_Click(object sender, RoutedEventArgs e)
-        { 
+        {
             ExamineItemScreen eis = new ExamineItemScreen();
 
             //change item name to fit on one line
-            string temp = (String) lbl_itemName.Content;
-
+            string name = this.name;
+            eis.lbl_itemName.Content = Regex.Replace(name, @"\n", "");
             //update name, price, description and image of template
-            eis.lbl_itemName.Content = Regex.Replace(temp, @"\n", ""); 
-            eis.lbl_itemPrice.Content = lbl_itemPrice.Content;
-            eis.tb_description.Text = this.getDesription();
+
+            eis.lbl_itemPrice.Content = this.price;
+            eis.tb_description.Text = this.description;
             eis.image.Source = background.ImageSource;
 
             //change overlay dimensions

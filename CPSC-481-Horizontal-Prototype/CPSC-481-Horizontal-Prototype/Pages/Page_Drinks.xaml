@@ -80,16 +80,7 @@
                 <Label x:Name="header_beer" Content="Beer" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
                 <!-- Gas Lamps -->
                 <Label x:Name="lbl_gasLamp" Content="Gas Lamp" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="gl1"/>
-                    <local:MenuItem_Control x:Name="gl2"/>
-                    <local:MenuItem_Control x:Name="gl3"/>
-                    <local:MenuItem_Control x:Name="gl4"/>
-                    <local:MenuItem_Control x:Name="gl5"/>
-                    <local:MenuItem_Control x:Name="gl6"/>
-                    <local:MenuItem_Control x:Name="gl7"/>
-                    <local:MenuItem_Control x:Name="gl8"/>
-                    <local:MenuItem_Control x:Name="gl9"/>
+                <WrapPanel x:Name="wp_gasLamps" Orientation="Horizontal" Margin="60,10,200,10">
                 </WrapPanel>
 
                 <!-- Domestic -->
@@ -115,7 +106,7 @@
 
                 <!-- Whiskey -->
                 <Label x:Name="header_whiskey" Content="Whiskey" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
-                
+
                 <!--Irish-->
                 <Label x:Name="lbl_irish" Content="Irish" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
                 <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
@@ -179,7 +170,7 @@
                 <Label x:Name="header_wine" Content="Wine" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
             </StackPanel>
         </ScrollViewer>
-        
-   
+
+
     </Grid>
 </UserControl>

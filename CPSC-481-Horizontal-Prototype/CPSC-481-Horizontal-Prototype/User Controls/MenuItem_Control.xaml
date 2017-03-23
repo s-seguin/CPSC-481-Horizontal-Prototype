@@ -7,7 +7,7 @@
     <Grid Height="165" Width="165" Margin="20">
         <Button x:Name="btn_viewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="150" Click="btn_viewItem_Click">
             <Button.Background>
-                <ImageBrush x:Name="background" Stretch="UniformToFill" ImageSource="../Resources/Images/beer.png"/>
+                <ImageBrush x:Name="background" ImageSource="../Resources/Images/beer.png"/>
             </Button.Background>
         </Button>
         <Label x:Name="lbl_itemName" Content="Label" FontSize="16" FontFamily="Segoe UI Light" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Background="#FF213F57" Opacity=".85" Width="140" />

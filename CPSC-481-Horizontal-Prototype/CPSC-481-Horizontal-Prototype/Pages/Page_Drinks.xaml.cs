@@ -51,131 +51,73 @@ namespace CPSC_481_Horizontal_Prototype
             wp_gasLamps.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpeg"));
 
             //Init Canadian Brewed
-            cb1.lbl_itemName.Content = "Big Rock \nGrasshopper";
-            cb1.lbl_itemPrice.Content = canadianPrice;
-            cb1.background.ImageSource = new BitmapImage(new Uri(path + "grasshopper.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Big Rock \nGrasshopper", canadianPrice, "", path + "grasshopper.jpeg"));
 
-            cb2.lbl_itemName.Content = "Big Rock \nTraditional Ale";
-            cb2.lbl_itemPrice.Content = canadianPrice;
-            cb2.background.ImageSource = new BitmapImage(new Uri(path + "traditional_ale.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Big Rock \nTraditional Ale", canadianPrice, "" , path + "traditional_ale.jpeg"));
 
-            cb3.lbl_itemName.Content = "Last Best IPA";
-            cb3.lbl_itemPrice.Content = canadianPrice;
-            cb3.background.ImageSource = new BitmapImage(new Uri(path + "last_best_ipa.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Last Best IPA", canadianPrice, "", path + "last_best_ipa.jpeg"));
 
-            cb4.lbl_itemName.Content = "Tool Shed \nStar Cheek IPA";
-            cb4.lbl_itemPrice.Content = canadianPrice;
-            cb4.background.ImageSource = new BitmapImage(new Uri(path + "star_cheek.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Tool Shed \nStar Cheek IPA", canadianPrice, "", path + "star_cheek.jpeg"));
 
-            cb5.lbl_itemName.Content = "Village Blacksmith";
-            cb5.lbl_itemPrice.Content = canadianPrice;
-            cb5.background.ImageSource = new BitmapImage(new Uri(path + "village_blacksmith.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Village Blacksmith", canadianPrice, "", path + "village_blacksmith.jpeg"));
 
-            cb6.lbl_itemName.Content = "Wild Rose \nRaspberry";
-            cb6.lbl_itemPrice.Content = canadianPrice;
-            cb6.background.ImageSource = new BitmapImage(new Uri(path + "wraspberry_ale.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Wild Rose \nRaspberry", canadianPrice, "", path + "wraspberry_ale.jpeg"));
 
-            cb7.lbl_itemName.Content = "Alexander Keith's";
-            cb7.lbl_itemPrice.Content = canadianPrice;
-            cb7.background.ImageSource = new BitmapImage(new Uri(path + "alexander_keiths.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Alexander Keith's", canadianPrice, "", path + "alexander_keiths.jpeg"));
 
-            cb8.lbl_itemName.Content = "Molson \nCanadian";
-            cb8.lbl_itemPrice.Content = canadianPrice;
-            cb8.background.ImageSource = new BitmapImage(new Uri(path + "molson_canadian.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Molson \nCanadian", canadianPrice, "", path + "molson_canadian.jpeg"));
 
-            cb9.lbl_itemName.Content = "Phillips Blue Buck";
-            cb9.lbl_itemPrice.Content = canadianPrice;
-            cb9.background.ImageSource = new BitmapImage(new Uri(path + "blue_buck.jpeg", UriKind.Relative));
+            wp_domestic.Children.Add(new MenuItem_Control("Phillips Blue Buck", canadianPrice, "", path + "blue_buck.jpeg"));
 
 
             //Init Of the World
-            otw1.lbl_itemName.Content = "Guinness Stout";
-            otw1.lbl_itemPrice.Content = otwPrice;
-            otw1.background.ImageSource = new BitmapImage(new Uri(path + "guinness_stout.jpeg", UriKind.Relative));
+            wp_otw.Children.Add(new MenuItem_Control("Guinness Stout", otwPrice, "", path + "guinness_stout.jpeg"));
 
-            otw2.lbl_itemName.Content = "Strongbow Cider";
-            otw2.lbl_itemPrice.Content = otwPrice;
-            otw2.background.ImageSource = new BitmapImage(new Uri(path + "strongbow_cider.jpeg", UriKind.Relative));
+            wp_otw.Children.Add(new MenuItem_Control("Strongbow Cider", otwPrice, "", path + "strongbow_cider.jpeg"));
 
 
             //Init Irish Whiskey
-            irish1.lbl_itemName.Content = "Jameson";
-            irish1.lbl_itemPrice.Content = "$8.00";
-            irish1.background.ImageSource = new BitmapImage(new Uri(path + "jameson.jpeg", UriKind.Relative));
+            wp_irish.Children.Add(new MenuItem_Control("Jameson", "$8.00", "", path + "jameson.jpeg"));
 
             //Init Scotch
-            scotch1.lbl_itemName.Content = "Chivas Regal";
-            scotch1.lbl_itemPrice.Content = "$9.00";
-            scotch1.background.ImageSource = new BitmapImage(new Uri(path + "chivas_regal.jpeg", UriKind.Relative));
+            wp_scotch.Children.Add(new MenuItem_Control("Chivas Regal", "$9.00", "", path + "chivas_regal.jpeg"));
 
-            //Init Canadian
-            cadWhiskey1.lbl_itemName.Content = "Crown Royal";
-            cadWhiskey1.lbl_itemPrice.Content = "$8.00";
-            cadWhiskey1.background.ImageSource = new BitmapImage(new Uri(path + "crown_royal.jpeg", UriKind.Relative));
+            //Init Canadian Whiskey
+            wp_cadWhiskey.Children.Add(new MenuItem_Control("Crown Royal", "$8.00", "", path + "crown_royal.jpeg"));
 
-            cadWhiskey2.lbl_itemName.Content = "Crown Royal \nBlack";
-            cadWhiskey2.lbl_itemPrice.Content = "$9.00";
-            cadWhiskey2.background.ImageSource = new BitmapImage(new Uri(path + "crown_royal_black.jpeg", UriKind.Relative));
+            wp_cadWhiskey.Children.Add(new MenuItem_Control("Crown Royal \nBlack", "$9.00", "", path + "crown_royal_black.jpeg"));
 
-            cadWhiskey3.lbl_itemName.Content = "Crown Royal \nMaple";
-            cadWhiskey3.lbl_itemPrice.Content = "$8.00";
-            cadWhiskey3.background.ImageSource = new BitmapImage(new Uri(path + "crown_royal_maple.jpeg", UriKind.Relative));
+            wp_cadWhiskey.Children.Add(new MenuItem_Control("Crown Royal \nMaple", "$8.00", "", path + "crown_royal_maple.jpeg"));
 
-            cadWhiskey4.lbl_itemName.Content = "Gibsons \nFinest 12 Years";
-            cadWhiskey4.lbl_itemPrice.Content = "$8.00";
-            cadWhiskey4.background.ImageSource = new BitmapImage(new Uri(path + "gibsons.jpeg", UriKind.Relative));
+            wp_cadWhiskey.Children.Add(new MenuItem_Control("Gibsons \nFinest 12 Years", "$8.00", "", path + "gibsons.jpeg"));
 
             //Init Bourbon
-            bourbon1.lbl_itemName.Content = "Jack Daniel's";
-            bourbon1.lbl_itemPrice.Content = "$8.00";
-            bourbon1.background.ImageSource = new BitmapImage(new Uri(path + "jack_daniels.png", UriKind.Relative));
+            wp_bourbon.Children.Add(new MenuItem_Control("Jack Daniel's", "$8.00", "", path + "jack_daniels.png"));
 
-            bourbon2.lbl_itemName.Content = "Jack Daniel's \nHoney";
-            bourbon2.lbl_itemPrice.Content = "$8.00";
-            bourbon2.background.ImageSource = new BitmapImage(new Uri(path + "jack_daniels_honey.png", UriKind.Relative));
+            wp_bourbon.Children.Add(new MenuItem_Control("Jack Daniel's \nHoney", "$8.00", "", path + "jack_daniels_honey.png"));
 
-            bourbon3.lbl_itemName.Content = "Maker's Mark";
-            bourbon3.lbl_itemPrice.Content = "$9.00";
-            bourbon3.background.ImageSource = new BitmapImage(new Uri(path + "makers_mark.png", UriKind.Relative));
+            wp_bourbon.Children.Add(new MenuItem_Control("Maker's Mark", "$9.00", "", path + "makers_mark.png"));
 
             //Init Gin
-            gin1.lbl_itemName.Content = "Bombay Sapphire";
-            gin1.lbl_itemPrice.Content = "$8.00";
-            gin1.background.ImageSource = new BitmapImage(new Uri(path + "bombay_sapphire.jpeg", UriKind.Relative));
+            wp_gin.Children.Add(new MenuItem_Control("Bombay Sapphire", "$8.00", "", path + "bombay_sapphire.jpeg"));
 
-            gin2.lbl_itemName.Content = "Tanqueray";
-            gin2.lbl_itemPrice.Content = "$8.00";
-            gin2.background.ImageSource = new BitmapImage(new Uri(path + "tanqueray.jpeg", UriKind.Relative));
+            wp_gin.Children.Add(new MenuItem_Control("Tanqueray", "$8.00", "", path + "tanqueray.jpeg"));
 
             //Init Rum
-            rum1.lbl_itemName.Content = "Bacardi Gold";
-            rum1.lbl_itemPrice.Content = rumPrice;
-            rum1.background.ImageSource = new BitmapImage(new Uri(path + "bacardi_gold.jpeg", UriKind.Relative));
+            wp_rum.Children.Add(new MenuItem_Control("Bacardi Gold", rumPrice, "", path + "bacardi_gold.jpeg"));
 
-            rum2.lbl_itemName.Content = "Bacardi White";
-            rum2.lbl_itemPrice.Content = rumPrice;
-            rum2.background.ImageSource = new BitmapImage(new Uri(path + "bacardi_white.jpeg", UriKind.Relative));
+            wp_rum.Children.Add(new MenuItem_Control("Bacardi White", rumPrice, "", path + "bacardi_white.jpeg"));
 
-            rum3.lbl_itemName.Content = "Captain Morgan \nBlack Spiced";
-            rum3.lbl_itemPrice.Content = rumPrice;
-            rum3.background.ImageSource = new BitmapImage(new Uri(path + "captain_morgan_black.jpeg", UriKind.Relative));
+            wp_rum.Children.Add(new MenuItem_Control("Captain Morgan \nBlack Spiced", rumPrice, "", path + "captain_morgan_black.jpeg"));
 
-            rum4.lbl_itemName.Content = "Captain Morgan \nPrivate Stock";
-            rum4.lbl_itemPrice.Content = rumPrice;
-            rum4.background.ImageSource = new BitmapImage(new Uri(path + "captain_morgan.jpeg", UriKind.Relative));
+            wp_rum.Children.Add(new MenuItem_Control("Captain Morgan \nPrivate Stock", rumPrice, "", path + "captain_morgan.jpeg"));
 
             //Init Vodka
-            vodka1.lbl_itemName.Content = "Grey Goose";
-            vodka1.lbl_itemPrice.Content = "$9.00";
-            vodka1.background.ImageSource = new BitmapImage(new Uri(path + "grey_goose.jpeg", UriKind.Relative));
+            wp_vodka.Children.Add(new MenuItem_Control("Grey Goose", "$9.00", "", path + "grey_goose.jpeg"));
 
-            vodka2.lbl_itemName.Content = "Smirnoff";
-            vodka2.lbl_itemPrice.Content = "$8.00";
-            vodka2.background.ImageSource = new BitmapImage(new Uri(path + "smirnoff.jpeg", UriKind.Relative));
+            wp_vodka.Children.Add(new MenuItem_Control("Smirnoff", "$8.00", "", path + "smirnoff.jpeg"));
 
-            vodka3.lbl_itemName.Content = "Smirnoff \nFlavored";
-            vodka3.lbl_itemPrice.Content = "$8.00";
-            vodka3.background.ImageSource = new BitmapImage(new Uri(path + "smirnoff_flavored.jpeg", UriKind.Relative));
+            wp_vodka.Children.Add(new MenuItem_Control("Smirnoff \nFlavored", "$8.00", "", path + "smirnoff_flavored.jpeg"));
 
         }
 

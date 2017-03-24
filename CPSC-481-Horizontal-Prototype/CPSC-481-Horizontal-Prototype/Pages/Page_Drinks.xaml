@@ -80,87 +80,49 @@
                 <Label x:Name="header_beer" Content="Beer" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
                 <!-- Gas Lamps -->
                 <Label x:Name="lbl_gasLamp" Content="Gas Lamp" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel x:Name="wp_gasLamps" Orientation="Horizontal" Margin="60,10,200,10">
-                </WrapPanel>
+                <WrapPanel x:Name="wp_gasLamps" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!-- Domestic -->
                 <Label x:Name="lbl_canadian" Content="Canadian Brewed" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="cb1"/>
-                    <local:MenuItem_Control x:Name="cb2"/>
-                    <local:MenuItem_Control x:Name="cb3"/>
-                    <local:MenuItem_Control x:Name="cb4"/>
-                    <local:MenuItem_Control x:Name="cb5"/>
-                    <local:MenuItem_Control x:Name="cb6"/>
-                    <local:MenuItem_Control x:Name="cb7"/>
-                    <local:MenuItem_Control x:Name="cb8"/>
-                    <local:MenuItem_Control x:Name="cb9"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_domestic" Orientation="Horizontal" Margin="60,10,200,10"/>
+
 
                 <!-- Of the World -->
                 <Label x:Name="lbl_ofTheWorld" Content="Of The World" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="otw1"/>
-                    <local:MenuItem_Control x:Name="otw2"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_otw" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!-- Whiskey -->
                 <Label x:Name="header_whiskey" Content="Whiskey" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
 
                 <!--Irish-->
                 <Label x:Name="lbl_irish" Content="Irish" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="irish1"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_irish" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!--Scotch-->
                 <Label x:Name="lbl_scotch" Content="Scotch" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="scotch1"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_scotch" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!--Canadian Whiskey-->
                 <Label x:Name="lbl_cadWhiskey" Content="Canadian Whiskey" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="cadWhiskey1"/>
-                    <local:MenuItem_Control x:Name="cadWhiskey2"/>
-                    <local:MenuItem_Control x:Name="cadWhiskey3"/>
-                    <local:MenuItem_Control x:Name="cadWhiskey4"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_cadWhiskey" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!--Bourbon-->
                 <Label x:Name="lbl_bourbon" Content="Bourbon" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="bourbon1"/>
-                    <local:MenuItem_Control x:Name="bourbon2"/>
-                    <local:MenuItem_Control x:Name="bourbon3"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_bourbon" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!-- Top Shelf-->
                 <Label x:Name="header_topShelf" Content="Top Shelf" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
                 <!--Gin-->
                 <Label x:Name="lbl_gin" Content="Gin" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="gin1"/>
-                    <local:MenuItem_Control x:Name="gin2"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_gin" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!--Rum-->
                 <Label x:Name="lbl_rum" Content="Rum" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="rum1"/>
-                    <local:MenuItem_Control x:Name="rum2"/>
-                    <local:MenuItem_Control x:Name="rum3"/>
-                    <local:MenuItem_Control x:Name="rum4"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_rum" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!--Vodka-->
                 <Label x:Name="lbl_vodka" Content="Vodka" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="60,10,0,0"/>
-                <WrapPanel Orientation="Horizontal" Margin="60,10,200,10">
-                    <local:MenuItem_Control x:Name="vodka1"/>
-                    <local:MenuItem_Control x:Name="vodka2"/>
-                    <local:MenuItem_Control x:Name="vodka3"/>
-                </WrapPanel>
+                <WrapPanel x:Name="wp_vodka" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!--Cocktails-->
                 <Label x:Name="header_cocktails" Content="Cocktails" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>

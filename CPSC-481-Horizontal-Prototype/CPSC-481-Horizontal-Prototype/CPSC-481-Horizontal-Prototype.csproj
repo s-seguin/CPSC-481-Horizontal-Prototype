@@ -219,6 +219,25 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Images\Food\flatbread_prosciutto.jpg" />
+    <Resource Include="Resources\Images\Food\flatbread_spicy.jpg" />
+    <Resource Include="Resources\Images\Food\flatbread_spinach.jpg" />
+    <Resource Include="Resources\Images\Drinks\smirnoff.jpeg" />
+    <Resource Include="Resources\Images\Drinks\smirnoff_flavored.jpeg" />
+    <Resource Include="Resources\Images\Drinks\star_cheek.jpeg" />
+    <Resource Include="Resources\Images\Drinks\strongbow_cider.jpeg" />
+    <Resource Include="Resources\Images\Drinks\tanqueray.jpeg" />
+    <Resource Include="Resources\Images\Drinks\traditional_ale.jpeg" />
+    <Resource Include="Resources\Images\Drinks\village_blacksmith.jpeg" />
+    <Resource Include="Resources\Images\Drinks\wraspberry_ale.jpeg" />
+    <Resource Include="Resources\Images\Food\steak_sandwich.jpg" />
+    <Resource Include="Resources\Images\Food\big_pub_special.png" />
+    <Resource Include="Resources\Images\Food\steak_sandwich_special.png" />
+    <Resource Include="Resources\Images\Food\wings_special.jpg" />
+    <Resource Include="Resources\Images\Food\mussels.jpg" />
+    <Resource Include="Resources\Images\Food\big_pub.jpg" />
+    <Resource Include="Resources\Images\Food\tacos.jpg" />
+    <Resource Include="Resources\Images\Food\wings.jpg" />
     <Resource Include="Resources\Images\help_icon.png" />
     <Resource Include="Resources\Images\Drinks\gaslamp_blanc.jpeg" />
     <Resource Include="Resources\Images\Drinks\platinum_blonde.jpeg" />
@@ -226,6 +245,30 @@
     <Resource Include="Resources\Images\Drinks\gaslamp_light.jpeg" />
     <Resource Include="Resources\Images\Drinks\maple_cream.jpeg" />
     <Resource Include="Resources\Images\Drinks\nut_brown.jpeg" />
+    <Resource Include="Resources\Images\Drinks\alexander_keiths.jpeg" />
+    <Resource Include="Resources\Images\Drinks\bacardi_gold.jpeg" />
+    <Resource Include="Resources\Images\Drinks\bacardi_white.jpeg" />
+    <Resource Include="Resources\Images\Drinks\blue_buck.jpeg" />
+    <Resource Include="Resources\Images\Drinks\bombay_sapphire.jpeg" />
+    <Resource Include="Resources\Images\Drinks\captain_morgan.jpeg" />
+    <Resource Include="Resources\Images\Drinks\captain_morgan_black.jpeg" />
+    <Resource Include="Resources\Images\Drinks\chivas_regal.jpeg" />
+    <Resource Include="Resources\Images\Drinks\crown_royal.jpeg" />
+    <Resource Include="Resources\Images\Drinks\crown_royal_black.jpeg" />
+    <Resource Include="Resources\Images\Drinks\crown_royal_maple.jpeg" />
+    <Content Include="Resources\Images\Drinks\bulldog.jpeg" />
+    <Content Include="Resources\Images\Drinks\fireball.jpeg" />
+    <Resource Include="Resources\Images\Drinks\gibsons.jpeg" />
+    <Resource Include="Resources\Images\Drinks\grasshopper.jpeg" />
+    <Resource Include="Resources\Images\Drinks\grey_goose.jpeg" />
+    <Resource Include="Resources\Images\Drinks\guinness_stout.jpeg" />
+    <Resource Include="Resources\Images\Drinks\jack_daniels.png" />
+    <Resource Include="Resources\Images\Drinks\jack_daniels_honey.png" />
+    <Resource Include="Resources\Images\Drinks\jameson.jpeg" />
+    <Resource Include="Resources\Images\Drinks\last_best_ipa.jpeg" />
+    <Resource Include="Resources\Images\Drinks\makers_mark.png" />
+    <Resource Include="Resources\Images\Drinks\molson_canadian.jpeg" />
+    <Content Include="Resources\Images\Drinks\jager.jpeg" />
     <Content Include="Resources\Images\Drinks\prairie_pale_ale.jpeg" />
     <Resource Include="Resources\Images\Drinks\rustic_red.jpeg" />
     <Resource Include="Resources\Images\Drinks\west_coast_ipa.jpeg" />

@@ -66,7 +66,7 @@ namespace CPSC_481_Horizontal_Prototype
             //update name, price, description and image of template
 
             eis.lbl_itemPrice.Content = this.price;
-            eis.tb_description.Text = this.description;
+            eis.tb_description.Text = this.getDesription();
             eis.image.Source = background.ImageSource;
 
             //change overlay dimensions

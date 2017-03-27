@@ -52,6 +52,7 @@ namespace CPSC_481_Horizontal_Prototype
             //make the thing look nice in corner
             grid_summary.Background = focusedTab.GetTabButton().Background;
             lbl_tabName.Content = focusedTab.ToString();
+            lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing;
 
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
@@ -170,6 +171,8 @@ namespace CPSC_481_Horizontal_Prototype
             tabPanel.Children.Add(btn);
             lbl_tabName.Content = tab.ToString();
             grid_summary.Background = tab.GetTabButton().Background;
+            lbl_tabTotal.Content = "Total: $" + tab.amountOwing;
+
             this.focusedTab = tab;
         }
 
@@ -213,12 +216,12 @@ namespace CPSC_481_Horizontal_Prototype
         private void btn_submitQueue_Click(object sender, RoutedEventArgs e)
         {
             MainScreen ms = Switcher.pageSwitcher;
+
             ms.focusedTab.PlaceOrder();
             ms.focusedTab.clearTray();
-            sp_item_names.Children.Clear();
-            sp_item_prices.Children.Clear();
-            sp_item_quantity.Children.Clear();
+
             lbl_queueTotal.Content = "Total: $0.00";
+            showQueue(false);
         }
     }
 }

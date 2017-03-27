@@ -26,6 +26,9 @@ namespace CPSC_481_Horizontal_Prototype
         String price { get; set; }
         String description { get; set; }
 
+        private MainScreen ms;
+        public Classes.MenuItem mi;
+
         public MenuItem_Control()
         {
             InitializeComponent();
@@ -40,6 +43,16 @@ namespace CPSC_481_Horizontal_Prototype
             this.price = price;
             this.description = description;
             this.background.ImageSource = new BitmapImage(new Uri(path, UriKind.Relative));
+
+            //change price format
+            string tempPrice = this.price.TrimStart('$');
+            double priceInt = Convert.ToDouble(tempPrice);
+
+            //change item name to fit on one line
+            string name1 = Regex.Replace(this.name, @"\n", "");
+
+            //initialize MenuItem object
+            mi = new Classes.MenuItem(name1, this.getDesription(), priceInt);
         }
 
         public void setDescription(string descr)
@@ -58,13 +71,11 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_viewItem_Click(object sender, RoutedEventArgs e)
         {
-            ExamineItemScreen eis = new ExamineItemScreen();
 
-            //change item name to fit on one line
-            string name = this.name;
-            eis.lbl_itemName.Content = Regex.Replace(name, @"\n", "");
+            ExamineItemScreen eis = new ExamineItemScreen(mi);
+
             //update name, price, description and image of template
-
+            eis.lbl_itemName.Content = mi.name;
             eis.lbl_itemPrice.Content = this.price;
             eis.tb_description.Text = this.getDesription();
             eis.image.Source = background.ImageSource;

@@ -22,10 +22,10 @@ namespace CPSC_481_Horizontal_Prototype.Screens
     {
         private MainScreen ms;
         private Classes.MenuItem mi;
-        public ExamineItemScreen()
+        public ExamineItemScreen (Classes.MenuItem mi)
         {
             //this.ms = ms;
-            //this.mi = mi;
+            this.mi = mi;
             InitializeComponent();
             btn_decrease.IsEnabled = false;
         }
@@ -56,7 +56,10 @@ namespace CPSC_481_Horizontal_Prototype.Screens
 
         private void btn_addToTray_Click(object sender, RoutedEventArgs e)
         {
-           // ms.focusedTab.AddToTray(mi);
+            ms = Switcher.pageSwitcher;
+            ms.focusedTab.AddToTray(mi, Convert.ToInt32(this.tb_numItems.Text));
+            ms.showQueue(true);
+            this.Close();
         }
 
         private void dd_sides_SelectionChanged(object sender, SelectionChangedEventArgs e)

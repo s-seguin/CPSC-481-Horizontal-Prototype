@@ -32,6 +32,7 @@ namespace CPSC_481_Horizontal_Prototype
             string path = "../../Resources/Images/Drinks/";
 
             //Init Gas Lamps
+            
             wp_gasLamps.Children.Add(new MenuItem_Control("Gas Lamp \nPrairie Pale Ale", gasLampPrice, "A crisp copper coloured pale ale that perfectly balances a smooth and robust malt base with an aromatic hint of citrus hops.", path + "prairie_pale_ale.jpeg"));
 
             wp_gasLamps.Children.Add(new MenuItem_Control("Rustic Red", gasLampPrice, "We have recrafted our Rustic Red! This deep red ale is balanced with toasted malts, caramel toffee and a distinct hoppy finish.", path + "rustic_red.jpeg"));

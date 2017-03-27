@@ -118,6 +118,7 @@ namespace CPSC_481_Horizontal_Prototype
             {
                 if (ut.GetTabButton().IsFocused)
                 {
+                    lbl_tabTotal.Content = "Total: $" + ut.amountOwing ;
                     lbl_tabName.Content = ut.ToString();
                     grid_summary.Background = ut.GetTabButton().Background;
                     this.focusedTab = ut;
@@ -130,21 +131,28 @@ namespace CPSC_481_Horizontal_Prototype
         private void btn_expandQueue_Click(object sender, RoutedEventArgs e)
         {
             //expand queue when side panel is collapsed
-            if (!stack_sidePanel.IsVisible)
+            if (!grid_queue.IsVisible) { showQueue(true);  }
+
+            //minimize side panel
+            else { showQueue(false); }
+
+        }
+
+        public void showQueue(Boolean value)
+        {
+            if (value)
             {
                 //change expand button margins
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 416);
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 413);
                 this.btn_expandQueue.Content = "\uE015";       //chevron down
-                stack_sidePanel.Visibility = Visibility.Visible;
+                grid_queue.Visibility = Visibility.Visible;
             }
-            //minimize side panel
             else
             {
                 this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 108);
                 this.btn_expandQueue.Content = "\uE014";        //checvron up
-                stack_sidePanel.Visibility = Visibility.Collapsed;
+                grid_queue.Visibility = Visibility.Collapsed;
             }
-
         }
 
         #endregion
@@ -194,12 +202,23 @@ namespace CPSC_481_Horizontal_Prototype
         {
             PaymentScreen ps = new PaymentScreen();
             ps.ShowDialog();
+
         }
 
-        #endregion
-
-       
 
         #endregion
+
+        #endregion
+
+        private void btn_submitQueue_Click(object sender, RoutedEventArgs e)
+        {
+            MainScreen ms = Switcher.pageSwitcher;
+            ms.focusedTab.PlaceOrder();
+            ms.focusedTab.clearTray();
+            sp_item_names.Children.Clear();
+            sp_item_prices.Children.Clear();
+            sp_item_quantity.Children.Clear();
+            lbl_queueTotal.Content = "Total: $0.00";
+        }
     }
 }

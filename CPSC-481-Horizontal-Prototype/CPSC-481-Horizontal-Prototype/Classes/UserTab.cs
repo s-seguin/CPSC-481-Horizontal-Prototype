@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPSC_481_Horizontal_Prototype.User_Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,35 +44,27 @@ namespace CPSC_481_Horizontal_Prototype.Classes
             else
                 orderTray.Add(item, quantity);
 
-            double queueTotal = 0;
-            ms.sp_item_names.Children.Clear();
-            ms.sp_item_quantity.Children.Clear();
-            ms.sp_item_prices.Children.Clear();
-           
-            foreach (KeyValuePair<MenuItem, int> order in orderTray)
-            {
-                Label name = new Label();
-                Label item_quantity = new Label();
-                Label price = new Label();
+            ms.sp_tray.Children.Clear();
+            ms.focusedTab.LoadTray();
 
-
-                //set name, quantity and price of drinks in order queue
-                //order.Key.name is the name of the item
-                //orderTray[order.Key] is price per item
-
-                name.Content = order.Key.name;
-                item_quantity.Content = "x" + orderTray[order.Key];
-                price.Content = "$" + order.Key.price * orderTray[order.Key];
-                queueTotal += order.Key.price * orderTray[order.Key];
-
-                ms.sp_item_names.Children.Add(name);
-                ms.sp_item_quantity.Children.Add(item_quantity);
-                ms.sp_item_prices.Children.Add(price);
-
-                //update order queue total
-                ms.lbl_queueTotal.Content = "Total: $" + queueTotal;
-            }
         }
+
+        public void RemoveFromTray(KeyValuePair<MenuItem, int> order, int quantity)
+        {
+            MainScreen ms = Switcher.pageSwitcher;
+            if (order.Value > quantity)
+            {
+                orderTray.Remove(order.Key);
+                orderTray.Add(order.Key, (order.Value - quantity));
+            }
+            else
+            {
+                orderTray.Remove(order.Key);
+            }
+            ms.sp_tray.Children.Clear();
+            ms.focusedTab.LoadTray();
+        }
+
 
         public void PlaceOrder()
         {
@@ -103,10 +96,31 @@ namespace CPSC_481_Horizontal_Prototype.Classes
             MainScreen ms = Switcher.pageSwitcher;
 
             orderTray.Clear();
-            ms.sp_item_names.Children.Clear();
-            ms.sp_item_prices.Children.Clear();
-            ms.sp_item_quantity.Children.Clear();
+            ms.sp_tray.Children.Clear();
         }
 
+
+        public void LoadTray()
+        {
+            MainScreen ms = Switcher.pageSwitcher;
+            double queueTotal = 0;
+            foreach (KeyValuePair<MenuItem, int> order in orderTray)
+            {
+                //set name, quantity and price of drinks in order queue
+                //order.Key.name is the name of the item
+                //orderTray[order.Key] is price per item
+
+                string name = order.Key.name;
+                int item_quantity = orderTray[order.Key];
+                double price = order.Key.price * orderTray[order.Key];
+                queueTotal += order.Key.price * orderTray[order.Key];
+
+                ms.sp_tray.Children.Add(new trayItem(order, name, item_quantity, price));
+
+                //update order queue total
+                
+            }
+            ms.lbl_queueTotal.Content = "Total: $" + queueTotal;
+        }
     }
 }

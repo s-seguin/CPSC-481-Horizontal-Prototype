@@ -86,6 +86,9 @@
       <DependentUpon>Page_Specials.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Switcher.cs" />
+    <Compile Include="User Controls\trayItem.xaml.cs">
+      <DependentUpon>trayItem.xaml</DependentUpon>
+    </Compile>
     <Page Include="Screens\AddTab.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Page_Specials.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\trayItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

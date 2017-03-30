@@ -125,6 +125,7 @@ namespace CPSC_481_Horizontal_Prototype
                     grid_summary.Background = ut.GetTabButton().Background;
                     this.focusedTab = ut;
 
+                    ut.clearTray();
                 }
             }
   
@@ -145,15 +146,15 @@ namespace CPSC_481_Horizontal_Prototype
             if (value)
             {
                 //change expand button margins
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 508);
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 307, 508);
                 this.btn_expandQueue.Content = "\uE015";       //chevron down
                 grid_queue.Visibility = Visibility.Visible;
             }
             else
             {
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 108);
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 307, 108);
                 this.btn_expandQueue.Content = "\uE014";        //checvron up
-                grid_queue.Visibility = Visibility.Collapsed;
+                grid_queue.Visibility = Visibility.Hidden;
             }
         }
 

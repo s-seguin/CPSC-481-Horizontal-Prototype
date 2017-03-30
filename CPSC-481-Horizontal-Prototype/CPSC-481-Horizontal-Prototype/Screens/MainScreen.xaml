@@ -18,7 +18,7 @@
         </StackPanel>
             <Grid x:Name="main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="75,0,0,0" Background="#FFF4F4F4">
                 <local:Page_Holder x:Name="Page_Holder" VerticalAlignment="Top" Margin="10,10,10,118" HorizontalAlignment="Center" />
-                <Rectangle Fill="#FF213F57" HorizontalAlignment="Stretch" Height="108" VerticalAlignment="Bottom" StrokeThickness="0" Margin="10,0,311,0" RadiusX="3" RadiusY="3" />
+                <Rectangle Fill="#FF213F57" HorizontalAlignment="Stretch" Height="108" VerticalAlignment="Bottom" StrokeThickness="0" Margin="10,0,350,0" RadiusX="3" RadiusY="3" />
 
             <WrapPanel HorizontalAlignment="Center" Height="104"  VerticalAlignment="Bottom" Width="420" Margin="268,0,529,0">
                 
@@ -48,44 +48,36 @@
 
             </WrapPanel>
 
-            <Button x:Name="btn_expandQueue" VerticalContentAlignment="Top" Content="&#xE014;" Width="32" Height="32" Click="btn_expandQueue_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,268,108" Background="White" FontFamily="Segoe UI Symbol" BorderBrush="{x:Null}" Foreground="#FF00B694" BorderThickness="0" FontSize="18">
+            <Button x:Name="btn_expandQueue" VerticalContentAlignment="Top" Content="&#xE014;" Width="32" Height="32" Click="btn_expandQueue_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,307,108" Background="White" FontFamily="Segoe UI Symbol" BorderBrush="{x:Null}" Foreground="#FF00B694" BorderThickness="0" FontSize="18">
                 <Button.Effect>
                     <DropShadowEffect ShadowDepth="1" Opacity="0.25"/>
                 </Button.Effect>
             </Button>
                 
             <!--Queue-->    
-            <Grid x:Name="grid_queue" HorizontalAlignment="Right" Height="400" Width="300" Background= "#FFF4F4F4" VerticalAlignment="Bottom" Margin="0,0,0,108" Visibility="Visible">
-                    <Label Content="Current Order" HorizontalContentAlignment="Left" VerticalAlignment="Top" Height="45" Width="300" FontSize="24" Background="White" BorderThickness="0,0,0,1" BorderBrush="#FFF4F4F4" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
+            <Grid x:Name="grid_queue" HorizontalAlignment="Right" Height="400" Width="340" Background= "#FFF4F4F4" VerticalAlignment="Bottom" Margin="0,0,0,108" Visibility="Hidden">
+                    <Label Content="Current Order" HorizontalContentAlignment="Left" VerticalAlignment="Top" Height="45" Width="340" FontSize="24" Background="White" BorderThickness="0,0,0,1" BorderBrush="Gray" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
 
                     <ScrollViewer Margin="0,45,0,108" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Background="White" ScrollChanged="ScrollViewer_ScrollChanged">
-                        <Grid >
-                            <!-- Item Name-->
-                            <StackPanel  x:Name="sp_item_names" HorizontalAlignment="Left" Width="200" Background= "White" VerticalAlignment="Top" />
-
-                            <!-- Item Quantity-->
-                            <StackPanel  x:Name="sp_item_quantity" HorizontalAlignment="Left" Width="50" Background= "White" VerticalAlignment="Top" Margin="200,0,0,0" />
-
-                            <!-- Item Price-->
-                            <StackPanel  x:Name="sp_item_prices" HorizontalAlignment="Right" Width="50" Background= "White" VerticalAlignment="Top" />
-                        </Grid>
+                        <!-- Item tray-->
+                        <StackPanel  x:Name="sp_tray" HorizontalAlignment="Left" Width="340" Background= "White" VerticalAlignment="Top" />
                     </ScrollViewer>
                     
 
 
-                    <Grid HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="300" Background="White">
+                    <Grid HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="340" Background="White">
 
                     <Label x:Name="lbl_queueTotal" Content="Total: $0.00" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="62" Width="200" FontSize="34" Background="{x:Null}" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
-                    <Button x:Name="lbl_submitQueue" Content="Submit Order" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Width="100" FontSize="14" Background="#FF213F57" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFB5BEC7" Click="btn_submitQueue_Click" />
+                    <Button x:Name="lbl_submitQueue" Content="Submit Order" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Width="120" FontSize="16" Background="#FF213F57" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFB5BEC7" Click="btn_submitQueue_Click" />
                 </Grid>
             </Grid>
 
 
-                <Grid x:Name="grid_summary" HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="300" Background="#FFf2ab57">
+                <Grid x:Name="grid_summary" HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="340" Background="#FFf2ab57">
                 <Label x:Name="lbl_tabName" Content="" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Height="54" Width="195" FontSize="21" Foreground="White" Margin="5,0,0,0"/>
-                <Separator Width="180"  HorizontalAlignment="Left" Margin="10,0,0,0" Background="#FFECECEC"/>
+                <Separator Width="200"  HorizontalAlignment="Left" Margin="10,0,0,0" Background="#FFECECEC"/>
                 <Label x:Name="lbl_tabTotal" Content="Total: $0.00" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="54" Width="195" FontSize="34" FontFamily="Segoe UI Light" Foreground="White" BorderThickness="0" Margin="5,0,0,0"/>
-                <Button x:Name="btn_payNow" Content="Pay Now" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="100"  FontSize="21" Background="#FF00B694" BorderBrush="#FFE1F7F3" Foreground="#FFE1F7F3" BorderThickness="0" Click="btn_payNow_click"/>
+                <Button x:Name="btn_payNow" Content="Pay Now" HorizontalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Stretch" Width="120"  FontSize="21" Background="#FF00B694" BorderBrush="#FFE1F7F3" Foreground="#FFE1F7F3" BorderThickness="0" Click="btn_payNow_click"/>
             </Grid>
 
         </Grid>

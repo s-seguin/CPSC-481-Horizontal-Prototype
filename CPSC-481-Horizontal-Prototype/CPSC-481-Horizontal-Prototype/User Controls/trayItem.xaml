@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="CPSC_481_Horizontal_Prototype.User_Controls.trayItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="340">
+
+    <Grid x:Name="grid_tray_item" Background="White" Height="Auto" Width="Auto" FocusableChanged="grid_tray_item_FocusableChanged" MouseLeftButtonDown="grid_tray_item_MouseLeftButtonDown" >
+        <Button x:Name="btn_remove" FontFamily="Segoe UI Symbol" Content="&#xE10a;" HorizontalAlignment="Left" Background="White" BorderThickness="0" Foreground="#FFEE516C" VerticalContentAlignment="Center" Visibility="Hidden" Click="btn_remove_Click"/>
+        <Label x:Name="item_name" Content="Name" FontFamily="Segoe UI Light" HorizontalAlignment="Left" Width="200" Margin="17,0,0,0" VerticalContentAlignment="Center"/>
+        <Label x:Name="item_quantity" Content="x " FontSize="18" FontFamily="Segoe UI Light" HorizontalAlignment="Left" Width="50" Margin="195,0,0,0" VerticalContentAlignment="Center"/>
+        <Label x:Name="item_price" Content="$ "  FontSize="18" FontFamily="Segoe UI Light" HorizontalAlignment="Right" Width="75" VerticalContentAlignment="Center"/>
+        <Separator Width="Auto" Height="1" VerticalAlignment="Bottom" Margin="0" Foreground="#FFF4F4F4" />
+    </Grid>
+
+</UserControl>

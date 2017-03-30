@@ -54,6 +54,7 @@ namespace CPSC_481_Horizontal_Prototype.Classes
                 Label item_quantity = new Label();
                 Label price = new Label();
 
+
                 //set name, quantity and price of drinks in order queue
                 //order.Key.name is the name of the item
                 //orderTray[order.Key] is price per item

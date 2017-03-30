@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
         mc:Ignorable="d"
-        Title="Specials" Height="768" Width="1280"  WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
+        Title="Specials" Height="900" Width="1980"  WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
     <Viewbox Stretch="Fill" >
     <Grid>
         <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="75" Background="#FF122331">
@@ -55,17 +55,22 @@
             </Button>
                 
             <!--Queue-->    
-            <Grid x:Name="grid_queue" HorizontalAlignment="Right" Height="305" Width="300" Background= "#FFF4F4F4" VerticalAlignment="Bottom" Margin="0,0,0,108" Visibility="Collapsed">
+            <Grid x:Name="grid_queue" HorizontalAlignment="Right" Height="400" Width="300" Background= "#FFF4F4F4" VerticalAlignment="Bottom" Margin="0,0,0,108" Visibility="Visible">
                     <Label Content="Current Order" HorizontalContentAlignment="Left" VerticalAlignment="Top" Height="45" Width="300" FontSize="24" Background="White" BorderThickness="0,0,0,1" BorderBrush="#FFF4F4F4" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
-                
-                    <!-- Item Name-->
-                    <StackPanel  x:Name="sp_item_names" HorizontalAlignment="Left" Height="260" Width="200" Background= "White" VerticalAlignment="Bottom" />
 
-                    <!-- Item Quantity-->
-                    <StackPanel  x:Name="sp_item_quantity" HorizontalAlignment="Left" Height="260" Width="50" Background= "White" VerticalAlignment="Bottom" Margin="200,0,0,0" />
+                    <ScrollViewer Margin="0,45,0,108" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Background="White" ScrollChanged="ScrollViewer_ScrollChanged">
+                        <Grid >
+                            <!-- Item Name-->
+                            <StackPanel  x:Name="sp_item_names" HorizontalAlignment="Left" Width="200" Background= "White" VerticalAlignment="Top" />
 
-                    <!-- Item Price-->
-                    <StackPanel  x:Name="sp_item_prices" HorizontalAlignment="Right" Height="260" Width="50" Background= "White" VerticalAlignment="Bottom" />
+                            <!-- Item Quantity-->
+                            <StackPanel  x:Name="sp_item_quantity" HorizontalAlignment="Left" Width="50" Background= "White" VerticalAlignment="Top" Margin="200,0,0,0" />
+
+                            <!-- Item Price-->
+                            <StackPanel  x:Name="sp_item_prices" HorizontalAlignment="Right" Width="50" Background= "White" VerticalAlignment="Top" />
+                        </Grid>
+                    </ScrollViewer>
+                    
 
 
                     <Grid HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="300" Background="White">

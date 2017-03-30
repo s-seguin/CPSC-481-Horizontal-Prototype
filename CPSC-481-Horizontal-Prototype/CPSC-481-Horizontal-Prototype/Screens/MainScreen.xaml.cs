@@ -22,6 +22,7 @@ namespace CPSC_481_Horizontal_Prototype
         private SolidColorBrush col_tabBlue = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
         private SolidColorBrush col_tabOrange = new SolidColorBrush(Color.FromArgb(0xFF, 0xf2, 0xab, 0x57)); //FFf2ab57
 
+        
         #endregion
 
         #region Constructors
@@ -144,7 +145,7 @@ namespace CPSC_481_Horizontal_Prototype
             if (value)
             {
                 //change expand button margins
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 413);
+                this.btn_expandQueue.Margin = new Thickness(0, 0, 268, 508);
                 this.btn_expandQueue.Content = "\uE015";       //chevron down
                 grid_queue.Visibility = Visibility.Visible;
             }
@@ -154,6 +155,13 @@ namespace CPSC_481_Horizontal_Prototype
                 this.btn_expandQueue.Content = "\uE014";        //checvron up
                 grid_queue.Visibility = Visibility.Collapsed;
             }
+        }
+
+        private void btn_payNow_click(object sender, RoutedEventArgs e)
+        {
+            PaymentScreen ps = new PaymentScreen();
+            ps.ShowDialog();
+
         }
 
         #endregion
@@ -201,12 +209,7 @@ namespace CPSC_481_Horizontal_Prototype
            this.Page_Holder.Content = nextPage;
         }
 
-        private void btn_payNow_click(object sender, RoutedEventArgs e)
-        {
-            PaymentScreen ps = new PaymentScreen();
-            ps.ShowDialog();
-
-        }
+        
 
 
         #endregion
@@ -222,6 +225,33 @@ namespace CPSC_481_Horizontal_Prototype
 
             lbl_queueTotal.Content = "Total: $0.00";
             showQueue(false);
+        }
+
+        private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            bool AutoScroll = true;
+            ScrollViewer sv = (ScrollViewer)sender;
+
+            if (e.ExtentHeightChange == 0)
+            {   // Content unchanged : user scroll event
+                if (sv.VerticalOffset == sv.ScrollableHeight)
+                {   // Scroll bar is in bottom
+                    // Set autoscroll mode
+                    AutoScroll = true;
+                }
+                else
+                {   // Scroll bar isn't in bottom
+                    // Unset autoscroll mode
+                    AutoScroll = false;
+                }
+            }
+
+            // Content scroll event : autoscroll eventually
+            if (AutoScroll && e.ExtentHeightChange != 0)
+            {   // Content changed and autoscroll mode set
+                // Autoscroll
+                sv.ScrollToVerticalOffset(sv.ExtentHeight);
+            }
         }
     }
 }

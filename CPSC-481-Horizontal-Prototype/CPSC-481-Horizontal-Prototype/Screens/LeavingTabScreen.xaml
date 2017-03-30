@@ -1,0 +1,31 @@
+﻿<Window x:Class="CPSC_481_Horizontal_Prototype.Screens.LeavingTabScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
+        mc:Ignorable="d"
+      Title="LeavingTabWarning" Height="500" Width="750" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
+    <Grid Background="#FF344D61">
+        <WrapPanel Margin="10,10,0,0" Height="100" Width="278" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Label x:Name="label" Content="&#x26A0;" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Segoe UI Symbol" FontSize="64" Foreground="#FFC1A10F"/>
+            <Label x:Name="lbl_warning" Content="Warning" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="48" Foreground="#FFC1A10F" />
+        </WrapPanel>
+        <TextBlock x:Name="textBlock" FontSize="24" Margin="55,121,55,159" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="216" FontFamily="Segoe UI Light" ><Run/><LineBreak/><Run Text="You are trying to change tabs with items in your tray. Changing tabs will clear the current tray, do you want to continue?"/></TextBlock>
+        <Button x:Name="btn_no" Content="No" Click="btn_no_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="100"  Width="370" Background="#FF536472" Foreground="#FFDA1739" BorderBrush="{x:Null}" FontSize="26.667" />
+        <Button x:Name="btn_yes" Content="Yes" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="100"  Width="370" Background="#FF536472" Foreground="#FF00BB97" BorderBrush="{x:Null}" FontSize="26.667" Click="btn_yes_Click" />
+
+        <Separator HorizontalAlignment="Stretch" Height="5" Margin="0,0,0,100" VerticalAlignment="Bottom" Background="White"/>
+        <Separator HorizontalAlignment="Center" Height="1" VerticalAlignment="Bottom" Width="104" Background="White" Margin="373,0,269,-3" >
+            <Separator.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Separator.RenderTransform>
+        </Separator>
+
+    </Grid>
+</Window>

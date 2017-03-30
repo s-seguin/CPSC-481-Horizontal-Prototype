@@ -73,6 +73,9 @@
     <Compile Include="Screens\LeavingTabScreen.xaml.cs">
       <DependentUpon>LeavingTabScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Max8TabsWarning.xaml.cs">
+      <DependentUpon>Max8TabsWarning.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\PaymentScreen.xaml.cs">
       <DependentUpon>PaymentScreen.xaml</DependentUpon>
     </Compile>
@@ -124,6 +127,10 @@
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
     <Page Include="Screens\LeavingTabScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\Max8TabsWarning.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

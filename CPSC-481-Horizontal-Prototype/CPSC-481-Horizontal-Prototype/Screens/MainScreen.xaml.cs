@@ -120,7 +120,8 @@ namespace CPSC_481_Horizontal_Prototype
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Only a maximum of 8 tabs are allowed", "Warning");
+                Max8TabsWarning mxWarning = new Max8TabsWarning();
+                mxWarning.ShowDialog();
             }
 
         }

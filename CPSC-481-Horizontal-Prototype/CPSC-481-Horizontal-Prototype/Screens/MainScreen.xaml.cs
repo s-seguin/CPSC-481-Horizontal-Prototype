@@ -114,6 +114,7 @@ namespace CPSC_481_Horizontal_Prototype
                 if (wantToLeave || focusedTab.OrderTrayEmpty())
                 {
                     focusedTab.ClearTray();
+                    focusedTab.LoadTray();
                     AddTab at = new AddTab(this, null);
                     at.ShowDialog();
                 }
@@ -137,14 +138,6 @@ namespace CPSC_481_Horizontal_Prototype
             {
                 foreach (UserTab ut in allTabs.GetTabs())
                 {
-<<<<<<< HEAD
-                    lbl_tabTotal.Content = "Total: $" + ut.amountOwing ;
-                    lbl_tabName.Content = ut.ToString();
-                    grid_summary.Background = ut.GetTabButton().Background;
-                    this.focusedTab = ut;
-
-                    ut.clearTray();
-=======
                     if (ut.GetTabButton().IsFocused)
                     {
                         focusedTab.ClearTray();
@@ -154,7 +147,6 @@ namespace CPSC_481_Horizontal_Prototype
                         this.focusedTab = ut;
 
                     }
->>>>>>> 6aee7a553360598b79d4ee50f5c2864003bee611
                 }
             }
           

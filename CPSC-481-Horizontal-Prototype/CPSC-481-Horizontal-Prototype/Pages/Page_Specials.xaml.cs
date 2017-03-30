@@ -27,8 +27,8 @@ namespace CPSC_481_Horizontal_Prototype
         {
             InitializeComponent();
             DateTime dt = DateTime.Now;
-            string day = dt.DayOfWeek.ToString();
-            //string day = "Saturday";
+           // string day = dt.DayOfWeek.ToString();
+            string day = "Wednesday";
 
             switch (day)
             {

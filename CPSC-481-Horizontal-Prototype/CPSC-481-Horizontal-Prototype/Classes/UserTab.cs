@@ -91,7 +91,7 @@ namespace CPSC_481_Horizontal_Prototype.Classes
         }
 
         //temporary method to remove items from order queue
-        public void clearTray()
+        public void ClearTray()
         {
             MainScreen ms = Switcher.pageSwitcher;
 
@@ -122,5 +122,15 @@ namespace CPSC_481_Horizontal_Prototype.Classes
             }
             ms.lbl_queueTotal.Content = "Total: $" + queueTotal;
         }
+=======
+        public bool OrderTrayEmpty()
+        {
+            if (orderTray.Count == 0 || orderTray == null)
+                return true;
+            else
+                return false;
+        }
+
+>>>>>>> 6aee7a553360598b79d4ee50f5c2864003bee611
     }
 }

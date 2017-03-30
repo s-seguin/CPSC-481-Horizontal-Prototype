@@ -21,7 +21,7 @@ namespace CPSC_481_Horizontal_Prototype
         public ActiveTabs allTabs { get; set; }
         private SolidColorBrush col_tabBlue = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
         private SolidColorBrush col_tabOrange = new SolidColorBrush(Color.FromArgb(0xFF, 0xf2, 0xab, 0x57)); //FFf2ab57
-
+        public bool wantToLeave = false;
         
         #endregion
 
@@ -104,30 +104,60 @@ namespace CPSC_481_Horizontal_Prototype
         {
             if (allTabs.GetTabs().Count < 8)
             {
-                AddTab at = new AddTab(this, null);
-                at.ShowDialog();
+                if (!focusedTab.OrderTrayEmpty())
+                {
+                    LeavingTabScreen warningScreen = new LeavingTabScreen(this);
+                    warningScreen.ShowDialog();
+
+
+                }
+                if (wantToLeave || focusedTab.OrderTrayEmpty())
+                {
+                    focusedTab.ClearTray();
+                    AddTab at = new AddTab(this, null);
+                    at.ShowDialog();
+                }
             }
             else
             {
-                MessageBoxResult result = MessageBox.Show("Only a maximum of 8 tabs are allowed", "Warning");
+                Max8TabsWarning mxWarning = new Max8TabsWarning();
+                mxWarning.ShowDialog();
             }
 
         }
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
         {
-            foreach (UserTab ut in allTabs.GetTabs())
+            if (!focusedTab.OrderTrayEmpty())
             {
-                if (ut.GetTabButton().IsFocused)
+                LeavingTabScreen warningScreen = new LeavingTabScreen(this);
+                warningScreen.ShowDialog();
+            }
+            if (wantToLeave || focusedTab.OrderTrayEmpty())
+            {
+                foreach (UserTab ut in allTabs.GetTabs())
                 {
+<<<<<<< HEAD
                     lbl_tabTotal.Content = "Total: $" + ut.amountOwing ;
                     lbl_tabName.Content = ut.ToString();
                     grid_summary.Background = ut.GetTabButton().Background;
                     this.focusedTab = ut;
 
                     ut.clearTray();
+=======
+                    if (ut.GetTabButton().IsFocused)
+                    {
+                        focusedTab.ClearTray();
+                        lbl_tabTotal.Content = "Total: $" + ut.amountOwing;
+                        lbl_tabName.Content = ut.ToString();
+                        grid_summary.Background = ut.GetTabButton().Background;
+                        this.focusedTab = ut;
+
+                    }
+>>>>>>> 6aee7a553360598b79d4ee50f5c2864003bee611
                 }
             }
+          
   
         }
 
@@ -222,7 +252,7 @@ namespace CPSC_481_Horizontal_Prototype
             MainScreen ms = Switcher.pageSwitcher;
 
             ms.focusedTab.PlaceOrder();
-            ms.focusedTab.clearTray();
+            ms.focusedTab.ClearTray();
 
             lbl_queueTotal.Content = "Total: $0.00";
             showQueue(false);

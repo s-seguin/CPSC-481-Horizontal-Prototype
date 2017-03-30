@@ -70,6 +70,12 @@
     <Compile Include="Screens\HelpScreen.xaml.cs">
       <DependentUpon>HelpScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\LeavingTabScreen.xaml.cs">
+      <DependentUpon>LeavingTabScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Max8TabsWarning.xaml.cs">
+      <DependentUpon>Max8TabsWarning.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\PaymentScreen.xaml.cs">
       <DependentUpon>PaymentScreen.xaml</DependentUpon>
     </Compile>
@@ -123,6 +129,14 @@
     <Compile Include="Screens\HomeScreen.xaml.cs">
       <DependentUpon>HomeScreen.xaml</DependentUpon>
     </Compile>
+    <Page Include="Screens\LeavingTabScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\Max8TabsWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Screens\PaymentScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -263,6 +277,7 @@
     <Resource Include="Resources\Images\Drinks\crown_royal.jpeg" />
     <Resource Include="Resources\Images\Drinks\crown_royal_black.jpeg" />
     <Resource Include="Resources\Images\Drinks\crown_royal_maple.jpeg" />
+    <Resource Include="Classes\TODO.txt" />
     <Content Include="Resources\Images\Drinks\bulldog.jpeg" />
     <Content Include="Resources\Images\Drinks\fireball.jpeg" />
     <Resource Include="Resources\Images\Drinks\gibsons.jpeg" />

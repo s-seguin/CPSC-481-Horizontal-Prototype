@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         Title="HelpScreen" Height="500" Width="750" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
     <Grid Background="#FF344D61">
-        <WrapPanel Margin="10,10,0,0" Height="45" Width="110" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <Label x:Name="lbl_help" Content="Help" VerticalContentAlignment="Center" FontFamily="Segoe UI Light" FontSize="28" Foreground="White"/>
+        <WrapPanel Margin="10,10,0,0" Height="45" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <Image Source="/Resources/Images/help_icon.png" Height="45" Width="45" VerticalAlignment="Center"  />
+            <Label x:Name="lbl_help" Content="Help" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="28" Foreground="White"/>
         </WrapPanel>
-        <TextBlock x:Name="textBlock" FontSize="24" Margin="55,121,55,159" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="216" ><Run/><LineBreak/><Run Text="A server has been notified and will be with you as soon as possible. "/><LineBreak/><Run Text="If you tapped the help button by accident or no longer require assistance, please hit the 'Cancel' button, otherwise tap 'Resume'  to continue ordering."/></TextBlock>
-        <Button x:Name="btn_cancel" Content="Cancel" Click="btn_cancel_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="100"  Width="370" Background="{x:Null}" Foreground="#FFEE516C" BorderBrush="{x:Null}" FontSize="26.667" />
-        <Button x:Name="btn_resume" Content="Resume" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="100"  Width="370" Background="{x:Null}" Foreground="#FF00BB97" BorderBrush="{x:Null}" FontSize="26.667" />
+        <TextBlock x:Name="textBlock" FontSize="24" Margin="55,121,55,159" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="216" FontFamily="Segoe UI Light" ><Run/><LineBreak/><Run Text="A server has been notified and will be with you as soon as possible. "/><LineBreak/><Run Text="If you tapped the help button by accident or no longer require assistance, please hit the 'Cancel' button, otherwise tap 'Resume'  to continue ordering."/></TextBlock>
+        <Button x:Name="btn_cancel" Content="Cancel" Click="btn_cancel_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="100"  Width="370" Background="#FF536472" Foreground="#FFC92440" BorderBrush="{x:Null}" FontSize="26.667" />
+        <Button x:Name="btn_resume" Content="Resume" HorizontalAlignment="LEft" VerticalAlignment="Bottom" Height="100"  Width="370" Background="#FF536472" Foreground="#FF00BB97" BorderBrush="{x:Null}" FontSize="26.667" />
 
         <Separator HorizontalAlignment="Stretch" Height="5" Margin="0,0,0,100" VerticalAlignment="Bottom" Background="White"/>
         <Separator HorizontalAlignment="Center" Height="1" VerticalAlignment="Bottom" Width="104" Background="White" Margin="373,0,269,-3" >

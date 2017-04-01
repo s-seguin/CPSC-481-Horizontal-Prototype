@@ -1,0 +1,12 @@
+diff a/CPSC-481-Horizontal-Prototype/CPSC-481-Horizontal-Prototype/Pages/Page_Specials.xaml.cs b/CPSC-481-Horizontal-Prototype/CPSC-481-Horizontal-Prototype/Pages/Page_Specials.xaml.cs	(rejected hunks)
+@@ -27,8 +27,8 @@
+         {
+             InitializeComponent();
+             DateTime dt = DateTime.Now;
+-            string day = dt.DayOfWeek.ToString();
+-            //string day = "Saturday";
++           // string day = dt.DayOfWeek.ToString();
++            string day = "Wednesday";
+ 
+             switch (day)
+             {

@@ -187,6 +187,17 @@ namespace CPSC_481_Horizontal_Prototype
 
         }
 
+        private void btn_submitQueue_Click(object sender, RoutedEventArgs e)
+        {
+            MainScreen ms = Switcher.pageSwitcher;
+
+            ms.focusedTab.PlaceOrder();
+            ms.focusedTab.ClearTray();
+
+            lbl_queueTotal.Content = "Total: $0.00";
+            showQueue(false);
+        }
+
         #endregion
 
         #region Helper Functions
@@ -227,29 +238,6 @@ namespace CPSC_481_Horizontal_Prototype
             return btn;
         }
 
-        internal void Navigate(UserControl nextPage)
-        {
-           this.Page_Holder.Content = nextPage;
-        }
-
-        
-
-
-        #endregion
-
-        #endregion
-
-        private void btn_submitQueue_Click(object sender, RoutedEventArgs e)
-        {
-            MainScreen ms = Switcher.pageSwitcher;
-
-            ms.focusedTab.PlaceOrder();
-            ms.focusedTab.ClearTray();
-
-            lbl_queueTotal.Content = "Total: $0.00";
-            showQueue(false);
-        }
-
         private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
         {
             bool AutoScroll = true;
@@ -276,5 +264,17 @@ namespace CPSC_481_Horizontal_Prototype
                 sv.ScrollToVerticalOffset(sv.ExtentHeight);
             }
         }
+
+        internal void Navigate(UserControl nextPage)
+        {
+           this.Page_Holder.Content = nextPage;
+        }
+
+        
+
+
+        #endregion
+
+        #endregion
     }
 }

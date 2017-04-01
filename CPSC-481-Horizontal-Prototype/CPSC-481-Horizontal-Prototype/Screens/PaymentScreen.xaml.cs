@@ -19,12 +19,19 @@ namespace CPSC_481_Horizontal_Prototype.Screens
     /// </summary>
     public partial class PaymentScreen : Window
     {
+        private MainScreen ms;
+
         public PaymentScreen()
         {
             InitializeComponent();
 
+            ms = Switcher.pageSwitcher;
+            lbl_title.Content = ms.focusedTab.ToString() + "'s Tab";
+            ms.focusedTab.LoadOrder(this);
+
         }
 
+        #region Button Clicks
         private void btn_close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -56,6 +63,34 @@ namespace CPSC_481_Horizontal_Prototype.Screens
             rbtn_card.IsChecked = true;
             rbtn_cash.IsChecked = false;
             btn_payNow.IsEnabled = true;
+        }
+        #endregion
+
+        private void ScrollViewer_ScrollChanged(object sender, ScrollChangedEventArgs e)
+        {
+            bool AutoScroll = true;
+            ScrollViewer sv = (ScrollViewer)sender;
+
+            if (e.ExtentHeightChange == 0)
+            {   // Content unchanged : user scroll event
+                if (sv.VerticalOffset == sv.ScrollableHeight)
+                {   // Scroll bar is in bottom
+                    // Set autoscroll mode
+                    AutoScroll = true;
+                }
+                else
+                {   // Scroll bar isn't in bottom
+                    // Unset autoscroll mode
+                    AutoScroll = false;
+                }
+            }
+
+            // Content scroll event : autoscroll eventually
+            if (AutoScroll && e.ExtentHeightChange != 0)
+            {   // Content changed and autoscroll mode set
+                // Autoscroll
+                sv.ScrollToVerticalOffset(sv.ExtentHeight);
+            }
         }
     }
 }

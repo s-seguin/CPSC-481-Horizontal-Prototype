@@ -1,4 +1,5 @@
-﻿using CPSC_481_Horizontal_Prototype.User_Controls;
+﻿using CPSC_481_Horizontal_Prototype.Screens;
+using CPSC_481_Horizontal_Prototype.User_Controls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,11 +69,12 @@ namespace CPSC_481_Horizontal_Prototype.Classes
 
         public void PlaceOrder()
         {
+            MainScreen ms = Switcher.pageSwitcher;
             foreach (KeyValuePair<MenuItem, int> order in orderTray)
             {
                 OrderItem(order);
             }
-            Switcher.pageSwitcher.lbl_tabTotal.Content = "Total: $" + amountOwing;
+            ms.lbl_tabTotal.Content = "Total: $" + amountOwing;
         }
 
         override public string ToString()
@@ -122,6 +124,36 @@ namespace CPSC_481_Horizontal_Prototype.Classes
             }
             ms.lbl_queueTotal.Content = "Total: $" + queueTotal;
         }
+
+        public void LoadOrder(PaymentScreen ps)
+        {
+            double queueTotal = 0;
+            foreach (KeyValuePair<MenuItem, int> order in currentOrder)
+            {
+                //set name, quantity and price of drinks in order queue
+                //order.Key.name is the name of the item
+                //orderTray[order.Key] is price per item
+
+                string name = order.Key.name;
+                int item_quantity = order.Value;
+                double price = order.Key.price * order.Value;
+                queueTotal += order.Key.price * order.Value;
+
+                paymentItem curItem = new paymentItem(order, name, item_quantity, price);
+                curItem.Width = 600;
+                curItem.Margin = new System.Windows.Thickness(0);
+                curItem.item_name.FontSize = 18;
+
+                ps.sp_order.Children.Add(curItem);
+
+                //update order queue total
+
+            }
+            ps.subVal.Content = "$" + queueTotal;
+            ps.gstVal.Content = "$" + queueTotal * .05;
+            ps.totalVal.Content = "$" + queueTotal * 1.05;
+        }
+
 
         public bool OrderTrayEmpty()
         {

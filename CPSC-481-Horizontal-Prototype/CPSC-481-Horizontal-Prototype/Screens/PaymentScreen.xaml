@@ -5,41 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
         mc:Ignorable="d"
-        Title="PaymentScreen" Height="550" Width="450" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
-    <Grid Margin="1,0,-1,0">
-        <Label x:Name="lbl_title" Content="Stuart's Tab" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="18" Height="60" Width="450" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#FFF0ECEC" FontFamily="Segoe UI Light"/>
-        <Button x:Name="btn_close" Content="&#xE10A;"  VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Height="30" FontFamily="Segoe UI Symbol" FontSize="18.667" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_close_Click" Foreground="#FFEE516C"/>
+        Title="PaymentScreen" Height="800" Width="600" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
+    <Grid>
+        <Label x:Name="lbl_title" Content="'s Tab" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" FontSize="28" Height="60" Width="600" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#FFF0ECEC" FontFamily="Segoe UI Light"/>
+        <Button x:Name="btn_close" Content="&#xE10A;"  VerticalAlignment="Top" HorizontalAlignment="Right" Width="50" Height="50" FontFamily="Segoe UI Symbol" FontSize="32" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_close_Click" Foreground="#FFEE516C"/>
 
-       <!-- <Button Width="100" Height="100" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Right"  Margin="0,0,75,55" VerticalContentAlignment="Bottom" Padding="0" BorderThickness="0" Click="btn_cash_Click" >
-            <Button.Background >
-                <ImageBrush ImageSource="/Resources/Images/btn_cash.png">
-                    <ImageBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.4" CenterX="0.4" ScaleX="0.4" ScaleY="0.4"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </ImageBrush.RelativeTransform>
-                </ImageBrush>
-            </Button.Background>
-            <Label x:Name="lbl_cash" Content="Cash" FontSize="14" FontFamily="Segoe UI Light"/>
-        </Button>
+        
+        <!-- ScrollViewer Headers-->
+        <Label x:Name="lbl_itemName" Content="Item Name" HorizontalAlignment="Left" Margin="30,70,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold"/>
+        <Label x:Name="lbl_Quantity" Content="Quantity" HorizontalAlignment="Center" Margin="320,70,200,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold" Width="76"/>
+        <Label x:Name="lbl_price" Content="Price" HorizontalAlignment="Right" Margin="0,70,70,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold"/>
 
-        <Button Width="100" Height="100" FontSize="12" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="75,0,0,55" VerticalContentAlignment="Bottom" Padding="0" BorderThickness="0" Click="btn_card_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/Resources/Images/btn_card.png">
-                    <ImageBrush.RelativeTransform>
-                        <TransformGroup>
-                            <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleX="0.5" ScaleY="0.5"/>
-                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                            <RotateTransform CenterY="0.5" CenterX="0.5"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </ImageBrush.RelativeTransform>
-                </ImageBrush>
-            </Button.Background>
-            <Label x:Name="lbl_credit" Content="Credit/Debit" FontSize="14" FontFamily="Segoe UI Light"/>
-        </Button>-->
+        <ScrollViewer Height="400" Margin="30,100,30,0" VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Disabled" Background="White" ScrollChanged="ScrollViewer_ScrollChanged">
+            <!-- Item tray-->
+            <StackPanel  x:Name="sp_order" HorizontalAlignment="Left" Width="530" Background= "White" VerticalAlignment="Top" />
+        </ScrollViewer>
 
+        <!-- Subtotal, GST, Total -->
+        <Grid Width="150" Height="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,100,180">
+            <!-- Summary Headers -->
+            <StackPanel Width="75" HorizontalAlignment="Left">
+                <Label x:Name="lbl_subtotal" Content="Subtotal" FontFamily="Segoe UI Bold"/>
+                <Label x:Name="label" Content="GST" FontFamily="Segoe UI Light"/>
+                <Label x:Name="lbl_total" Content="Total" FontFamily="Segoe UI Bold"/>
+            </StackPanel>
+
+            <StackPanel Width="75" HorizontalAlignment="Right">
+                <Label Name="subVal" Content=" $0.00" FontFamily="Segoe UI Light" HorizontalAlignment="Right" />
+                <Label Name="gstVal" Content="$0.00" FontFamily="Segoe UI Light" HorizontalAlignment="Right" />
+                <Label Name="totalVal" Content="$0.00" FontFamily="Segoe UI Light" HorizontalAlignment="Right" />
+            </StackPanel>
+        </Grid>
+
+        
+        <!-- Payment option and pay now-->
         <RadioButton x:Name="rbtn_cash" Style="{StaticResource {x:Type ToggleButton}}" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="110" Height="110" Margin="0,0,75,55" Checked="rbtn_cash_Checked" Background="{x:Null}" BorderBrush="{x:Null}">
             <Button Width="100" Height="100" FontSize="12" VerticalContentAlignment="Bottom" Padding="0" BorderThickness="0" Click="btn_cash_Click" >
                 <Button.Background >
@@ -55,7 +54,7 @@
                 <Label x:Name="lbl_cash" Content="Cash" FontSize="14" FontFamily="Segoe UI Light"/>
             </Button>
         </RadioButton>
-
+        
         <RadioButton x:Name="rbtn_card" Style="{StaticResource {x:Type ToggleButton}}" VerticalContentAlignment="Center" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="110" Height="110" Margin="75,0,0,55" Checked="rbtn_card_Checked" Background="{x:Null}" BorderBrush="{x:Null}" >
             <Button Width="100" Height="100" FontSize="12"  VerticalContentAlignment="Bottom" Padding="0" BorderThickness="0" Click="btn_card_Click">
                 <Button.Background>
@@ -73,50 +72,7 @@
                 <Label x:Name="lbl_credit" Content="Credit/Debit" FontSize="14" FontFamily="Segoe UI Light"/>
             </Button>
         </RadioButton>
-       
-        <Button x:Name="btn_payNow" Content="PAY NOW" FontSize="18" Height="50" Width="450" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="btn_payNow_Click" Background="#FF00B694" Foreground="White" FontFamily="Segoe UI Black" BorderThickness="0" IsEnabled="False"/>
-        <Label x:Name="lbl_quantity" Content="Quantity" HorizontalAlignment="Left" Margin="70,70,0,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold"/>
-        <Label x:Name="lbl_itemName" Content="Item Name" HorizontalAlignment="Center" Margin="188,70,182,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold" Width="76"/>
-        <Label x:Name="lbl_price" Content="Price" HorizontalAlignment="Right" Margin="0,70,70,0" VerticalAlignment="Top" FontFamily="Calibri" FontSize="14" FontWeight="Bold"/>
 
-
-        <TextBlock Name="tb_quantity" HorizontalAlignment="Left" Margin="100,98,0,332" Width="Auto" Height="Auto" FontFamily="Segoe UI Light">
-            <Run Text="1"/>
-            <LineBreak/>
-            <LineBreak/>
-            <Run Text="2"/>
-            <LineBreak/>
-            <LineBreak/>
-            <Run Text="2"/>
-             <LineBreak/>
-            <LineBreak/>
-            <Run Text="1"/>
-        </TextBlock>
-
-        <TextBlock x:Name="tb_itemName" TextAlignment="Center" HorizontalAlignment="Center" Margin="189,100,182,332" Width="Auto" Height="Auto" FontFamily="Segoe UI Light"><Run Text="Big Pub Burger"/><LineBreak/><LineBreak/><Run Text="Rickard's Red"/><LineBreak/><LineBreak/><Run Text="Soft Drink"/><LineBreak/><LineBreak/><Run Text="Maple Cream"/></TextBlock>
-
-        <TextBlock Name="tb_price" TextAlignment="Center" HorizontalAlignment="Right" Margin="0,100,75,332" Width="Auto" Height="Auto" FontFamily="Segoe UI Light">
-            <Run Text="$12.00"/>
-            <LineBreak/>
-            <LineBreak/>
-            <Run Text="$13.00"/>
-            <LineBreak/>
-            <LineBreak/>
-            <Run Text="$5.00"/>
-             <LineBreak/>
-            <LineBreak/>
-            <Run Text="$7.50"/>
-        </TextBlock>
-
-        <GridSplitter x:Name="gridSplitter_Copy" HorizontalAlignment="Center" Height="1" Margin="45,120,45,0" VerticalAlignment="Top" Width="360" Background="#FFACAAAA"/>
-        <GridSplitter x:Name="gridSplitter_Copy1" HorizontalAlignment="Center" Height="1" Margin="45,150,45,0" VerticalAlignment="Top" Width="360" Background="#FFACAAAA"/>
-        <GridSplitter x:Name="gridSplitter_Copy2" HorizontalAlignment="Center" Height="1" Margin="45,182,45,0" VerticalAlignment="Top" Width="360" Background="#FFACAAAA"/>
-        <GridSplitter x:Name="gridSplitter_Copy3" HorizontalAlignment="Center" Height="1" Margin="45,214,45,0" VerticalAlignment="Top" Width="360" Background="#FFACAAAA"/>
-
-        <Label x:Name="lbl_subtotal" Content="Subtotal             $42.50" HorizontalAlignment="Right" Margin="0,289,75,234" FontFamily="Segoe UI Light"/>
-        <Label x:Name="label" Content="GST               $2.13" HorizontalAlignment="Right" Margin="0,312,75,211" FontFamily="Segoe UI Light"/>
-        <Label x:Name="lbl_total" Content="Total             $44.63" HorizontalAlignment="Right" Margin="0,337,75,186" FontFamily="Segoe UI Light"/>
-
-
+        <Button x:Name="btn_payNow" Content="PAY NOW" FontSize="18" Height="50" Width="600" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="btn_payNow_Click" Background="#FF00B694" Foreground="White" FontFamily="Segoe UI Black" BorderThickness="0" IsEnabled="False"/>
     </Grid>
 </Window>

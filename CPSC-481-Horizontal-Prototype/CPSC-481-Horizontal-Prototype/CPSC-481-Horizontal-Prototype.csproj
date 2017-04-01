@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\ActiveTabs.cs" />
+    <Compile Include="Classes\LoadingAdorner.cs" />
     <Compile Include="Classes\MenuItem.cs" />
     <Compile Include="Classes\UserTab.cs" />
     <Compile Include="Pages\Page_Drinks.xaml.cs">
@@ -92,6 +93,9 @@
       <DependentUpon>Page_Specials.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\Switcher.cs" />
+    <Compile Include="User Controls\paymentItem.xaml.cs">
+      <DependentUpon>paymentItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="User Controls\trayItem.xaml.cs">
       <DependentUpon>trayItem.xaml</DependentUpon>
     </Compile>
@@ -156,6 +160,10 @@
     <Page Include="Pages\Page_Specials.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Controls\paymentItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="User Controls\trayItem.xaml">
       <SubType>Designer</SubType>

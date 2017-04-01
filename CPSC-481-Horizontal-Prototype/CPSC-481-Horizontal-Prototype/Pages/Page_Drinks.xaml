@@ -66,12 +66,12 @@
         <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="5" Margin="25,135,0,0" VerticalAlignment="Top" Width="400"/>
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="35" Margin="35,150,0,0" >
-            <Button  x:Name="btn_beer" Style="{StaticResource InformButton}" Click="navButton_Click">Beer</Button>
-            <Button  x:Name="btn_whiskey" Style="{StaticResource InformButton}" Click="navButton_Click">Whiskey</Button>
-            <Button  x:Name="btn_topShelf" Style="{StaticResource InformButton}" Click="navButton_Click">Top Shelf</Button>
-            <Button  x:Name="btn_cocktails" Style="{StaticResource InformButton}" Click="navButton_Click">Cocktails</Button>
-            <Button  x:Name="btn_martinis" Style="{StaticResource InformButton}" Click="navButton_Click">Martinis</Button>
-            <Button  x:Name="btn_wine" Style="{StaticResource InformButton}" Click="navButton_Click">Wine</Button>
+            <Button  x:Name="btn_beer" Style="{StaticResource InformButton}" Click="navButton_Click" >Beer</Button>
+            <Button  x:Name="btn_whiskey" Style="{StaticResource InformButton}" Click="navButton_Click" >Whiskey</Button>
+            <Button  x:Name="btn_topShelf" Style="{StaticResource InformButton}" Click="navButton_Click" >Top Shelf</Button>
+            <Button  x:Name="btn_cocktails" Style="{StaticResource InformButton}" Click="navButton_Click" >Cocktails</Button>
+            <Button  x:Name="btn_martinis" Style="{StaticResource InformButton}" Click="navButton_Click" >Martinis</Button>
+            <Button  x:Name="btn_wine" Style="{StaticResource InformButton}" Click="navButton_Click" >Wine</Button>
         </StackPanel>
 
         <ScrollViewer x:Name="sv_drinks" HorizontalAlignment="Stretch" Margin="0,195,0,0" VerticalAlignment="Stretch">

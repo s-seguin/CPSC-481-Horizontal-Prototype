@@ -240,6 +240,34 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Images\Food\sw_brisket_dip.jpg" />
+    <Resource Include="Resources\Images\Food\sw_grilled_cheese.jpg" />
+    <Resource Include="Resources\Images\Food\sw_montreal_reuben.jpg" />
+    <Resource Include="Resources\Images\Food\sw_steak.jpg" />
+    <Resource Include="Resources\Images\Food\burger_big_pub.jpg" />
+    <Resource Include="Resources\Images\Food\burger_bison.png" />
+    <Resource Include="Resources\Images\Food\burger_jalapeno_bacon.jpg" />
+    <Resource Include="Resources\Images\Food\burger_lamb.jpg" />
+    <Resource Include="Resources\Images\Food\burger_malibu.jpg" />
+    <Resource Include="Resources\Images\Food\burger_stuffed.jpg" />
+    <Resource Include="Resources\Images\Food\apple_pie.jpg" />
+    <Resource Include="Resources\Images\Food\mud_pie.jpg" />
+    <Resource Include="Resources\Images\Food\salad_caesar.jpg" />
+    <Resource Include="Resources\Images\Food\salad_cobb.jpg" />
+    <Resource Include="Resources\Images\Food\salad_pear_beet.jpg" />
+    <Resource Include="Resources\Images\Food\salad_quinoa_kale.jpg" />
+    <Resource Include="Resources\Images\Food\broccoli_cheddar.jpg" />
+    <Resource Include="Resources\Images\Food\clam_chowder.jpg" />
+    <Resource Include="Resources\Images\Food\roasted_tomato_basil.jpg" />
+    <Resource Include="Resources\Images\Food\irish_potato_nachos.jpg" />
+    <Resource Include="Resources\Images\Food\loaded_nachos.jpg" />
+    <Resource Include="Resources\Images\Food\pickle_spears.jpg" />
+    <Resource Include="Resources\Images\Food\truffle_fries.jpg" />
+    <Resource Include="Resources\Images\Food\little_pub_sliders.jpg" />
+    <Resource Include="Resources\Images\Food\chicken_tenders.jpg" />
+    <Resource Include="Resources\Images\Food\quesadilla.png" />
+    <Resource Include="Resources\Images\Food\stuffed_yorkshires.jpg" />
+    <Resource Include="Resources\Images\Food\spring_rolls.jpg" />
     <Resource Include="Resources\Images\Food\flatbread_prosciutto.jpg" />
     <Resource Include="Resources\Images\Food\flatbread_spicy.jpg" />
     <Resource Include="Resources\Images\Food\flatbread_spinach.jpg" />
@@ -256,7 +284,6 @@
     <Resource Include="Resources\Images\Food\steak_sandwich_special.png" />
     <Resource Include="Resources\Images\Food\wings_special.jpg" />
     <Resource Include="Resources\Images\Food\mussels.jpg" />
-    <Resource Include="Resources\Images\Food\big_pub.jpg" />
     <Resource Include="Resources\Images\Food\tacos.jpg" />
     <Resource Include="Resources\Images\Food\wings.jpg" />
     <Resource Include="Resources\Images\help_icon.png" />

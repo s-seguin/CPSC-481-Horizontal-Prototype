@@ -219,11 +219,11 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Smirnoff \nFlavored", "$8.00", "", path + "smirnoff_flavored.jpeg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Spicy Carnivore", "$9.00", "", foodPath + "flatbread_spicy.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Spicy Carnivore", "$9.00", "Italian sausage, Montréal smoked meat, chopped bacon, Sriracha tomato sauce, mixed three cheese blend", foodPath + "flatbread_spicy.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Prociutto and Arugula", "$9.00", "", foodPath + "flatbread_prosciutto.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Prociutto and Arugula", "$9.00", "thin sliced prosciutto, mixed three cheese blend, house-made tomato sauce, fresh arugula", foodPath + "flatbread_prosciutto.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Spinach and Feta", "$9.00", "", foodPath + "flatbread_spinach.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Spinach and Feta", "$9.00", "fresh spinach, red onion, diced tomato, feta and mozzarella cheese, signature tomato sauce", foodPath + "flatbread_spinach.jpg"));
         }
 
         private void sunSpecials()

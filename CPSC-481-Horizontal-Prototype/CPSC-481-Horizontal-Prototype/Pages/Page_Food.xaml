@@ -66,16 +66,51 @@
         <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="5" Margin="25,135,0,0" VerticalAlignment="Top" Width="400"/>
 
         <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="35" Margin="35,150,0,0" >
-            <Button Style="{StaticResource InformButton}">Starters</Button>
-            <Button Style="{StaticResource InformButton}">Appetizers</Button>
-            <Button Style="{StaticResource InformButton}">Burgers</Button>
-            <Button Style="{StaticResource InformButton}">Sandwiches</Button>
-            <Button Style="{StaticResource InformButton}">Flatbreads</Button>
-            <Button Style="{StaticResource InformButton}">Desserts</Button>
+            <Button Name="btn_starters" Style="{StaticResource InformButton}" Click="navButton_Click" >Starters</Button>
+            <Button Name="btn_nachos" Style="{StaticResource InformButton}" Click="navButton_Click" >Nachos</Button>
+            <Button Name="btn_soups" Style="{StaticResource InformButton}" Click="navButton_Click" >Soups</Button>
+            <Button Name="btn_salads" Style="{StaticResource InformButton}" Click="navButton_Click" >Salads</Button>
+            <Button Name="btn_burgers" Style="{StaticResource InformButton}" Click="navButton_Click" >Burgers</Button>
+            <Button Name="btn_sandwiches" Style="{StaticResource InformButton}" Click="navButton_Click" >Sandwiches</Button>
+            <Button Name="btn_flatbreads" Style="{StaticResource InformButton}" Click="navButton_Click" >Flatbreads</Button>
+            <Button Name="btn_desserts" Style="{StaticResource InformButton}" Click="navButton_Click" >Desserts</Button>
         </StackPanel>
 
-        <ScrollViewer HorizontalAlignment="Stretch" Margin="0,195,0,0" VerticalAlignment="Stretch">
-            <Label x:Name="lbl_starters" Content="Starters" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF414141" FontSize="24" Margin="25,25,0,0"/>
+        <ScrollViewer x:Name="sv_food" HorizontalAlignment="Stretch" Margin="0,195,0,0" VerticalAlignment="Stretch">
+            <StackPanel >
+                <!-- Starters -->
+                <Label x:Name="header_starters" Content="Starters" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_starters" Orientation="Horizontal" Margin="60,10,200,10"/>
+
+                <!-- Nachos & Platters -->
+                <Label x:Name="header_nachos" Content="Nachos &amp; Platters" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_nachos" Orientation="Horizontal" Margin="60,10,200,10"/>
+
+                <!-- Soups -->
+                <Label x:Name="header_soups" Content="Soups" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_soups" Orientation="Horizontal" Margin="60,10,200,10"/>
+                
+                <!-- Salads -->
+                <Label x:Name="header_salads" Content="Salads" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_salads" Orientation="Horizontal" Margin="60,10,200,10"/>
+
+                <!-- Burgers -->
+                <Label x:Name="header_burgers" Content="Burgers" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_burgers" Orientation="Horizontal" Margin="60,10,200,10"/>
+
+                <!-- Sandwiches -->
+                <Label x:Name="header_sandwiches" Content="Sandwiches" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_sandwiches" Orientation="Horizontal" Margin="60,10,200,10"/>
+
+                <!-- Flatbreads -->
+                <Label x:Name="header_flatbreads" Content="Flatbreads" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_flatbreads" Orientation="Horizontal" Margin="60,10,200,10"/>
+
+                <!-- Desserts -->
+                <Label x:Name="header_desserts" Content="Desserts" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_desserts" Orientation="Horizontal" Margin="60,10,200,10"/>
+
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </UserControl>

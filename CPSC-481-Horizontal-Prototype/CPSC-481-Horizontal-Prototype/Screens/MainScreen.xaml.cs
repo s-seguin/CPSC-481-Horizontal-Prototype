@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace CPSC_481_Horizontal_Prototype
 {
@@ -22,7 +24,8 @@ namespace CPSC_481_Horizontal_Prototype
         private SolidColorBrush col_tabBlue = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
         private SolidColorBrush col_tabOrange = new SolidColorBrush(Color.FromArgb(0xFF, 0xf2, 0xab, 0x57)); //FFf2ab57
         public bool wantToLeave = false;
-        
+        private bool trayOpen;
+
         #endregion
 
         #region Constructors
@@ -81,6 +84,7 @@ namespace CPSC_481_Horizontal_Prototype
                 btn_specials.Height = 104;
                 btn_drinks.Height = 99;
                 btn_food.Height = 104;
+                
             }
 
             else if (btn_food.IsFocused)
@@ -99,6 +103,8 @@ namespace CPSC_481_Horizontal_Prototype
                 hs.ShowDialog();
                 gw.Close();
             }
+            
+
         }
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
@@ -161,6 +167,7 @@ namespace CPSC_481_Horizontal_Prototype
                     if (ut.GetTabButton().IsFocused)
                     {
                         focusedTab.ClearTray();
+                        lbl_queueTotal.Content = "Total: $0.00";
                         lbl_tabTotal.Content = "Total: $" + ut.amountOwing;
                         lbl_tabName.Content = ut.ToString();
                         grid_summary.Background = ut.GetTabButton().Background;
@@ -173,10 +180,10 @@ namespace CPSC_481_Horizontal_Prototype
   
         }
 
-        private void btn_expandQueue_Click(object sender, RoutedEventArgs e)
+        public void btn_expandQueue_Click(object sender, RoutedEventArgs e)
         {
             //expand queue when side panel is collapsed
-            if (!grid_queue.IsVisible) { showQueue(true);  }
+            if (sp_trayAndBtn.Margin == new Thickness(0,0,0,-292)) { showQueue(true);  }
 
             //minimize side panel
             else { showQueue(false); }
@@ -185,18 +192,21 @@ namespace CPSC_481_Horizontal_Prototype
 
         public void showQueue(Boolean value)
         {
-            if (value)
+            //value is true if we desire to expand the tray
+            if ((value) && (!trayOpen))
             {
                 //change expand button margins
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 307, 508);
                 this.btn_expandQueue.Content = "\uE015";       //chevron down
-                grid_queue.Visibility = Visibility.Visible;
+                this.trayOpen = true;
+                Storyboard sb = Resources["sbShowTray"] as Storyboard;
+                sb.Begin(sp_trayAndBtn);
             }
-            else
+            else if ((!value) && (trayOpen))
             {
-                this.btn_expandQueue.Margin = new Thickness(0, 0, 307, 108);
                 this.btn_expandQueue.Content = "\uE014";        //checvron up
-                grid_queue.Visibility = Visibility.Hidden;
+                this.trayOpen = false;
+                Storyboard sb = Resources["sbHideTray"] as Storyboard;
+                sb.Begin(sp_trayAndBtn);
             }
         }
 
@@ -217,11 +227,10 @@ namespace CPSC_481_Horizontal_Prototype
             ms.focusedTab.PlaceOrder();
             ms.focusedTab.ClearTray();
 
-            showQueue(false);
-
             lbl_queueTotal.Content = "Total: $0.00";
+
             ClosingScreen cs = new ClosingScreen(2000, "Your order has been successfully placed!");
-            
+            showQueue(false);
         }
 
         #endregion
@@ -239,6 +248,13 @@ namespace CPSC_481_Horizontal_Prototype
             tabPanel.Children.Add(btn);
             lbl_tabName.Content = tab.ToString();
             grid_summary.Background = tab.GetTabButton().Background;
+
+            Storyboard sb = Resources["sbShowTab"] as Storyboard;
+            sb.Begin(btn);
+
+            Storyboard sb1 = Resources["sbHideTab"] as Storyboard;
+            sb1.Begin(btn);
+
             lbl_tabTotal.Content = "Total: $" + tab.amountOwing;
 
             this.focusedTab = tab;

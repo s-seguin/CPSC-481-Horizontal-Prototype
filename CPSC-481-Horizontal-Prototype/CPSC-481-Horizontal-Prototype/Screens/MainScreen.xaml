@@ -6,23 +6,39 @@
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
         mc:Ignorable="d"
         Title="Specials" Height="900" Width="1980"  WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
-    <Viewbox Stretch="Fill" >
-    <Grid>
-        <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="75" Background="#FF122331">
-            <Image x:Name="logo" Height="75" Width="75" Source="/Resources/Images/logo_sml.png"/>
-            <!--<Button x:Name="btn_personTab" BorderThickness="0,0,0,0"  Width="75"  Height="75" Content="W" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_changeTab_Click" Background="#FF288da7"/>
-            <Button x:Name="btn_personTab_2" BorderThickness="0,0,0,0"  Width="75"  Height="75" Content="S" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_changeTab_Click" Background="#FFf2ab57"/>
-           --> 
-            <Button x:Name="btn_addTab" Width="75" BorderThickness="0,0,0,0"  Height="75" VerticalContentAlignment="Center" Content="+" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_addTab_Click" Background="#FF00b694" RenderTransformOrigin="0.547,0.727"/>
+    <Window.Resources>
+        <!--Move tray-->
+        <Storyboard x:Key="sbShowTray" >
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,-292" To="0,0,0,108" DecelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
 
-        </StackPanel>
+        <Storyboard x:Key="sbHideTray" >
+            <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,108" To="0,0,0,-292" DecelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+
+        <Storyboard x:Key="sbShowTab" >
+            <DoubleAnimation Storyboard.TargetProperty="Width" From="75" To="200" DecelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+
+        <Storyboard x:Key="sbHideTab" >
+            <DoubleAnimation Storyboard.TargetProperty="Width" From="200" To="75" DecelerationRatio=".9" Duration="0:0:1" />
+        </Storyboard>
+    </Window.Resources>
+    
+    <Viewbox Stretch="Fill" >
+        
+    <Grid>
+        <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="75" Background="#FF122331" ClipToBounds="False">
+            <Image x:Name="logo" Height="75" Width="75" Source="/Resources/Images/logo_sml.png"/>
+                <Button x:Name="btn_addTab" Width="75" BorderThickness="0,0,0,0"  Height="75" VerticalContentAlignment="Center" Content="+" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_addTab_Click" Background="#FF00b694" RenderTransformOrigin="0.547,0.727"/>
+            </StackPanel>
             <Grid x:Name="main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="75,0,0,0" Background="#FFF4F4F4">
                 <local:Page_Holder x:Name="Page_Holder" VerticalAlignment="Top" Margin="10,10,10,118" HorizontalAlignment="Center" />
                 <Rectangle Fill="#FF213F57" HorizontalAlignment="Stretch" Height="108" VerticalAlignment="Bottom" StrokeThickness="0" Margin="10,0,350,0" RadiusX="3" RadiusY="3" />
 
             <WrapPanel HorizontalAlignment="Center" Height="104"  VerticalAlignment="Bottom" Width="420" Margin="268,0,529,0">
                 
-                <Button x:Name="btn_specials" Width="100" Height="104" Click="btn_nav_Click" BorderThickness="0" >
+                <Button x:Name="btn_specials" Width="100" Height="104" Click="btn_nav_Click" BorderThickness="0">
                     <Button.Background>
                         <ImageBrush ImageSource="/Resources/Images/btn_specials_bg.png"/>
                     </Button.Background>
@@ -48,31 +64,30 @@
 
             </WrapPanel>
 
-            <Button x:Name="btn_expandQueue" VerticalContentAlignment="Top" Content="&#xE014;" Width="32" Height="32" Click="btn_expandQueue_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,307,108" Background="White" FontFamily="Segoe UI Symbol" BorderBrush="{x:Null}" Foreground="#FF00B694" BorderThickness="0" FontSize="18">
-                <Button.Effect>
-                    <DropShadowEffect ShadowDepth="1" Opacity="0.25"/>
-                </Button.Effect>
-            </Button>
+            <!--Queue-->
+                <StackPanel  Name="sp_trayAndBtn" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,-292" >
+                    <Button x:Name="btn_expandQueue" HorizontalAlignment="Left" Content="&#xE014;" Width="32" Height="32" Click="btn_expandQueue_Click"  Background="White" FontFamily="Segoe UI Symbol" BorderBrush="{x:Null}" Foreground="#FF00B694" BorderThickness="0" FontSize="18">
+                        <Button.Effect>
+                            <DropShadowEffect ShadowDepth="1" Opacity="0.25"/>
+                        </Button.Effect>
+                     </Button>
+
+                    <Grid x:Name="grid_queue" Height="400" Width="340" Background= "#FFF4F4F4">
+                        <Label Content="Current Order" HorizontalContentAlignment="Left" VerticalAlignment="Top" Height="45" Width="340" FontSize="24" Background="White" BorderThickness="0,0,0,1" BorderBrush="Gray" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
+
+                        <ScrollViewer Margin="0,45,0,108" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Background="White" ScrollChanged="ScrollViewer_ScrollChanged" PanningMode="VerticalOnly" ManipulationBoundaryFeedback="ScrollViewer_ManipulationBoundaryFeedback">
+                            <!-- Item tray-->
+                            <StackPanel  x:Name="sp_tray" HorizontalAlignment="Left" Width="340" Background= "White" VerticalAlignment="Top" />
+                        </ScrollViewer>
+
+                        <Grid HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="340" Background="White">
+
+                            <Label x:Name="lbl_queueTotal" Content="Total: $0.00" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="62" Width="200" FontSize="34" Background="{x:Null}" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
+                            <Button x:Name="lbl_submitQueue" Content="Submit Order" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Width="120" FontSize="16" Background="#FF213F57" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFB5BEC7" Click="btn_submitQueue_Click" />
+                        </Grid>
+                    </Grid>
+                </StackPanel>
                 
-            <!--Queue-->    
-            <Grid x:Name="grid_queue" HorizontalAlignment="Right" Height="400" Width="340" Background= "#FFF4F4F4" VerticalAlignment="Bottom" Margin="0,0,0,108" Visibility="Hidden">
-                    <Label Content="Current Order" HorizontalContentAlignment="Left" VerticalAlignment="Top" Height="45" Width="340" FontSize="24" Background="White" BorderThickness="0,0,0,1" BorderBrush="Gray" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
-
-                    <ScrollViewer Margin="0,45,0,108" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Background="White" ScrollChanged="ScrollViewer_ScrollChanged" PanningMode="VerticalOnly" ManipulationBoundaryFeedback="ScrollViewer_ManipulationBoundaryFeedback">
-                        <!-- Item tray-->
-                        <StackPanel  x:Name="sp_tray" HorizontalAlignment="Left" Width="340" Background= "White" VerticalAlignment="Top" />
-                    </ScrollViewer>
-                    
-
-
-                    <Grid HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="340" Background="White">
-
-                    <Label x:Name="lbl_queueTotal" Content="Total: $0.00" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="62" Width="200" FontSize="34" Background="{x:Null}" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
-                    <Button x:Name="lbl_submitQueue" Content="Submit Order" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Width="120" FontSize="16" Background="#FF213F57" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFB5BEC7" Click="btn_submitQueue_Click" />
-                </Grid>
-            </Grid>
-
-
                 <Grid x:Name="grid_summary" HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="340" Background="#FFf2ab57">
                 <Label x:Name="lbl_tabName" Content="" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Height="54" Width="195" FontSize="21" Foreground="White" Margin="5,0,0,0"/>
                 <Separator Width="200"  HorizontalAlignment="Left" Margin="10,0,0,0" Background="#FFECECEC"/>

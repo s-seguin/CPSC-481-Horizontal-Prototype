@@ -22,8 +22,6 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         public HelpScreen()
         {
             InitializeComponent();
-            this.Height = SystemParameters.PrimaryScreenHeight * .4;
-            this.Width = SystemParameters.PrimaryScreenWidth * .4;
         }
 
         private void btn_cancel_Click(object sender, RoutedEventArgs e)

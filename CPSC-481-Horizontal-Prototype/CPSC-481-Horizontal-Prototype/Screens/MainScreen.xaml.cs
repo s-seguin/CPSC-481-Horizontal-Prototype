@@ -95,8 +95,6 @@ namespace CPSC_481_Horizontal_Prototype
             {
                 GrayedOutWindow gw = new GrayedOutWindow();
                 HelpScreen hs = new HelpScreen();
-                hs.Height = SystemParameters.PrimaryScreenHeight * .4;
-                hs.Width = SystemParameters.PrimaryScreenWidth * .4;
                 gw.Show();
                 hs.ShowDialog();
                 gw.Close();

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPSC_481_Horizontal_Prototype.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,6 +50,24 @@ namespace CPSC_481_Horizontal_Prototype.Screens
 
         private void btn_payNow_Click(object sender, RoutedEventArgs e)
         {
+            ms.allTabs.RemoveTab(ms.focusedTab);
+            ms.tabPanel.Children.Remove(ms.focusedTab.GetTabButton());
+            if (ms.allTabs.GetTabs().Count > 0)
+            {
+                UserTab ut = ms.allTabs.GetTabs()[0];
+                ms.lbl_tabTotal.Content = "Total: $" + ut.amountOwing;
+                ms.lbl_tabName.Content = ut.ToString();
+                ms.grid_summary.Background = ut.GetTabButton().Background;
+                ms.focusedTab = ut;
+            }
+            else
+            {
+                //that was the last tab
+                ClosingScreen cs = new ClosingScreen(5000);
+                MainScreen mainScreen = new MainScreen();
+                ms.Close();
+            }
+            this.Close();
         }
 
         private void btn_cash_Click(object sender, RoutedEventArgs e)

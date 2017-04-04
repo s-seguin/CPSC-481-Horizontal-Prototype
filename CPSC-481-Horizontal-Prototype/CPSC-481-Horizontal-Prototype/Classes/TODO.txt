@@ -1,2 +1,3 @@
 ﻿-Add notification help has been called
 -find better way to deal with closing the session
+-put gray screen in menu item control

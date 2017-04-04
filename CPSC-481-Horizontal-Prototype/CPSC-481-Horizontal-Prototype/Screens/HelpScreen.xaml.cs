@@ -28,5 +28,10 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         {
             this.Close();
         }
+
+        private void btn_resume_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

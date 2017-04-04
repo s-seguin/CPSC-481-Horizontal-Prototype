@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CPSC_481_Horizontal_Prototype.Screens;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,8 +29,11 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
         {
+            GrayedOutWindow gw = new GrayedOutWindow();
             AddTab a = new AddTab(ms, this);
-            a.Show();
+            gw.Show();
+            a.ShowDialog();
+            gw.Close();
         }
     }
 }

@@ -71,6 +71,9 @@
     <Compile Include="Screens\ExamineItemScreen.xaml.cs">
       <DependentUpon>ExamineItemScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\GrayedOutWindow.xaml.cs">
+      <DependentUpon>GrayedOutWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\HelpScreen.xaml.cs">
       <DependentUpon>HelpScreen.xaml</DependentUpon>
     </Compile>
@@ -119,6 +122,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Screens\ExamineItemScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\GrayedOutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -15,18 +15,13 @@ using System.Windows.Shapes;
 namespace CPSC_481_Horizontal_Prototype.Screens
 {
     /// <summary>
-    /// Interaction logic for HelpScreen.xaml
+    /// Interaction logic for GrayedOutWindow.xaml
     /// </summary>
-    public partial class HelpScreen : Window
+    public partial class GrayedOutWindow : Window
     {
-        public HelpScreen()
+        public GrayedOutWindow()
         {
             InitializeComponent();
-        }
-
-        private void btn_cancel_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -93,10 +93,11 @@ namespace CPSC_481_Horizontal_Prototype
 
             else if (btn_help.IsFocused)
             {
+                GrayedOutWindow gw = new GrayedOutWindow();
                 HelpScreen hs = new HelpScreen();
-                hs.Height = SystemParameters.PrimaryScreenHeight * .4;
-                hs.Width = SystemParameters.PrimaryScreenWidth * .4;
+                gw.Show();
                 hs.ShowDialog();
+                gw.Close();
             }
         }
 
@@ -106,23 +107,37 @@ namespace CPSC_481_Horizontal_Prototype
             {
                 if (!focusedTab.OrderTrayEmpty())
                 {
+                    GrayedOutWindow gw = new GrayedOutWindow();
                     LeavingTabScreen warningScreen = new LeavingTabScreen(this);
+                    gw.Show();
                     warningScreen.ShowDialog();
+                    gw.Close();
 
 
                 }
                 if (wantToLeave || focusedTab.OrderTrayEmpty())
                 {
+                    GrayedOutWindow gw = new GrayedOutWindow();
+
                     focusedTab.ClearTray();
                     focusedTab.LoadTray();
                     AddTab at = new AddTab(this, null);
+                    gw.Show();
                     at.ShowDialog();
+                    gw.Close();
+
                 }
             }
             else
             {
+                GrayedOutWindow gw = new GrayedOutWindow();
+
                 Max8TabsWarning mxWarning = new Max8TabsWarning();
+                gw.Show();
+
                 mxWarning.ShowDialog();
+                gw.Close();
+
             }
 
         }
@@ -131,8 +146,13 @@ namespace CPSC_481_Horizontal_Prototype
         {
             if (!focusedTab.OrderTrayEmpty())
             {
+                GrayedOutWindow gw = new GrayedOutWindow();
+
                 LeavingTabScreen warningScreen = new LeavingTabScreen(this);
+                gw.Show();
                 warningScreen.ShowDialog();
+                gw.Close();
+
             }
             if (wantToLeave || focusedTab.OrderTrayEmpty())
             {
@@ -182,8 +202,11 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_payNow_click(object sender, RoutedEventArgs e)
         {
+            GrayedOutWindow gw = new GrayedOutWindow();
             PaymentScreen ps = new PaymentScreen();
+            gw.Show();
             ps.ShowDialog();
+            gw.Close();
 
         }
 

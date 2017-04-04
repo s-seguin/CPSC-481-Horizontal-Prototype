@@ -1,5 +1,2 @@
 ﻿-Add notification help has been called
--send orders to receipts
--remove tabs during session
--send back to welcome screen if no existing tabs
 -find better way to deal with closing the session

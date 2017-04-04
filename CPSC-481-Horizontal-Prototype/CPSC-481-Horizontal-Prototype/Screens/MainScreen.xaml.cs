@@ -16,7 +16,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         #region Attributes
 
-        public UserTab focusedTab { get; private set;}
+        public UserTab focusedTab { get; set;}
         public bool isStartup { get; private set; } = true;
         public ActiveTabs allTabs { get; set; }
         private SolidColorBrush col_tabBlue = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
@@ -270,11 +270,16 @@ namespace CPSC_481_Horizontal_Prototype
            this.Page_Holder.Content = nextPage;
         }
 
-        
 
+
+
+        #endregion
 
         #endregion
 
-        #endregion
+        private void ScrollViewer_ManipulationBoundaryFeedback(object sender, System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

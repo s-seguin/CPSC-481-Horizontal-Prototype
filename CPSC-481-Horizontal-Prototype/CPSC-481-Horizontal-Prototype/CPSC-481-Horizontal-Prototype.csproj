@@ -248,6 +248,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\Images\Drinks\heineken.jpeg" />
+    <Content Include="Resources\Images\Drinks\prairie_pale_ale.jpeg" />
+    <Content Include="Resources\Images\Drinks\west_coast_ipa.jpeg" />
     <Resource Include="Resources\Images\Food\sw_brisket_dip.jpg" />
     <Resource Include="Resources\Images\Food\sw_grilled_cheese.jpg" />
     <Resource Include="Resources\Images\Food\sw_montreal_reuben.jpg" />
@@ -326,9 +329,7 @@
     <Resource Include="Resources\Images\Drinks\makers_mark.png" />
     <Resource Include="Resources\Images\Drinks\molson_canadian.jpeg" />
     <Content Include="Resources\Images\Drinks\jager.jpeg" />
-    <Content Include="Resources\Images\Drinks\prairie_pale_ale.jpeg" />
     <Resource Include="Resources\Images\Drinks\rustic_red.jpeg" />
-    <Resource Include="Resources\Images\Drinks\west_coast_ipa.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -52,29 +52,31 @@ namespace CPSC_481_Horizontal_Prototype
             wp_gasLamps.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpeg"));
 
             //Init Canadian Brewed
-            wp_domestic.Children.Add(new MenuItem_Control("Big Rock \nGrasshopper", canadianPrice, "", path + "grasshopper.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Big Rock \nGrasshopper", canadianPrice, "Truly a home grown, honest-to-goodness Albertan beer. A light touch of hops gives the beer a crisp finish, balancing its soft sweetness and texture with fruity or citrusy notes", path + "grasshopper.jpeg"));
 
-            wp_domestic.Children.Add(new MenuItem_Control("Big Rock \nTraditional Ale", canadianPrice, "" , path + "traditional_ale.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Big Rock \nTraditional Ale", canadianPrice, "Calgary’s original craft beer, a deep copper colour with a blend of caramel and black hops" , path + "traditional_ale.jpeg"));
 
-            wp_domestic.Children.Add(new MenuItem_Control("Last Best IPA", canadianPrice, "", path + "last_best_ipa.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Last Best IPA", canadianPrice, "A raw and unfiltered IPA showcasing the tropical and citrusy notes of the Mosaic Hops.This is a well balanced 4 malt blend.", path + "last_best_ipa.jpeg"));
 
-            wp_domestic.Children.Add(new MenuItem_Control("Tool Shed \nStar Cheek IPA", canadianPrice, "", path + "star_cheek.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Tool Shed \nStar Cheek IPA", canadianPrice, "This India pale ale is hoppy, bold and citrusy, yet clean and crisp. These hops don’t smack you in the face, they tempt you to experience their complex profile.", path + "star_cheek.jpeg"));
 
-            wp_domestic.Children.Add(new MenuItem_Control("Village Blacksmith", canadianPrice, "", path + "village_blacksmith.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Village Blacksmith", canadianPrice, "A distinctly dark and flavourful ale that carefully balances the sweet flavours of the dark malts with the bitterness of the hopping.Citrus aromas balanced with roasted espresso, chocolate and licorice.", path + "village_blacksmith.jpeg"));
 
-            wp_domestic.Children.Add(new MenuItem_Control("Wild Rose \nRaspberry", canadianPrice, "", path + "wraspberry_ale.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Wild Rose \nRaspberry", canadianPrice, "Wraspberry Ale continues a centuries-long tradition by using raspberries to give a tart edge to this smooth, refreshing ale.", path + "wraspberry_ale.jpeg"));
 
-            wp_domestic.Children.Add(new MenuItem_Control("Alexander Keith's", canadianPrice, "", path + "alexander_keiths.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Alexander Keith's", canadianPrice, "Smooth golden ale with a distinct taste. Slight sweetness and a bitter finish.", path + "alexander_keiths.jpeg"));
 
-            wp_domestic.Children.Add(new MenuItem_Control("Molson \nCanadian", canadianPrice, "", path + "molson_canadian.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Molson \nCanadian", canadianPrice, "A beer made from Canadian water, prairie barley and no preservatives. This is one clean, crisp beer.", path + "molson_canadian.jpeg"));
 
-            wp_domestic.Children.Add(new MenuItem_Control("Phillips Blue Buck", canadianPrice, "", path + "blue_buck.jpeg"));
+            wp_domestic.Children.Add(new MenuItem_Control("Phillips Blue Buck", canadianPrice, "A deep amber coloured beer, the Blue Buck has a crisp finish featuring a delicate hop aroma.", path + "blue_buck.jpeg"));
 
 
             //Init Of the World
-            wp_otw.Children.Add(new MenuItem_Control("Guinness Stout", otwPrice, "", path + "guinness_stout.jpeg"));
+            wp_otw.Children.Add(new MenuItem_Control("Guinness Stout", otwPrice, "Brewed the same way since 1759 at St. James’s Gate Brewery in Dublin.Velvet black with a thick creamy head.", path + "guinness_stout.jpeg"));
 
-            wp_otw.Children.Add(new MenuItem_Control("Strongbow Cider", otwPrice, "", path + "strongbow_cider.jpeg"));
+            wp_otw.Children.Add(new MenuItem_Control("Strongbow Cider", otwPrice, "Bold cider flavour from the fermented cider apples followed by a distinct fresh apple taste from the culinary apples.", path + "strongbow_cider.jpeg"));
+
+            wp_otw.Children.Add(new MenuItem_Control("Heineken Brewlock", otwPrice, "A patented BrewLock system relies on natural atmospheric pressure versus propellant gasses. Using only water, malted barley, and hops. The resin from the female hop flower cones is used to help balance the sweetness of the barley with a refreshing bitterness.", path + "heineken.jpeg"));
 
 
             //Init Irish Whiskey

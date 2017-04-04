@@ -46,11 +46,14 @@ namespace CPSC_481_Horizontal_Prototype
 
             //change price format
             string tempPrice = this.price.TrimStart('$');
+            if (tempPrice.Contains('/'))
+                tempPrice = tempPrice.Replace("/oz.", "");
             double priceInt = Convert.ToDouble(tempPrice);
+            //double priceInt = 0.00;
 
             //change item name to fit on one line
             string name1 = Regex.Replace(this.name, @"\n", "");
-
+            
             //initialize MenuItem object
             mi = new Classes.MenuItem(name1, this.getDesription(), priceInt);
         }

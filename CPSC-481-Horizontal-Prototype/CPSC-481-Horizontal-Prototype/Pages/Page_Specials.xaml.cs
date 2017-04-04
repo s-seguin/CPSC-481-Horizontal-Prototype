@@ -22,6 +22,9 @@ namespace CPSC_481_Horizontal_Prototype
     {
         string path = "../../Resources/Images/Drinks/";
         string foodPath = "../../Resources/Images/Food/";
+        List<string> wingFlavors = new List<string> { "Mango Chipotle", "Salt & Vinegar", "Parmesan Herb", "Dill Pickle", "Salt & Pepper", "Ketchup", "Asian Sweet Ginger", "Hot Teriyaki", "Baja Chipotle", "Buffalo Bleu Cheese",
+                "Sweet Chili", "Crown Royal Whiskey BBQ", "Spicy Parmesan", "Honey Garlic", "Teriyaki", "Red Cream Ale", "Poblano Chili and Lime", "Red Thai", "Sweet Szechwan", "Honey Hot", "Sri Lanken",
+                "Philippine Adobo Pepper", "Buffalo Mild", "Buffalo Medium", "Buffalo Hot", "Buffalo Hotter" };
 
         public Page_Specials()
         {
@@ -29,6 +32,7 @@ namespace CPSC_481_Horizontal_Prototype
             DateTime dt = DateTime.Now;
             string day = dt.DayOfWeek.ToString();
             //string day = "Saturday";
+            wingFlavors.Sort();
 
             switch (day)
             {
@@ -91,7 +95,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpeg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Wings", "$2.40", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip\n\nCome in orders of 10.", foodPath + "wings_special.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Chicken Wings", "$2.40", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip\n\nCome in orders of 10.", foodPath + "wings_special.jpg", wingFlavors));
         }
 
         private void tueSpecials()

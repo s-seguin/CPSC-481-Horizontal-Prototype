@@ -22,12 +22,10 @@
         <Button x:Name="btn_addToTray" Content="Add to tray" HorizontalAlignment="Left" Margin="301,252,0,0" VerticalAlignment="Top" Width="153" Height="30"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_addToTray_Click" Background="#FF00BB97" Foreground="White" FontFamily="Segoe UI Light" FontSize="14"/>
         <TextBlock x:Name="tb_description" HorizontalAlignment="Left" Height="115" Margin="168,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus mi vel malesuada sollicitudin. Suspendisse in cursus ex. Cras placerat in diam sodales pellentesque. Nulla lacinia nunc commodo neque tristique varius. Fusce iaculis euismod mattis. In quis lacus elit. Phasellus vitae placerat mi."/>
         <Button x:Name="btn_close" Content="&#xE10A;"  VerticalAlignment="Top" HorizontalAlignment="Right" Width="30" Height="30" FontFamily="Segoe UI Symbol" FontSize="18.667" BorderBrush="{x:Null}" Background="{x:Null}" Foreground="#FFEE516C" Click="btn_close_Click"/>
-        <Label x:Name="lbl_sides" Content="Side:" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="16" Visibility="Collapsed"/>
-        <ComboBox x:Name="dd_sides" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="120" Margin="10,252,0,0" SelectionChanged="dd_sides_SelectionChanged" Visibility="Collapsed">
-            <ComboBoxItem IsSelected="True">Fries</ComboBoxItem>
-            <ComboBoxItem>Salad</ComboBoxItem>
-        </ComboBox>        
-        <Label x:Name="lbl_itemName" Content="Gas Lamp - Nut Brown" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Foreground="#FF344D61" FontFamily="Segoe UI Light" FontSize="16"/>
+        <Label x:Name="lbl_sides" Content="Flavors:" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="16" Visibility="Collapsed"/>
+        <ComboBox x:Name="dd_sides" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="120" Margin="10,252,0,0" SelectionChanged="dd_sides_SelectionChanged" Visibility="Collapsed" />
+
+            <Label x:Name="lbl_itemName" Content="Gas Lamp - Nut Brown" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" Foreground="#FF344D61" FontFamily="Segoe UI Light" FontSize="16"/>
         <Label x:Name="lbl_itemPrice" Content="$5.25" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="82,170,0,0" VerticalAlignment="Top" FontFamily="Segoe UI Light" Background="#FF00BB97" Foreground="White" Width="62" Opacity="0.75"/>
 
 

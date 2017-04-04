@@ -194,8 +194,11 @@ namespace CPSC_481_Horizontal_Prototype
             ms.focusedTab.PlaceOrder();
             ms.focusedTab.ClearTray();
 
-            lbl_queueTotal.Content = "Total: $0.00";
             showQueue(false);
+
+            lbl_queueTotal.Content = "Total: $0.00";
+            ClosingScreen cs = new ClosingScreen(2000, "Your order has been successfully placed!");
+            
         }
 
         #endregion

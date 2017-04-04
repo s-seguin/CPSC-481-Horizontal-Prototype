@@ -26,5 +26,17 @@ namespace CPSC_481_Horizontal_Prototype.Screens
             System.Threading.Thread.Sleep(time);
             this.Close();
         }
+
+        public ClosingScreen(int time, string txt)
+        {
+            InitializeComponent();
+            this.lbl_warning.Content = "Your order has been placed!";
+            this.lbl_warning.VerticalAlignment = VerticalAlignment.Center;
+            this.lbl_warning.HorizontalAlignment = HorizontalAlignment.Center;
+            this.Height = 250;
+            this.Show();
+            System.Threading.Thread.Sleep(time);
+            this.Close();
+        }
     }
 }

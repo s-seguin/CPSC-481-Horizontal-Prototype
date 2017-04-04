@@ -26,7 +26,10 @@ namespace CPSC_481_Horizontal_Prototype
 
             string starters_price = "$15.00";
             string desserts_price = "$8.50";
-
+            List<string> wingFlavors = new List<string> { "Mango Chipotle", "Salt & Vinegar", "Parmesan Herb", "Dill Pickle", "Salt & Pepper", "Ketchup", "Asian Sweet Ginger", "Hot Teriyaki", "Baja Chipotle", "Buffalo Bleu Cheese",
+                "Sweet Chili", "Crown Royal Whiskey BBQ", "Spicy Parmesan", "Honey Garlic", "Teriyaki", "Red Cream Ale", "Poblano Chili and Lime", "Red Thai", "Sweet Szechwan", "Honey Hot", "Sri Lanken",
+                "Philippine Adobo Pepper", "Buffalo Mild", "Buffalo Medium", "Buffalo Hot", "Buffalo Hotter" };
+            wingFlavors.Sort();
             string path = "../../Resources/Images/Food/";
 
             //init Starters
@@ -38,7 +41,7 @@ namespace CPSC_481_Horizontal_Prototype
             wp_starters.Children.Add(new MenuItem_Control("Little Pub Sliders", starters_price, "house-made patties, bacon, cheddar cheese, pan fried mushrooms, grilled onions, lettuce, tomato, red onion, pickle, signature burger sauce", path + "little_pub_sliders.jpg"));
             wp_starters.Children.Add(new MenuItem_Control("Truffle Fries", "$11.00", "house cut fries, truffle oil, green onion, Parmesan herb spice, fresh grated Parmesan\nDip choice: garlic aioli, greek yogurt ranch, chipotle mayo, sriracha balsamic ketchup", path + "truffle_fries.jpg"));
             wp_starters.Children.Add(new MenuItem_Control("Pickle Spears", "$14.50", "flash fried seasoned dill pickle quarters, Southwest chipotle dip", path + "pickle_spears.jpg"));
-            wp_starters.Children.Add(new MenuItem_Control("Chicken Wings", starters_price, "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house - made Greek yogurt ranch or creamy bleu cheese dip", path + "wings.jpg"));
+            wp_starters.Children.Add(new MenuItem_Control("Chicken Wings", starters_price, "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house - made Greek yogurt ranch or creamy bleu cheese dip", path + "wings.jpg", wingFlavors));
 
             //init Nachos & Platters
             wp_nachos.Children.Add(new MenuItem_Control("Loaded Nachos", "$23.00", "tri-coloured tortilla chips, Monterey jack, mozzarella, Canadian cheddar cheese, tomato, black olives, red and green onion, chopped peppers, jalapeños, salsa, sour cream", path + "loaded_nachos.jpg"));

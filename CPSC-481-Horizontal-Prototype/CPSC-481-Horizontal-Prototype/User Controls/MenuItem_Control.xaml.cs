@@ -26,6 +26,8 @@ namespace CPSC_481_Horizontal_Prototype
         String price { get; set; }
         String description { get; set; }
 
+        List<string> cbOptions { get; set; }
+
         private MainScreen ms;
         public Classes.MenuItem mi;
 
@@ -57,6 +59,32 @@ namespace CPSC_481_Horizontal_Prototype
             mi = new Classes.MenuItem(name1, this.getDesription(), priceInt);
         }
 
+
+        //wing menu item because it contains flavors
+        public MenuItem_Control(string name, string price, string description, string path, List <string> cbOptions)
+        {
+            InitializeComponent();
+            this.lbl_itemName.Content = name;
+            this.name = name;
+            this.lbl_itemPrice.Content = price;
+            this.price = price;
+            this.description = description;
+            this.background.ImageSource = new BitmapImage(new Uri(path, UriKind.Relative));
+            this.cbOptions = cbOptions;
+
+            //change price format
+            string tempPrice = this.price.TrimStart('$');
+            if (tempPrice.Contains('/'))
+                tempPrice = tempPrice.Replace("/oz.", "");
+            double priceInt = Convert.ToDouble(tempPrice);
+
+            //change item name to fit on one line
+            string name1 = Regex.Replace(this.name, @"\n", "");
+
+            //initialize MenuItem object
+            mi = new Classes.MenuItem(name1, this.getDesription(), priceInt);
+        }
+
         public void setDescription(string descr)
         {
             this.description = descr;
@@ -77,10 +105,21 @@ namespace CPSC_481_Horizontal_Prototype
             ExamineItemScreen eis = new ExamineItemScreen(mi);
 
             //update name, price, description and image of template
-            eis.lbl_itemName.Content = mi.name;
+            eis.lbl_itemName.Content = this.name;
             eis.lbl_itemPrice.Content = this.price;
             eis.tb_description.Text = this.getDesription();
             eis.image.Source = background.ImageSource;
+
+            if (this.cbOptions != null)
+            {
+                for (int i =0; i < this.cbOptions.Count; i++)
+                {
+                    eis.dd_sides.Items.Add(cbOptions[i]);
+                }
+                eis.dd_sides.SelectedIndex = 0;
+                eis.lbl_sides.Visibility = Visibility.Visible;
+                eis.dd_sides.Visibility = Visibility.Visible;
+            }
 
             //change overlay dimensions
             eis.Height = SystemParameters.PrimaryScreenHeight * .4;

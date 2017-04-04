@@ -65,7 +65,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
             {
                 //that was the last tab
                 this.Close();
-                ClosingScreen cs = new ClosingScreen(2000);
+                ClosingScreen cs = new ClosingScreen(3000);
                 ms.Close();
             }
             

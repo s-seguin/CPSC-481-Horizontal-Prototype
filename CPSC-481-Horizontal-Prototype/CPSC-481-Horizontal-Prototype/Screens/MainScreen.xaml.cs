@@ -270,11 +270,16 @@ namespace CPSC_481_Horizontal_Prototype
            this.Page_Holder.Content = nextPage;
         }
 
-        
 
+
+
+        #endregion
 
         #endregion
 
-        #endregion
+        private void ScrollViewer_ManipulationBoundaryFeedback(object sender, System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

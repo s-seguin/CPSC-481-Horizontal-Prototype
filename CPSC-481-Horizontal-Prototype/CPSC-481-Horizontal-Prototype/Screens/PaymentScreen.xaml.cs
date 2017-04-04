@@ -59,15 +59,16 @@ namespace CPSC_481_Horizontal_Prototype.Screens
                 ms.lbl_tabName.Content = ut.ToString();
                 ms.grid_summary.Background = ut.GetTabButton().Background;
                 ms.focusedTab = ut;
+                this.Close();
             }
             else
             {
                 //that was the last tab
-                ClosingScreen cs = new ClosingScreen(5000);
-                MainScreen mainScreen = new MainScreen();
+                this.Close();
+                ClosingScreen cs = new ClosingScreen(2000);
                 ms.Close();
             }
-            this.Close();
+            
         }
 
         private void btn_cash_Click(object sender, RoutedEventArgs e)

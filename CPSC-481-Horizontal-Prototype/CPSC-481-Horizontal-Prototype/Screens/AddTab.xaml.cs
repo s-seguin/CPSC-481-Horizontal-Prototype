@@ -28,12 +28,9 @@ namespace CPSC_481_Horizontal_Prototype
         {
             InitializeComponent();
             
-            this.Height = SystemParameters.PrimaryScreenHeight / 2;
+            // this.Height = SystemParameters.PrimaryScreenHeight / 2; // Important to keep height to the same as designed
             this.Width = SystemParameters.PrimaryScreenWidth / 2;
-
-            btn_submit.Width = SystemParameters.PrimaryScreenWidth / 4;
-            btn_cancel.Width = SystemParameters.PrimaryScreenWidth / 4;
-            
+ 
             this.ms = ms;
             this.homeScreen = hs;
             this.txtbox_name.Focus();

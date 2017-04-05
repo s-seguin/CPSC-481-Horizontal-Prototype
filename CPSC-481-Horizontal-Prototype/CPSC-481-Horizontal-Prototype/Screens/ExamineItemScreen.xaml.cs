@@ -24,6 +24,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         private Classes.MenuItem mi;
         public ExamineItemScreen (Classes.MenuItem mi)
         {
+
             //this.ms = ms;
             this.mi = mi;
             InitializeComponent();

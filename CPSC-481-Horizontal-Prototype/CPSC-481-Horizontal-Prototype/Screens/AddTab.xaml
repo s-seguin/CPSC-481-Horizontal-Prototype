@@ -6,29 +6,21 @@
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
         mc:Ignorable="d"
 
-        Title="AddTab" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen">
-    <Grid Background="#FF213F57">
-        <WrapPanel x:Name="input_name" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Stretch" Width="700"  Margin="10,0">
-            <Label x:Name="lbl_name"  Content="Name:&#xA;" HorizontalAlignment="Left" VerticalAlignment="Center" VerticalContentAlignment="Center" Width="170" Height="100" FontSize="48" Foreground="#FFE2E5E9" FontFamily="Segoe UI Light"/>
-            <TextBox x:Name="txtbox_name" HorizontalAlignment="Right" Height="100" TextWrapping="Wrap" VerticalAlignment="Center" Width="525" TextChanged="textBox_TextChanged" FontSize="64" Background="#FFE6E5E8" BorderBrush="{x:Null}"/>
+        Title="AddTab" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" Background="{x:Null}" Foreground="{x:Null}">
+    <Grid Background="White">
+        <Label x:Name="lbl_name"  Content="Please enter your name below" HorizontalAlignment="Stretch"   FontSize="24" Foreground="#FF536472" FontFamily="Segoe UI Light" Margin="25,95,25,0" RenderTransformOrigin="0.469,0.902" VerticalAlignment="Top" Height="43"/>
+        <TextBox x:Name="txtbox_name" HorizontalAlignment="Stretch" Height="62" TextWrapping="Wrap" VerticalAlignment="Center"  TextChanged="textBox_TextChanged" FontSize="36" Background="{x:Null}" BorderBrush="#FF00BB97" Foreground="#FF536472" BorderThickness="0,0,0,2" Margin="30,0" SelectionBrush="#FF00BB97" FontFamily="Segoe UI Semilight"/>
+        <WrapPanel x:Name="input_name" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Stretch"   Margin="10,0">
+
         </WrapPanel>
 
-        <Grid DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Height="100">
-            <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="100"  Width="400" Click="btn_cancel_Click"  Background="#FF536472" Foreground="#FFB81A35" BorderBrush="{x:Null}" FontSize="26.667" RenderTransformOrigin="0.046,1.474"/>
-            <Button x:Name="btn_submit" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="100"  Width="400" Background="#FF536472" Foreground="#FF00BB97" BorderBrush="{x:Null}" FontSize="26.667" Click="btn_submit_Click"/>
+        <Button x:Name="btn_cancel" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="52"  Width="160" Click="btn_cancel_Click"  Background="White" Foreground="#FF213F57" BorderBrush="#FF213F57" FontSize="20" Margin="210,0,0,52" BorderThickness="1"/>
+        <Button x:Name="btn_submit" Content="Submit" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="52"  Width="160" Background="#FF00BB97" Foreground="White" BorderBrush="{x:Null}" FontSize="20" Click="btn_submit_Click" Margin="25,0,0,52" BorderThickness="0"/>
+        <Grid HorizontalAlignment="Stretch" Height="70" VerticalAlignment="Top" Background="#FF213F57">
+            <Label x:Name="lbl_title" Content="Add Tab" HorizontalAlignment="Left"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="34" Foreground="White" Background="{x:Null}" Margin="25,0,0,0" Height="70"/>
         </Grid>
-        <Label x:Name="lbl_title" Content="New Tab" HorizontalAlignment="Stretch"  HorizontalContentAlignment="Center" VerticalAlignment="Top" FontSize="64" Foreground="White" FontFamily="Segoe UI Light" Background="{x:Null}"/>
-        <Separator HorizontalAlignment="Stretch" Height="1" Margin="0,0,0,100" VerticalAlignment="Bottom" Background="#FF344D61"/>
-        <Separator HorizontalAlignment="Center" Height="1" VerticalAlignment="Bottom" Width="100" Background="#FF344D61" Margin="400,0,300,0">
-            <Separator.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Separator.RenderTransform>
-        </Separator>
+        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Stretch" Height="1" Margin="30,143,400,0" VerticalAlignment="Top" />
+
 
     </Grid>
 </Window>

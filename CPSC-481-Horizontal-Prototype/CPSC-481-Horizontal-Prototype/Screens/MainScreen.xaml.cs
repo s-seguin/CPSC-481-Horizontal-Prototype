@@ -43,11 +43,12 @@ namespace CPSC_481_Horizontal_Prototype
             InitializeComponent();
 
             colorArray = new SolidColorBrush[5];
-            colorArray[0] = new SolidColorBrush(Color.FromRgb(0xff, 0xc1, 0x00));
-            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xc3, 0x56, 0xea));
-            colorArray[2] = new SolidColorBrush(Color.FromRgb(0x8f, 0xf2, 0x43));
-            colorArray[3] = new SolidColorBrush(Color.FromRgb(0x71, 0xae, 0xf2));
-            colorArray[4] = new SolidColorBrush(Color.FromRgb(0xea, 0x56, 0x45));
+            colorArray[2] = new SolidColorBrush(Color.FromRgb(0x77, 0xdd, 0x77)); // green
+            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xa4, 0x4b, 0xfc)); // purple
+            colorArray[0] = new SolidColorBrush(Color.FromRgb(0xff, 0xa5, 0x00)); // orange
+            colorArray[3] = new SolidColorBrush(Color.FromRgb(0x71, 0xae, 0xf2)); // light blue
+            colorArray[4] = new SolidColorBrush(Color.FromRgb(0xea, 0x56, 0x45)); // red
+         
 
             this.Hide();
         }
@@ -292,7 +293,7 @@ namespace CPSC_481_Horizontal_Prototype
             newTabThickness += 75;
             btn.Margin = new Thickness(0, newTabThickness, 0, 0);
 
-            int index = allTabs.GetTabs().Count % 5;
+            int index = allTabs.GetTabs().Count % colorArray.Length;
             btn.Background = colorArray[index];
 
             /*if (allTabs.GetTabs().Count % 2 == 0)

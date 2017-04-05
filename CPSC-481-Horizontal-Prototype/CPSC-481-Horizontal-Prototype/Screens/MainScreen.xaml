@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype"
         mc:Ignorable="d"
-        Title="Specials" Height="900" Width="1980"  WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
+        Title="Specials" Height="1080" Width="1980"  WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
     <Window.Resources>
         <!-- The following code is to remove the hover effect on buttons -->
         <!-- Source: http://mark-dot-net.blogspot.ca/2007/07/creating-custom-wpf-button-template-in.html -->
@@ -122,6 +122,7 @@
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,108" To="0,0,0,-292" DecelerationRatio=".9" Duration="0:0:1" />
         </Storyboard>
 
+        <!--Tab Animations-->
         <Storyboard x:Key="sbShowTab" >
             <DoubleAnimation Storyboard.TargetProperty="Width" From="75" To="200" DecelerationRatio=".9" Duration="0:0:1" Completed="Tab_Expanded"/>
         </Storyboard>
@@ -133,15 +134,24 @@
     
 <Viewbox Stretch="Fill" >
 
-        <Grid Name="grid_tryingshit">
-            <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="75" Background="#FF122331" ClipToBounds="False">
+        <Grid Name="grid_addTabs">
+            <StackPanel x:Name="tabPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="1080" Width="75" Background="#FF122331" ClipToBounds="False">
                 <Image x:Name="logo" Height="75" Width="75" Source="/Resources/Images/logo_sml.png"/>
                 <Button x:Name="btn_addTab" Width="75" BorderThickness="0,0,0,0"  Height="75" VerticalContentAlignment="Center" Content="+" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_addTab_Click" Background="#FF00b694" RenderTransformOrigin="0.547,0.727"/>
             </StackPanel>
+            
+            <!-- Exit button-->
+            <Button x:Name="btn_exit" Width="55" Margin="10" Height="75" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="btn_exit_Click" Style="{StaticResource Special_btn}">
+                <Button.Background >
+                    <ImageBrush ImageSource="/Resources/Images/btn_exit.png" />
+                </Button.Background>
+            </Button>
+
             <Grid x:Name="main" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="75,0,0,0" Background="#FFF4F4F4">
                 <local:Page_Holder x:Name="Page_Holder" VerticalAlignment="Top" Margin="10,10,10,118" HorizontalAlignment="Center" />
                 <Rectangle Fill="#FF213F57" HorizontalAlignment="Stretch" Height="108" VerticalAlignment="Bottom" StrokeThickness="0" Margin="10,0,350,0" RadiusX="3" RadiusY="3" />
 
+                <!-- Page Navigation buttons -->
                 <WrapPanel HorizontalAlignment="Center" Height="104"  VerticalAlignment="Bottom" Width="420" Margin="268,0,529,0">
 
                     <Button x:Name="btn_specials" 
@@ -207,6 +217,7 @@
                     </Grid>
                 </StackPanel>
 
+                <!-- Bottom Right Corner Schtuff-->
                 <Grid x:Name="grid_summary" HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="340" Background="#FFf2ab57">
                     <Label x:Name="lbl_tabName" Content="" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Height="54" Width="195" FontSize="21" Foreground="White" Margin="5,0,0,0"/>
                     <Separator Width="200"  HorizontalAlignment="Left" Margin="10,0,0,0" Background="#FFECECEC"/>

@@ -42,9 +42,13 @@ namespace CPSC_481_Horizontal_Prototype
             hs.Show();
             InitializeComponent();
 
-            colorArray = new SolidColorBrush[8];
-            colorArray[0] = new SolidColorBrush(Color.FromRgb(0xff, 0x69, 0x61));
-            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xf2, 0xab, 0x57));
+            colorArray = new SolidColorBrush[5];
+            colorArray[2] = new SolidColorBrush(Color.FromRgb(0x77, 0xdd, 0x77)); // green
+            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xa4, 0x4b, 0xfc)); // purple
+            colorArray[0] = new SolidColorBrush(Color.FromRgb(0xff, 0xa5, 0x00)); // orange
+            colorArray[3] = new SolidColorBrush(Color.FromRgb(0x71, 0xae, 0xf2)); // light blue
+            colorArray[4] = new SolidColorBrush(Color.FromRgb(0xea, 0x56, 0x45)); // red
+         
 
             this.Hide();
         }
@@ -99,7 +103,7 @@ namespace CPSC_481_Horizontal_Prototype
             }
         }
 
-        public void switch_btn_bg(Button focusedbtn, string btnName)
+        private void switch_btn_bg(Button focusedbtn, string btnName)
         {
             string url = "../../Resources/Images/btn_" + btnName + "_down_bg.png";
             focusedbtn.Background = new ImageBrush(new BitmapImage(new Uri(url, UriKind.Relative)));
@@ -252,6 +256,20 @@ namespace CPSC_481_Horizontal_Prototype
             showQueue(false);
         }
 
+        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        {
+            bool allEmpty = true;
+            foreach (UserTab ut in allTabs.GetTabs())
+            {
+                if (ut.amountOwing != 0) allEmpty = false;
+            }
+            if (allEmpty)
+            {
+                MainScreen ms = new MainScreen();
+                this.Close();
+            }
+        }
+
         #endregion
 
         #region Helper Functions
@@ -264,7 +282,7 @@ namespace CPSC_481_Horizontal_Prototype
         {
             btn = CreateTabButton(tab.ToString());
             tab.SetTabButton(btn);
-            grid_tryingshit.Children.Add(btn);
+            grid_addTabs.Children.Add(btn);
             lbl_tabName.Content = tab.ToString();
             grid_summary.Background = tab.GetTabButton().Background;
 
@@ -288,10 +306,14 @@ namespace CPSC_481_Horizontal_Prototype
             btn.BorderThickness = new Thickness(0, 0, 0, 0);
             newTabThickness += 75;
             btn.Margin = new Thickness(0, newTabThickness, 0, 0);
-            if (allTabs.GetTabs().Count % 2 == 0)
+
+            int index = allTabs.GetTabs().Count % colorArray.Length;
+            btn.Background = colorArray[index];
+
+            /*if (allTabs.GetTabs().Count % 2 == 0)
                 btn.Background = colorArray[0];
             else
-                btn.Background = colorArray[1];
+                btn.Background = colorArray[1];*/
 
             btn.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
             btn.Content = userName;
@@ -333,12 +355,6 @@ namespace CPSC_481_Horizontal_Prototype
         }
 
 
-
-
-        #endregion
-
-        #endregion
-
         private void ScrollViewer_ManipulationBoundaryFeedback(object sender, System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e)
         {
             e.Handled = true;
@@ -357,5 +373,9 @@ namespace CPSC_481_Horizontal_Prototype
             else { btn.Content = tabContent; }
             //btn.Margin = new Thickness(0, 0, 0, 0);
         }
+
+        #endregion
+
+        #endregion
     }
 }

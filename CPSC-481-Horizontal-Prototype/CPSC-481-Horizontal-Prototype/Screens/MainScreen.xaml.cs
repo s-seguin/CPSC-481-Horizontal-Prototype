@@ -26,13 +26,10 @@ namespace CPSC_481_Horizontal_Prototype
         private SolidColorBrush col_tabOrange = new SolidColorBrush(Color.FromArgb(0xFF, 0xf2, 0xab, 0x57)); //FFf2ab57
         public bool wantToLeave = false;
         private bool trayOpen;
-<<<<<<< HEAD
         private Button btn;
         private int newTabThickness = 75;
-=======
         private String currentPage;
         private SolidColorBrush[] colorArray;
->>>>>>> ca6ac7423bb172a11713a5a6cc9c2780e3bd86bf
 
         #endregion
 
@@ -88,6 +85,7 @@ namespace CPSC_481_Horizontal_Prototype
             if (btn_specials.IsFocused) {
                 Switcher.Switch(new Page_Specials());
                 currentPage = "specials";
+                btn_specials.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_specials_down_bg.png", UriKind.Relative)));
             }  else if (btn_drinks.IsFocused) {
                 Switcher.Switch(new Page_Drinks());
                 currentPage = "drinks";

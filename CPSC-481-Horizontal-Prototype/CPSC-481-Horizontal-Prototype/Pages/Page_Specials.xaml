@@ -71,13 +71,13 @@
             <Button x:Name="btn_food" Style="{StaticResource InformButton}" Click="navButton_Click">Food</Button>
         </StackPanel>
 
-        <DockPanel Width="700" Height="200" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="0,20,250,0">
-            <Border CornerRadius="6" BorderBrush="Gray" Background="LightGray" BorderThickness="2" DockPanel.Dock="Top">
+        <DockPanel Width="700" Height="200" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="0,25,250,0">
+            <Border CornerRadius="5" BorderBrush="#FF344D61" Background="White" BorderThickness="5" DockPanel.Dock="Top">
                 <StackPanel>
-                    <Label Content="$3.99 HAPPY HOUR" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="32" Focusable="False" />
-                    <Label Content="14 oz. Lamp Draught | Domestic Bottles |" HorizontalAlignment="Center" Foreground="#FF288DA7" FontSize="28" />
-                    <Label Content="Domestic Caesars | 6 oz. House Wine | Highball" HorizontalAlignment="Center" Foreground="#FF288DA7" FontSize="28" />
-                    <Label Content="MONDAY TO FRIDAY 2PM-6PM AND 4PM-6PM ON WEEKENDS" HorizontalAlignment="Center" Foreground="#FF288DA7" FontSize="24" />
+                    <Label Content="$3.99 HAPPY HOUR" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontSize="32" Focusable="False" Width="696" Background="#FF344D61" FontWeight="Bold" Margin="-1,-1,-1,0" />
+                    <Label Content="14 oz. Lamp Draught | Domestic Bottles |" HorizontalAlignment="Center" Foreground="#FF344D61" FontSize="28" />
+                    <Label Content="Domestic Caesars | 6 oz. House Wine | Highball" HorizontalAlignment="Center" Foreground="#FF344D61" FontSize="28" />
+                    <Label Content="MONDAY TO FRIDAY 2PM-6PM AND 4PM-6PM ON WEEKENDS" HorizontalAlignment="Center" Foreground="#FF344D61" FontSize="24" />
                 </StackPanel>
             </Border>
         </DockPanel>
@@ -85,11 +85,11 @@
         <ScrollViewer x:Name="sv_specials" HorizontalAlignment="Stretch" Margin="0,240,0,0" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible">
             <StackPanel >
                 <Label x:Name="lbl_info" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Visibility="Collapsed" />
-                
+
                 <!-- Drink specials-->
                 <Label x:Name="header_drinks" Content="Drinks" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
                 <WrapPanel x:Name="wp_drinks" Orientation="Horizontal" Margin="20,0,200,20"/>
-                
+
                 <!-- Food specials-->
                 <Label x:Name="header_food" Content="Food" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,0,0,0"/>
                 <WrapPanel x:Name="wp_food" Orientation="Horizontal" Margin="20,0,200,20"/>

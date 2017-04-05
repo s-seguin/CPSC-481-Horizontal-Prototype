@@ -101,7 +101,8 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_viewItem_Click(object sender, RoutedEventArgs e)
         {
-
+            GrayedOutWindow gw = new GrayedOutWindow();
+            gw.Show();
             ExamineItemScreen eis = new ExamineItemScreen(mi);
 
             //update name, price, description and image of template
@@ -127,6 +128,7 @@ namespace CPSC_481_Horizontal_Prototype
             eis.Height = SystemParameters.PrimaryScreenHeight * .4;
             eis.Width = SystemParameters.PrimaryScreenWidth * .4;
             eis.ShowDialog();
+            gw.Close();
         }
 
 

@@ -19,7 +19,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         #region Attributes
 
-        public UserTab focusedTab { get; set;}
+        public UserTab focusedTab { get; set; }
         public bool isStartup { get; private set; } = true;
         public ActiveTabs allTabs { get; set; }
         private SolidColorBrush col_tabBlue = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
@@ -28,7 +28,6 @@ namespace CPSC_481_Horizontal_Prototype
         private bool trayOpen;
         private Button btn;
         private int newTabThickness = 75;
-        private String currentPage;
         private SolidColorBrush[] colorArray;
 
         #endregion
@@ -70,7 +69,7 @@ namespace CPSC_481_Horizontal_Prototype
             // set current page to speacials and focus speacials button
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
-            btn_specials.Focus();
+            switch_btn_bg(btn_specials, "specials");
             currentPage = "specials";
 
         }
@@ -84,38 +83,39 @@ namespace CPSC_481_Horizontal_Prototype
 
             if (btn_specials.IsFocused) {
                 Switcher.Switch(new Page_Specials());
-                currentPage = "specials";
-                btn_specials.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_specials_down_bg.png", UriKind.Relative)));
-            }  else if (btn_drinks.IsFocused) {
+                switch_btn_bg(btn_specials, "specials");
+                //btn_specials.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_specials_down_bg.png", UriKind.Relative)));
+            } else if (btn_drinks.IsFocused) {
                 Switcher.Switch(new Page_Drinks());
-                currentPage = "drinks";
+                switch_btn_bg(btn_drinks,"drinks");
             } else if (btn_food.IsFocused) {
                 Switcher.Switch(new Page_Food());
-                currentPage = "food";
+                switch_btn_bg(btn_food, "food");
             } else if (btn_help.IsFocused) {
                 GrayedOutWindow gw = new GrayedOutWindow();
                 HelpScreen hs = new HelpScreen();
-
-                // make sure that the last active page still has its button focused
-                switch (currentPage)
-                {
-                    case "specials":
-                        btn_specials.Focus();
-                        break;
-                    case "drinks":
-                        btn_drinks.Focus();
-                        break;
-                    case "food":
-                        btn_food.Focus();
-                        break;
-                    default:
-                        // should be an error message here...
-                        break;
-                }
-
                 gw.Show();
                 hs.ShowDialog();
                 gw.Close();
+            }
+        }
+
+        public void switch_btn_bg(Button focusedbtn, string btnName)
+        {
+            string url = "../../Resources/Images/btn_" + btnName + "_down_bg.png";
+            focusedbtn.Background = new ImageBrush(new BitmapImage(new Uri(url, UriKind.Relative)));
+
+            if(focusedbtn != btn_specials)
+            {
+                btn_specials.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_specials_bg.png", UriKind.Relative)));
+            }
+            if (focusedbtn != btn_drinks)
+            {
+                btn_drinks.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_drinks_bg.png", UriKind.Relative)));
+            }
+            if (focusedbtn != btn_food)
+            {
+                btn_food.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_food_bg.png", UriKind.Relative)));
             }
         }
 

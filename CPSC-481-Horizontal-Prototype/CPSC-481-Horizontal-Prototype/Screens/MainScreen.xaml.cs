@@ -43,7 +43,7 @@ namespace CPSC_481_Horizontal_Prototype
             InitializeComponent();
 
             colorArray = new SolidColorBrush[8];
-            colorArray[0] = new SolidColorBrush(Color.FromRgb(0x28, 0x8d, 0xa7));
+            colorArray[0] = new SolidColorBrush(Color.FromRgb(0xff, 0x69, 0x61));
             colorArray[1] = new SolidColorBrush(Color.FromRgb(0xf2, 0xab, 0x57));
 
             this.Hide();
@@ -70,7 +70,6 @@ namespace CPSC_481_Horizontal_Prototype
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
             switch_btn_bg(btn_specials, "specials");
-            currentPage = "specials";
 
         }
         #endregion

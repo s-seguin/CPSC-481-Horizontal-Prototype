@@ -133,7 +133,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
+    
         <!--Move tray-->
         <Storyboard x:Key="sbShowTray" >
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,-292" To="0,0,0,108" DecelerationRatio=".9" Duration="0:0:1" />

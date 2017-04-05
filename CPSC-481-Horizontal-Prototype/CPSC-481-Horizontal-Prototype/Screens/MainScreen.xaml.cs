@@ -27,6 +27,7 @@ namespace CPSC_481_Horizontal_Prototype
         public bool wantToLeave = false;
         private bool trayOpen;
         private String currentPage;
+        private SolidColorBrush[] colorArray;
 
         #endregion
 
@@ -39,6 +40,10 @@ namespace CPSC_481_Horizontal_Prototype
             HomeScreen hs = new HomeScreen(this);
             hs.Show();
             InitializeComponent();
+
+            colorArray = new SolidColorBrush[8];
+            colorArray[0] = new SolidColorBrush(Color.FromRgb(0x28, 0x8d, 0xa7));
+            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xf2, 0xab, 0x57));
 
             this.Hide();
         }
@@ -273,9 +278,9 @@ namespace CPSC_481_Horizontal_Prototype
             btn.BorderBrush = null;
             btn.BorderThickness = new Thickness(0, 0, 0, 0);
             if (allTabs.GetTabs().Count % 2 == 0)
-                btn.Background = col_tabBlue;
+                btn.Background = colorArray[0];
             else
-                btn.Background = col_tabOrange;
+                btn.Background = colorArray[1];
 
             btn.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
             btn.Content = userName[0];

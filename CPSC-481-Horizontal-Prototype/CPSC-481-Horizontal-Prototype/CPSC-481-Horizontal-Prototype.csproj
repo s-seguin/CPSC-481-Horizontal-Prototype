@@ -242,9 +242,6 @@
     <Resource Include="Resources\Images\btn_specials_bg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Images\btn_specials-selected_bg.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Images\btn_drinks_bg.png" />
   </ItemGroup>
   <ItemGroup>
@@ -262,6 +259,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Images\btn_drinks_down_bg.png" />
+    <Resource Include="Resources\Images\btn_food_down_bg.png" />
+    <Resource Include="Resources\Images\btn_help_down_bg.png" />
+    <Resource Include="Resources\Images\btn_specials_down_bg.png" />
     <Content Include="Resources\Images\Drinks\heineken.jpeg" />
     <Content Include="Resources\Images\Drinks\prairie_pale_ale.jpeg" />
     <Content Include="Resources\Images\Drinks\west_coast_ipa.jpeg" />

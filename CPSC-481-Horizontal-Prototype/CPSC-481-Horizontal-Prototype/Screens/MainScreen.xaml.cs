@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 
 namespace CPSC_481_Horizontal_Prototype
 {
@@ -25,6 +26,7 @@ namespace CPSC_481_Horizontal_Prototype
         private SolidColorBrush col_tabOrange = new SolidColorBrush(Color.FromArgb(0xFF, 0xf2, 0xab, 0x57)); //FFf2ab57
         public bool wantToLeave = false;
         private bool trayOpen;
+        private String currentPage;
 
         #endregion
 
@@ -58,9 +60,11 @@ namespace CPSC_481_Horizontal_Prototype
             lbl_tabName.Content = focusedTab.ToString();
             lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing;
 
+            // set current page to speacials and focus speacials button
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
-            btn_specials.Height = 99;
+            btn_specials.Focus();
+            currentPage = "specials";
 
         }
         #endregion
@@ -70,41 +74,41 @@ namespace CPSC_481_Horizontal_Prototype
         #region Button Clicks
         public void btn_nav_Click(object sender, RoutedEventArgs e)
         {
-            if (btn_specials.IsFocused)
-            {
+
+            if (btn_specials.IsFocused) {
                 Switcher.Switch(new Page_Specials());
-                btn_specials.Height = 99;
-                btn_drinks.Height = 104;
-                btn_food.Height = 104;
-            }
-            
-            else if (btn_drinks.IsFocused)
-            {
+                currentPage = "specials";
+            }  else if (btn_drinks.IsFocused) {
                 Switcher.Switch(new Page_Drinks());
-                btn_specials.Height = 104;
-                btn_drinks.Height = 99;
-                btn_food.Height = 104;
-                
-            }
-
-            else if (btn_food.IsFocused)
-            {
+                currentPage = "drinks";
+            } else if (btn_food.IsFocused) {
                 Switcher.Switch(new Page_Food());
-                btn_specials.Height = 104;
-                btn_drinks.Height = 104;
-                btn_food.Height = 99;
-            }
-
-            else if (btn_help.IsFocused)
-            {
+                currentPage = "food";
+            } else if (btn_help.IsFocused) {
                 GrayedOutWindow gw = new GrayedOutWindow();
                 HelpScreen hs = new HelpScreen();
+
+                // make sure that the last active page still has its button focused
+                switch (currentPage)
+                {
+                    case "specials":
+                        btn_specials.Focus();
+                        break;
+                    case "drinks":
+                        btn_drinks.Focus();
+                        break;
+                    case "food":
+                        btn_food.Focus();
+                        break;
+                    default:
+                        // should be an error message here...
+                        break;
+                }
+
                 gw.Show();
                 hs.ShowDialog();
                 gw.Close();
             }
-            
-
         }
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)

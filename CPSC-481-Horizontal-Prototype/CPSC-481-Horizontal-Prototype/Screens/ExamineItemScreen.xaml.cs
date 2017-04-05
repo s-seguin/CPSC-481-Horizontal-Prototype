@@ -56,6 +56,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
 
         private void btn_addToTray_Click(object sender, RoutedEventArgs e)
         {
+            
             if (this.dd_sides.Visibility == Visibility.Visible)
             {
                 string ogName = mi.name;
@@ -64,6 +65,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
 
             ms = Switcher.pageSwitcher;
             ms.focusedTab.AddToTray(mi, Convert.ToInt32(this.tb_numItems.Text));
+            ms.lbl_submitQueue.IsEnabled = true;
             ms.showQueue(true);
             this.Close();
         }

@@ -42,9 +42,12 @@ namespace CPSC_481_Horizontal_Prototype
             hs.Show();
             InitializeComponent();
 
-            colorArray = new SolidColorBrush[8];
-            colorArray[0] = new SolidColorBrush(Color.FromRgb(0xff, 0x69, 0x61));
-            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xf2, 0xab, 0x57));
+            colorArray = new SolidColorBrush[5];
+            colorArray[0] = new SolidColorBrush(Color.FromRgb(0xff, 0xc1, 0x00));
+            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xc3, 0x56, 0xea));
+            colorArray[2] = new SolidColorBrush(Color.FromRgb(0x8f, 0xf2, 0x43));
+            colorArray[3] = new SolidColorBrush(Color.FromRgb(0x71, 0xae, 0xf2));
+            colorArray[4] = new SolidColorBrush(Color.FromRgb(0xea, 0x56, 0x45));
 
             this.Hide();
         }
@@ -99,7 +102,7 @@ namespace CPSC_481_Horizontal_Prototype
             }
         }
 
-        public void switch_btn_bg(Button focusedbtn, string btnName)
+        private void switch_btn_bg(Button focusedbtn, string btnName)
         {
             string url = "../../Resources/Images/btn_" + btnName + "_down_bg.png";
             focusedbtn.Background = new ImageBrush(new BitmapImage(new Uri(url, UriKind.Relative)));
@@ -288,10 +291,14 @@ namespace CPSC_481_Horizontal_Prototype
             btn.BorderThickness = new Thickness(0, 0, 0, 0);
             newTabThickness += 75;
             btn.Margin = new Thickness(0, newTabThickness, 0, 0);
-            if (allTabs.GetTabs().Count % 2 == 0)
+
+            int index = allTabs.GetTabs().Count % 5;
+            btn.Background = colorArray[index];
+
+            /*if (allTabs.GetTabs().Count % 2 == 0)
                 btn.Background = colorArray[0];
             else
-                btn.Background = colorArray[1];
+                btn.Background = colorArray[1];*/
 
             btn.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
             btn.Content = userName;

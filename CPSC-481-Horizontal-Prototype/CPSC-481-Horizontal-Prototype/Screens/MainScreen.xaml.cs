@@ -163,6 +163,8 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
         {
+            Button clickedBtn = (Button)sender;
+            btn = clickedBtn;
             lbl_submitQueue.IsEnabled = false;
             if (!focusedTab.OrderTrayEmpty())
             {
@@ -180,6 +182,9 @@ namespace CPSC_481_Horizontal_Prototype
                 {
                     if (ut.GetTabButton().IsFocused)
                     {
+                        Storyboard sb = Resources["sbShowTab"] as Storyboard;
+                        sb.Begin(btn);
+
                         focusedTab.ClearTray();
                         lbl_queueTotal.Content = "Total: $0.00";
                         lbl_tabTotal.Content = "Total: $" + ut.amountOwing;
@@ -351,10 +356,7 @@ namespace CPSC_481_Horizontal_Prototype
             string tabContent = (string)btn.Content;
             if (tabContent.Length > 1) btn.Content = tabContent[0];
             else { btn.Content = tabContent; }
-
-            grid_tryingshit.Children.Remove(btn);
-            btn.Margin = new Thickness(0, 0, 0, 0);
-            tabPanel.Children.Add(btn);
+            //btn.Margin = new Thickness(0, 0, 0, 0);
         }
     }
 }

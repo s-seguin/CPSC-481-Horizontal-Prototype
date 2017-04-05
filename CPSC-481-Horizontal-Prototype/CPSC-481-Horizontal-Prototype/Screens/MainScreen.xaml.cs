@@ -19,7 +19,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         #region Attributes
 
-        public UserTab focusedTab { get; set;}
+        public UserTab focusedTab { get; set; }
         public bool isStartup { get; private set; } = true;
         public ActiveTabs allTabs { get; set; }
         private SolidColorBrush col_tabBlue = new SolidColorBrush(Color.FromArgb(0xFF, 0x28, 0x8d, 0xa7));
@@ -28,7 +28,6 @@ namespace CPSC_481_Horizontal_Prototype
         private bool trayOpen;
         private Button btn;
         private int newTabThickness = 75;
-        private String currentPage;
         private SolidColorBrush[] colorArray;
 
         #endregion
@@ -43,9 +42,13 @@ namespace CPSC_481_Horizontal_Prototype
             hs.Show();
             InitializeComponent();
 
-            colorArray = new SolidColorBrush[8];
-            colorArray[0] = new SolidColorBrush(Color.FromRgb(0x28, 0x8d, 0xa7));
-            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xf2, 0xab, 0x57));
+            colorArray = new SolidColorBrush[5];
+            colorArray[2] = new SolidColorBrush(Color.FromRgb(0x77, 0xdd, 0x77)); // green
+            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xa4, 0x4b, 0xfc)); // purple
+            colorArray[0] = new SolidColorBrush(Color.FromRgb(0xff, 0xa5, 0x00)); // orange
+            colorArray[3] = new SolidColorBrush(Color.FromRgb(0x71, 0xae, 0xf2)); // light blue
+            colorArray[4] = new SolidColorBrush(Color.FromRgb(0xea, 0x56, 0x45)); // red
+         
 
             this.Hide();
         }
@@ -70,8 +73,7 @@ namespace CPSC_481_Horizontal_Prototype
             // set current page to speacials and focus speacials button
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
-            btn_specials.Focus();
-            currentPage = "specials";
+            switch_btn_bg(btn_specials, "specials");
 
         }
         #endregion
@@ -84,38 +86,39 @@ namespace CPSC_481_Horizontal_Prototype
 
             if (btn_specials.IsFocused) {
                 Switcher.Switch(new Page_Specials());
-                currentPage = "specials";
-                btn_specials.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_specials_down_bg.png", UriKind.Relative)));
-            }  else if (btn_drinks.IsFocused) {
+                switch_btn_bg(btn_specials, "specials");
+                //btn_specials.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_specials_down_bg.png", UriKind.Relative)));
+            } else if (btn_drinks.IsFocused) {
                 Switcher.Switch(new Page_Drinks());
-                currentPage = "drinks";
+                switch_btn_bg(btn_drinks,"drinks");
             } else if (btn_food.IsFocused) {
                 Switcher.Switch(new Page_Food());
-                currentPage = "food";
+                switch_btn_bg(btn_food, "food");
             } else if (btn_help.IsFocused) {
                 GrayedOutWindow gw = new GrayedOutWindow();
                 HelpScreen hs = new HelpScreen();
-
-                // make sure that the last active page still has its button focused
-                switch (currentPage)
-                {
-                    case "specials":
-                        btn_specials.Focus();
-                        break;
-                    case "drinks":
-                        btn_drinks.Focus();
-                        break;
-                    case "food":
-                        btn_food.Focus();
-                        break;
-                    default:
-                        // should be an error message here...
-                        break;
-                }
-
                 gw.Show();
                 hs.ShowDialog();
                 gw.Close();
+            }
+        }
+
+        private void switch_btn_bg(Button focusedbtn, string btnName)
+        {
+            string url = "../../Resources/Images/btn_" + btnName + "_down_bg.png";
+            focusedbtn.Background = new ImageBrush(new BitmapImage(new Uri(url, UriKind.Relative)));
+
+            if(focusedbtn != btn_specials)
+            {
+                btn_specials.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_specials_bg.png", UriKind.Relative)));
+            }
+            if (focusedbtn != btn_drinks)
+            {
+                btn_drinks.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_drinks_bg.png", UriKind.Relative)));
+            }
+            if (focusedbtn != btn_food)
+            {
+                btn_food.Background = new ImageBrush(new BitmapImage(new Uri("../../Resources/Images/btn_food_bg.png", UriKind.Relative)));
             }
         }
 
@@ -163,6 +166,8 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
         {
+            Button clickedBtn = (Button)sender;
+            btn = clickedBtn;
             lbl_submitQueue.IsEnabled = false;
             if (!focusedTab.OrderTrayEmpty())
             {
@@ -180,6 +185,9 @@ namespace CPSC_481_Horizontal_Prototype
                 {
                     if (ut.GetTabButton().IsFocused)
                     {
+                        Storyboard sb = Resources["sbShowTab"] as Storyboard;
+                        sb.Begin(btn);
+
                         focusedTab.ClearTray();
                         lbl_queueTotal.Content = "Total: $0.00";
                         lbl_tabTotal.Content = "Total: $" + ut.amountOwing;
@@ -284,10 +292,14 @@ namespace CPSC_481_Horizontal_Prototype
             btn.BorderThickness = new Thickness(0, 0, 0, 0);
             newTabThickness += 75;
             btn.Margin = new Thickness(0, newTabThickness, 0, 0);
-            if (allTabs.GetTabs().Count % 2 == 0)
+
+            int index = allTabs.GetTabs().Count % colorArray.Length;
+            btn.Background = colorArray[index];
+
+            /*if (allTabs.GetTabs().Count % 2 == 0)
                 btn.Background = colorArray[0];
             else
-                btn.Background = colorArray[1];
+                btn.Background = colorArray[1];*/
 
             btn.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
             btn.Content = userName;
@@ -348,13 +360,10 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void Tab_Hidden(object sender, EventArgs e)
         {
-            string tabContent = (string)btn.Content;
+            string tabContent = btn.Content.ToString();
             if (tabContent.Length > 1) btn.Content = tabContent[0];
             else { btn.Content = tabContent; }
-
-            grid_tryingshit.Children.Remove(btn);
-            btn.Margin = new Thickness(0, 0, 0, 0);
-            tabPanel.Children.Add(btn);
+            //btn.Margin = new Thickness(0, 0, 0, 0);
         }
     }
 }

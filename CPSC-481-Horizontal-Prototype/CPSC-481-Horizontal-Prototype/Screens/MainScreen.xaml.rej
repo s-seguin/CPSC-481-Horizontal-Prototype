@@ -1,0 +1,20 @@
+diff a/CPSC-481-Horizontal-Prototype/CPSC-481-Horizontal-Prototype/Screens/MainScreen.xaml b/CPSC-481-Horizontal-Prototype/CPSC-481-Horizontal-Prototype/Screens/MainScreen.xaml	(rejected hunks)
+@@ -22,15 +22,18 @@
+                          <Border Name="border"
+          				    Background="{TemplateBinding Background}">
+                          </Border>
+++<<<<<<< HEAD
+ +                        <ControlTemplate.Triggers>
+ +                            <Trigger Property="IsFocused" Value="True">
+ +                                <Setter Property="Background" >
+ +                                    <Setter.Value>
+ +                                        <ImageBrush x:Name="specials_background" ImageSource="/Resources/Images/btn_specials_down_bg.png"/>
+ +                                    </Setter.Value>
+ +                                </Setter>
+ +                            </Trigger>
+ +                        </ControlTemplate.Triggers>
+++=======
+++>>>>>>> 47a6c3dd981a2c4839ce51cb2b994f6c6c099824
+                      </ControlTemplate>
+                  </Setter.Value>
+              </Setter>

@@ -121,6 +121,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
         {
+            lbl_submitQueue.IsEnabled = false;
             if (allTabs.GetTabs().Count < 8)
             {
                 if (!focusedTab.OrderTrayEmpty())
@@ -162,6 +163,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_changeTab_Click(object sender, RoutedEventArgs e)
         {
+            lbl_submitQueue.IsEnabled = false;
             if (!focusedTab.OrderTrayEmpty())
             {
                 GrayedOutWindow gw = new GrayedOutWindow();
@@ -234,6 +236,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_submitQueue_Click(object sender, RoutedEventArgs e)
         {
+            lbl_submitQueue.IsEnabled = false;
             MainScreen ms = Switcher.pageSwitcher;
 
             ms.focusedTab.PlaceOrder();

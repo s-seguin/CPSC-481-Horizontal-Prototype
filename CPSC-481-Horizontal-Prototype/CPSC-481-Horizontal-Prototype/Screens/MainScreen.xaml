@@ -220,7 +220,7 @@
 
                         <Grid HorizontalAlignment="Right" Height="108" VerticalAlignment="Bottom" Width="340" Background="White">
                             <Label x:Name="lbl_queueTotal" Content="Total: $0.00" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" Height="62" Width="200" FontSize="34" Background="{x:Null}" Foreground="#FF4F4F4F" FontFamily="Segoe UI Light" />
-                            <Button x:Name="lbl_submitQueue" Content="Submit Order" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Width="120" FontSize="16" Background="#FF213F57" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFB5BEC7" Click="btn_submitQueue_Click" />
+                            <Button x:Name="lbl_submitQueue" Content="Submit Order" HorizontalAlignment="Right" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Width="120" FontSize="16" Background="#FF213F57" BorderThickness="0" BorderBrush="{x:Null}" Foreground="#FFB5BEC7" Click="btn_submitQueue_Click" IsEnabled="False" />
                         </Grid>
                     </Grid>
                 </StackPanel>

@@ -7,6 +7,133 @@
         mc:Ignorable="d"
         Title="Specials" Height="900" Width="1980"  WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
     <Window.Resources>
+        <!-- The following code is to remove the hover effect on buttons -->
+        <!-- Source: http://mark-dot-net.blogspot.ca/2007/07/creating-custom-wpf-button-template-in.html -->
+        
+        <Style x:Key="Special_btn" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <ImageBrush ImageSource="/Resources/Images/btn_specials_bg.png"/>
+                </Setter.Value>
+            </Setter>
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+        				    Background="{TemplateBinding Background}">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Resources/Images/btn_specials_down_bg.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Drinks_btn" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <ImageBrush ImageSource="/Resources/Images/btn_drinks_bg.png"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+        				    Background="{TemplateBinding Background}">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Resources/Images/btn_drinks_down_bg.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Food_btn" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <ImageBrush ImageSource="/Resources/Images/btn_food_bg.png"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+        				    Background="{TemplateBinding Background}">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Resources/Images/btn_food_down_bg.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="Help_btn" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="Background" >
+                <Setter.Value>
+                    <ImageBrush ImageSource="/Resources/Images/btn_help_bg.png"/>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+        				    Background="{TemplateBinding Background}">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed"  Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="/Resources/Images/btn_help_down_bg.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    
         <!--Move tray-->
         <Storyboard x:Key="sbShowTray" >
             <ThicknessAnimation Storyboard.TargetProperty="Margin" From="0,0,0,-292" To="0,0,0,108" DecelerationRatio=".9" Duration="0:0:1" />
@@ -17,17 +144,17 @@
         </Storyboard>
 
         <Storyboard x:Key="sbShowTab" >
-            <DoubleAnimation Storyboard.TargetProperty="Width" From="75" To="200" DecelerationRatio=".9" Duration="0:0:1" />
+            <DoubleAnimation Storyboard.TargetProperty="Width" From="75" To="200" DecelerationRatio=".9" Duration="0:0:1" Completed="Tab_Expanded"/>
         </Storyboard>
 
         <Storyboard x:Key="sbHideTab" >
-            <DoubleAnimation Storyboard.TargetProperty="Width" From="200" To="75" DecelerationRatio=".9" Duration="0:0:1" />
+            <DoubleAnimation Storyboard.TargetProperty="Width" From="200" To="75" DecelerationRatio=".9" Duration="0:0:1" Completed="Tab_Hidden" />
         </Storyboard>
     </Window.Resources>
     
 <Viewbox Stretch="Fill" >
 
-        <Grid>
+        <Grid Name="grid_tryingshit">
             <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="75" Background="#FF122331" ClipToBounds="False">
                 <Image x:Name="logo" Height="75" Width="75" Source="/Resources/Images/logo_sml.png"/>
                 <Button x:Name="btn_addTab" Width="75" BorderThickness="0,0,0,0"  Height="75" VerticalContentAlignment="Center" Content="+" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_addTab_Click" Background="#FF00b694" RenderTransformOrigin="0.547,0.727"/>
@@ -38,28 +165,32 @@
 
                 <WrapPanel HorizontalAlignment="Center" Height="104"  VerticalAlignment="Bottom" Width="420" Margin="268,0,529,0">
 
-                    <Button x:Name="btn_specials" Width="100" Height="104" Click="btn_nav_Click" BorderThickness="0">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Resources/Images/btn_specials_bg.png"/>
-                        </Button.Background>
+                    <Button x:Name="btn_specials" 
+                            Width="100" 
+                            Height="104" 
+                            Click="btn_nav_Click"  
+                            Style="{StaticResource Special_btn}">
                     </Button>
 
-                    <Button x:Name="btn_drinks" Content="Drinks" Width="100" Height="104" Click="btn_nav_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Resources/Images/btn_drinks_bg.png"/>
-                        </Button.Background>
+                    <Button x:Name="btn_drinks" 
+                            Width="100"
+                            Height="104" 
+                            Click="btn_nav_Click"
+                            Style="{StaticResource Drinks_btn}">
                     </Button>
 
-                    <Button x:Name="btn_food" Content="Food" Width="100" Height="104" Click="btn_nav_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Resources/Images/btn_food_bg.png"/>
-                        </Button.Background>
+                    <Button x:Name="btn_food"
+                            Width="100" 
+                            Height="104" 
+                            Click="btn_nav_Click" 
+                            Style="{StaticResource Food_btn}">
                     </Button>
 
-                    <Button x:Name="btn_help" Content="Help" Width="100" Height="104" Click="btn_nav_Click" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0">
-                        <Button.Background>
-                            <ImageBrush ImageSource="/Resources/Images/btn_help_bg.png"/>
-                        </Button.Background>
+                    <Button x:Name="btn_help"
+                            Width="100" 
+                            Height="104" 
+                            Click="btn_nav_Click" 
+                            Style="{StaticResource Help_btn}">
                     </Button>
 
                 </WrapPanel>

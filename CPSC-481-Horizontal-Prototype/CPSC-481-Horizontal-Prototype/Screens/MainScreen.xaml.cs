@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 
 namespace CPSC_481_Horizontal_Prototype
 {
@@ -25,6 +26,13 @@ namespace CPSC_481_Horizontal_Prototype
         private SolidColorBrush col_tabOrange = new SolidColorBrush(Color.FromArgb(0xFF, 0xf2, 0xab, 0x57)); //FFf2ab57
         public bool wantToLeave = false;
         private bool trayOpen;
+<<<<<<< HEAD
+        private Button btn;
+        private int newTabThickness = 75;
+=======
+        private String currentPage;
+        private SolidColorBrush[] colorArray;
+>>>>>>> ca6ac7423bb172a11713a5a6cc9c2780e3bd86bf
 
         #endregion
 
@@ -37,6 +45,10 @@ namespace CPSC_481_Horizontal_Prototype
             HomeScreen hs = new HomeScreen(this);
             hs.Show();
             InitializeComponent();
+
+            colorArray = new SolidColorBrush[8];
+            colorArray[0] = new SolidColorBrush(Color.FromRgb(0x28, 0x8d, 0xa7));
+            colorArray[1] = new SolidColorBrush(Color.FromRgb(0xf2, 0xab, 0x57));
 
             this.Hide();
         }
@@ -58,9 +70,11 @@ namespace CPSC_481_Horizontal_Prototype
             lbl_tabName.Content = focusedTab.ToString();
             lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing;
 
+            // set current page to speacials and focus speacials button
             Switcher.pageSwitcher = this;
             Switcher.Switch(new Page_Specials());
-            btn_specials.Height = 99;
+            btn_specials.Focus();
+            currentPage = "specials";
 
         }
         #endregion
@@ -70,41 +84,41 @@ namespace CPSC_481_Horizontal_Prototype
         #region Button Clicks
         public void btn_nav_Click(object sender, RoutedEventArgs e)
         {
-            if (btn_specials.IsFocused)
-            {
+
+            if (btn_specials.IsFocused) {
                 Switcher.Switch(new Page_Specials());
-                btn_specials.Height = 99;
-                btn_drinks.Height = 104;
-                btn_food.Height = 104;
-            }
-            
-            else if (btn_drinks.IsFocused)
-            {
+                currentPage = "specials";
+            }  else if (btn_drinks.IsFocused) {
                 Switcher.Switch(new Page_Drinks());
-                btn_specials.Height = 104;
-                btn_drinks.Height = 99;
-                btn_food.Height = 104;
-                
-            }
-
-            else if (btn_food.IsFocused)
-            {
+                currentPage = "drinks";
+            } else if (btn_food.IsFocused) {
                 Switcher.Switch(new Page_Food());
-                btn_specials.Height = 104;
-                btn_drinks.Height = 104;
-                btn_food.Height = 99;
-            }
-
-            else if (btn_help.IsFocused)
-            {
+                currentPage = "food";
+            } else if (btn_help.IsFocused) {
                 GrayedOutWindow gw = new GrayedOutWindow();
                 HelpScreen hs = new HelpScreen();
+
+                // make sure that the last active page still has its button focused
+                switch (currentPage)
+                {
+                    case "specials":
+                        btn_specials.Focus();
+                        break;
+                    case "drinks":
+                        btn_drinks.Focus();
+                        break;
+                    case "food":
+                        btn_food.Focus();
+                        break;
+                    default:
+                        // should be an error message here...
+                        break;
+                }
+
                 gw.Show();
                 hs.ShowDialog();
                 gw.Close();
             }
-            
-
         }
 
         private void btn_addTab_Click(object sender, RoutedEventArgs e)
@@ -246,17 +260,14 @@ namespace CPSC_481_Horizontal_Prototype
         /// <param name="tab">The user tab to create a button for</param>
         public void AddTabButton(UserTab tab)
         {
-            Button btn = CreateTabButton(tab.ToString());
+            btn = CreateTabButton(tab.ToString());
             tab.SetTabButton(btn);
-            tabPanel.Children.Add(btn);
+            grid_tryingshit.Children.Add(btn);
             lbl_tabName.Content = tab.ToString();
             grid_summary.Background = tab.GetTabButton().Background;
 
             Storyboard sb = Resources["sbShowTab"] as Storyboard;
             sb.Begin(btn);
-
-            Storyboard sb1 = Resources["sbHideTab"] as Storyboard;
-            sb1.Begin(btn);
 
             lbl_tabTotal.Content = "Total: $" + tab.amountOwing;
 
@@ -269,15 +280,19 @@ namespace CPSC_481_Horizontal_Prototype
             btn.Click += btn_changeTab_Click;
             btn.Width = 75;
             btn.Height = 75;
+            btn.HorizontalAlignment = HorizontalAlignment.Left;
+            btn.VerticalAlignment = VerticalAlignment.Top;
             btn.BorderBrush = null;
             btn.BorderThickness = new Thickness(0, 0, 0, 0);
+            newTabThickness += 75;
+            btn.Margin = new Thickness(0, newTabThickness, 0, 0);
             if (allTabs.GetTabs().Count % 2 == 0)
-                btn.Background = col_tabBlue;
+                btn.Background = colorArray[0];
             else
-                btn.Background = col_tabOrange;
+                btn.Background = colorArray[1];
 
             btn.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
-            btn.Content = userName[0];
+            btn.Content = userName;
             btn.FontSize = 48;
             btn.FontFamily = new FontFamily("Segoe UI Semibold");
             return btn;
@@ -325,6 +340,23 @@ namespace CPSC_481_Horizontal_Prototype
         private void ScrollViewer_ManipulationBoundaryFeedback(object sender, System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void Tab_Expanded(object sender, EventArgs e)
+        {
+            Storyboard sb = Resources["sbHideTab"] as Storyboard;
+            sb.Begin(btn);
+        }
+
+        private void Tab_Hidden(object sender, EventArgs e)
+        {
+            string tabContent = (string)btn.Content;
+            if (tabContent.Length > 1) btn.Content = tabContent[0];
+            else { btn.Content = tabContent; }
+
+            grid_tryingshit.Children.Remove(btn);
+            btn.Margin = new Thickness(0, 0, 0, 0);
+            tabPanel.Children.Add(btn);
         }
     }
 }

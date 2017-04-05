@@ -67,6 +67,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
                 this.Close();
                 ClosingScreen cs = new ClosingScreen(3000);
                 ms.Close();
+                MainScreen mainScreen = new MainScreen();
             }
             
         }

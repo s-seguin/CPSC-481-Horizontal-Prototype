@@ -25,6 +25,8 @@ namespace CPSC_481_Horizontal_Prototype
         private SolidColorBrush col_tabOrange = new SolidColorBrush(Color.FromArgb(0xFF, 0xf2, 0xab, 0x57)); //FFf2ab57
         public bool wantToLeave = false;
         private bool trayOpen;
+        private Button btn;
+        private int newTabThickness = 75;
 
         #endregion
 
@@ -243,17 +245,14 @@ namespace CPSC_481_Horizontal_Prototype
         /// <param name="tab">The user tab to create a button for</param>
         public void AddTabButton(UserTab tab)
         {
-            Button btn = CreateTabButton(tab.ToString());
+            btn = CreateTabButton(tab.ToString());
             tab.SetTabButton(btn);
-            tabPanel.Children.Add(btn);
+            grid_tryingshit.Children.Add(btn);
             lbl_tabName.Content = tab.ToString();
             grid_summary.Background = tab.GetTabButton().Background;
 
             Storyboard sb = Resources["sbShowTab"] as Storyboard;
             sb.Begin(btn);
-
-            Storyboard sb1 = Resources["sbHideTab"] as Storyboard;
-            sb1.Begin(btn);
 
             lbl_tabTotal.Content = "Total: $" + tab.amountOwing;
 
@@ -266,15 +265,19 @@ namespace CPSC_481_Horizontal_Prototype
             btn.Click += btn_changeTab_Click;
             btn.Width = 75;
             btn.Height = 75;
+            btn.HorizontalAlignment = HorizontalAlignment.Left;
+            btn.VerticalAlignment = VerticalAlignment.Top;
             btn.BorderBrush = null;
             btn.BorderThickness = new Thickness(0, 0, 0, 0);
+            newTabThickness += 75;
+            btn.Margin = new Thickness(0, newTabThickness, 0, 0);
             if (allTabs.GetTabs().Count % 2 == 0)
                 btn.Background = col_tabBlue;
             else
                 btn.Background = col_tabOrange;
 
             btn.Foreground = new SolidColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
-            btn.Content = userName[0];
+            btn.Content = userName;
             btn.FontSize = 48;
             btn.FontFamily = new FontFamily("Segoe UI Semibold");
             return btn;
@@ -322,6 +325,23 @@ namespace CPSC_481_Horizontal_Prototype
         private void ScrollViewer_ManipulationBoundaryFeedback(object sender, System.Windows.Input.ManipulationBoundaryFeedbackEventArgs e)
         {
             e.Handled = true;
+        }
+
+        private void Tab_Expanded(object sender, EventArgs e)
+        {
+            Storyboard sb = Resources["sbHideTab"] as Storyboard;
+            sb.Begin(btn);
+        }
+
+        private void Tab_Hidden(object sender, EventArgs e)
+        {
+            string tabContent = (string)btn.Content;
+            if (tabContent.Length > 1) btn.Content = tabContent[0];
+            else { btn.Content = tabContent; }
+
+            grid_tryingshit.Children.Remove(btn);
+            btn.Margin = new Thickness(0, 0, 0, 0);
+            tabPanel.Children.Add(btn);
         }
     }
 }

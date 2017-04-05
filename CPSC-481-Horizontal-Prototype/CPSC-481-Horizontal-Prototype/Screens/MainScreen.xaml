@@ -17,17 +17,17 @@
         </Storyboard>
 
         <Storyboard x:Key="sbShowTab" >
-            <DoubleAnimation Storyboard.TargetProperty="Width" From="75" To="200" DecelerationRatio=".9" Duration="0:0:1" />
+            <DoubleAnimation Storyboard.TargetProperty="Width" From="75" To="200" DecelerationRatio=".9" Duration="0:0:1" Completed="Tab_Expanded"/>
         </Storyboard>
 
         <Storyboard x:Key="sbHideTab" >
-            <DoubleAnimation Storyboard.TargetProperty="Width" From="200" To="75" DecelerationRatio=".9" Duration="0:0:1" />
+            <DoubleAnimation Storyboard.TargetProperty="Width" From="200" To="75" DecelerationRatio=".9" Duration="0:0:1" Completed="Tab_Hidden" />
         </Storyboard>
     </Window.Resources>
     
 <Viewbox Stretch="Fill" >
 
-        <Grid>
+        <Grid Name="grid_tryingshit">
             <StackPanel x:Name="tabPanel" HorizontalAlignment="Left"  VerticalAlignment="Stretch" Width="75" Background="#FF122331" ClipToBounds="False">
                 <Image x:Name="logo" Height="75" Width="75" Source="/Resources/Images/logo_sml.png"/>
                 <Button x:Name="btn_addTab" Width="75" BorderThickness="0,0,0,0"  Height="75" VerticalContentAlignment="Center" Content="+" BorderBrush="{x:Null}" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="48" Click="btn_addTab_Click" Background="#FF00b694" RenderTransformOrigin="0.547,0.727"/>

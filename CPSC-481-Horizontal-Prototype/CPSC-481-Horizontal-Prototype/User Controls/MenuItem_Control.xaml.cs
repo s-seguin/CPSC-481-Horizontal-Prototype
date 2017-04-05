@@ -105,7 +105,9 @@ namespace CPSC_481_Horizontal_Prototype
             ExamineItemScreen eis = new ExamineItemScreen(mi);
 
             //update name, price, description and image of template
-            eis.lbl_itemName.Content = this.name;
+            string name1 = Regex.Replace(this.name, @"\n", "");
+
+            eis.lbl_itemName.Content = name1;
             eis.lbl_itemPrice.Content = this.price;
             eis.tb_description.Text = this.getDesription();
             eis.image.Source = background.ImageSource;

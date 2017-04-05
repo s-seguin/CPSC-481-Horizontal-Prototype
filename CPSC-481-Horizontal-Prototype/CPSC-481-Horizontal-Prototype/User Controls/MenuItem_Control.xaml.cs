@@ -125,8 +125,8 @@ namespace CPSC_481_Horizontal_Prototype
             }
 
             //change overlay dimensions
-            eis.Height = SystemParameters.PrimaryScreenHeight * .4;
-            eis.Width = SystemParameters.PrimaryScreenWidth * .4;
+            eis.Height = SystemParameters.PrimaryScreenHeight / 2;
+            eis.Width = SystemParameters.PrimaryScreenWidth / 2;
             eis.ShowDialog();
             gw.Close();
         }

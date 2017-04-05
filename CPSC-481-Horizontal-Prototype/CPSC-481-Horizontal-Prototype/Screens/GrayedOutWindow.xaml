@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
         mc:Ignorable="d"
-        Title="GrayedOutWindow" Height="300" Width="300" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowState="Maximized" Cursor="No" WindowStyle="None" Opacity="0.3" AllowsTransparency="True" Background="#FF423838">
+        Title="GrayedOutWindow" Height="300" Width="300" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowState="Maximized" Cursor="No" WindowStyle="None" Opacity="0.4" AllowsTransparency="True" Background="#FF423838">
     <Grid>
 
     </Grid>

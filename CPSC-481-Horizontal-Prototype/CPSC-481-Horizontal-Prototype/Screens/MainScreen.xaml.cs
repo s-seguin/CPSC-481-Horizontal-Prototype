@@ -352,7 +352,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void Tab_Hidden(object sender, EventArgs e)
         {
-            string tabContent = (string)btn.Content;
+            string tabContent = btn.Content.ToString();
             if (tabContent.Length > 1) btn.Content = tabContent[0];
             else { btn.Content = tabContent; }
             //btn.Margin = new Thickness(0, 0, 0, 0);

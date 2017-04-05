@@ -150,7 +150,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_food.Children.Add(new MenuItem_Control("Big Pub Burger", "$6.50", "house-made beef patty, bacon, grilled onions, sautéed mushrooms, signature burger sauce, green leaf lettuce, tomato, red onion, pickle, Swiss, mozzarella or Canadian cheddar cheese, fresh brioche bun", foodPath + "big_pub_special.png"));
 
-            wp_food.Children.Add(new MenuItem_Control("Wings", "$6.50", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip.", foodPath + "wings.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Wings", "$6.50", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip.", foodPath + "wings.jpg", wingFlavors));
         }
 
         private void thurSpecials()

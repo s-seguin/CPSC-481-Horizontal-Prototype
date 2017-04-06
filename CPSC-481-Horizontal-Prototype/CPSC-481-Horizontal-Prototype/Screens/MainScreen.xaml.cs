@@ -68,7 +68,11 @@ namespace CPSC_481_Horizontal_Prototype
             //make the thing look nice in corner
             grid_summary.Background = focusedTab.GetTabButton().Background;
             lbl_tabName.Content = focusedTab.ToString();
-            lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing;
+            if (focusedTab.amountOwing.ToString().Contains("."))
+                lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing;
+            else
+                lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing + ".00";
+
 
             // set current page to speacials and focus speacials button
             Switcher.pageSwitcher = this;

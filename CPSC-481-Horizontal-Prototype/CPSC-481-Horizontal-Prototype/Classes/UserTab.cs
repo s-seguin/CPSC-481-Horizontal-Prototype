@@ -74,7 +74,12 @@ namespace CPSC_481_Horizontal_Prototype.Classes
             {
                 OrderItem(order);
             }
-            ms.lbl_tabTotal.Content = "Total: $" + amountOwing;
+            Console.WriteLine(amountOwing);
+            if ((amountOwing.ToString()).Contains('.'))
+                ms.lbl_tabTotal.Content = "Total: $" + amountOwing.ToString("F");
+            else
+                ms.lbl_tabTotal.Content = "Total: $" + amountOwing + ".00";
+
         }
 
         override public string ToString()
@@ -122,7 +127,13 @@ namespace CPSC_481_Horizontal_Prototype.Classes
                 //update order queue total
                 
             }
-            ms.lbl_queueTotal.Content = "Total: $" + queueTotal;
+            //if (queueTotal.ToString().Contains("."))
+            //{
+                
+                ms.lbl_queueTotal.Content = "Total: $" + queueTotal.ToString("F");
+            //}
+           // else
+             //   ms.lbl_queueTotal.Content = "Total: $" + queueTotal + ".00";
         }
 
         public void LoadOrder(PaymentScreen ps)

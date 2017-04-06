@@ -125,8 +125,8 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void wedSpecials()
         {
-            lbl_info.Content = "Half price happy hour on all drinks from 2pm - 6pm!!!";
-            lbl_info.Visibility = Visibility.Visible;
+            // lbl_info.Content = "Half price happy hour on all drinks from 2pm - 6pm!!!";
+            // lbl_info.Visibility = Visibility.Visible;
 
             string gasLampPrice = "$4.75";
 

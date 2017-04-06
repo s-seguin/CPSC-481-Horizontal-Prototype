@@ -51,7 +51,17 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         private void btn_payNow_Click(object sender, RoutedEventArgs e)
         {
             ms.allTabs.RemoveTab(ms.focusedTab);
-            ms.tabPanel.Children.Remove(ms.focusedTab.GetTabButton());
+            ms.grid_addTabs.Children.Remove(ms.focusedTab.GetTabButton());
+            ms.tabButtonsList.Remove(ms.focusedTab.GetTabButton());
+            ms.newTabThickness -= 75;
+            int marginTop = 150;
+            int i = 0;
+            foreach (Button btn  in ms.tabButtonsList)
+            {
+                btn.Margin = new Thickness(0, marginTop, 0, 0);
+                i++;
+                marginTop -= 75;
+            }
             if (ms.allTabs.GetTabs().Count > 0)
             {
                 UserTab ut = ms.allTabs.GetTabs()[0];

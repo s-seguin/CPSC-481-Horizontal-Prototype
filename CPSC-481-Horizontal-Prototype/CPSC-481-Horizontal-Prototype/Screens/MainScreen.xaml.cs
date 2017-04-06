@@ -19,6 +19,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         #region Attributes
 
+        public List<Button> tabButtonsList = new List<Button>();
         public UserTab focusedTab { get; set; }
         public bool isStartup { get; private set; } = true;
         public ActiveTabs allTabs { get; set; }
@@ -27,7 +28,7 @@ namespace CPSC_481_Horizontal_Prototype
         public bool wantToLeave = false;
         private bool trayOpen;
         private Button btn;
-        private int newTabThickness = 75;
+        public int newTabThickness = 75;
         private SolidColorBrush[] colorArray;
 
         #endregion
@@ -68,10 +69,8 @@ namespace CPSC_481_Horizontal_Prototype
             //make the thing look nice in corner
             grid_summary.Background = focusedTab.GetTabButton().Background;
             lbl_tabName.Content = focusedTab.ToString();
-            if (focusedTab.amountOwing.ToString().Contains("."))
-                lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing;
-            else
-                lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing + ".00";
+            lbl_tabTotal.Content = "Total: $" + focusedTab.amountOwing.ToString("F");
+           
 
 
             // set current page to speacials and focus speacials button
@@ -153,6 +152,8 @@ namespace CPSC_481_Horizontal_Prototype
                     gw.Close();
 
                 }
+                btn_payNow.IsEnabled = false;
+
             }
             else
             {
@@ -165,6 +166,7 @@ namespace CPSC_481_Horizontal_Prototype
                 gw.Close();
 
             }
+
 
         }
 
@@ -202,8 +204,12 @@ namespace CPSC_481_Horizontal_Prototype
                     }
                 }
             }
-          
-  
+
+            if (focusedTab.amountOwing > 0)
+                btn_payNow.IsEnabled = true;
+            else
+                btn_payNow.IsEnabled = false;
+
         }
 
         public void btn_expandQueue_Click(object sender, RoutedEventArgs e)
@@ -260,6 +266,7 @@ namespace CPSC_481_Horizontal_Prototype
             OrderPlacedScreen ops = new OrderPlacedScreen(1000);
             gw.Close();
             showQueue(false);
+            btn_payNow.IsEnabled = true;
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
@@ -289,6 +296,8 @@ namespace CPSC_481_Horizontal_Prototype
             btn = CreateTabButton(tab.ToString());
             tab.SetTabButton(btn);
             grid_addTabs.Children.Add(btn);
+            tabButtonsList.Add(btn);
+           // tabPanel.Children.Add(btn);
             lbl_tabName.Content = tab.ToString();
             grid_summary.Background = tab.GetTabButton().Background;
 

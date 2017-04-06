@@ -29,6 +29,7 @@ namespace CPSC_481_Horizontal_Prototype.Screens
         private void btn_no_Click(object sender, RoutedEventArgs e)
         {
             ms.wantToLeave = false;
+            ms.lbl_submitQueue.IsEnabled = true;
             this.Close();
 
         }

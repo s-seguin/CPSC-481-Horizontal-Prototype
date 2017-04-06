@@ -57,6 +57,11 @@ namespace CPSC_481_Horizontal_Prototype
                 else
                     theText = (ms.allTabs.GetTabs().Count).ToString();
             }
+            else
+            {
+                theText = theText.Trim();
+                theText =  theText.First().ToString().ToUpper() + String.Join("", theText.Skip(1));
+            }
 
             //pass textbox input into MainScreen
             UserTab tab = new UserTab(theText); //create a new user tab

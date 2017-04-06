@@ -196,7 +196,7 @@ namespace CPSC_481_Horizontal_Prototype
 
                         focusedTab.ClearTray();
                         lbl_queueTotal.Content = "Total: $0.00";
-                        lbl_tabTotal.Content = "Total: $" + ut.amountOwing;
+                        lbl_tabTotal.Content = "Total: $" + ut.amountOwing.ToString("F");
                         lbl_tabName.Content = ut.ToString();
                         grid_summary.Background = ut.GetTabButton().Background;
                         this.focusedTab = ut;
@@ -304,7 +304,7 @@ namespace CPSC_481_Horizontal_Prototype
             Storyboard sb = Resources["sbShowTab"] as Storyboard;
             sb.Begin(btn);
 
-            lbl_tabTotal.Content = "Total: $" + tab.amountOwing;
+            lbl_tabTotal.Content = "Total: $" + tab.amountOwing.ToString("F");
 
             this.focusedTab = tab;
         }

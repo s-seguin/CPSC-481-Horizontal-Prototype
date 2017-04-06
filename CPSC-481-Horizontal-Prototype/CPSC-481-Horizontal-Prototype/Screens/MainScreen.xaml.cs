@@ -255,8 +255,10 @@ namespace CPSC_481_Horizontal_Prototype
             ms.focusedTab.ClearTray();
 
             lbl_queueTotal.Content = "Total: $0.00";
-
-            ClosingScreen cs = new ClosingScreen(2000, "Your order has been successfully placed!");
+            GrayedOutWindow gw = new GrayedOutWindow();
+            gw.Show();
+            OrderPlacedScreen ops = new OrderPlacedScreen(1000);
+            gw.Close();
             showQueue(false);
         }
 

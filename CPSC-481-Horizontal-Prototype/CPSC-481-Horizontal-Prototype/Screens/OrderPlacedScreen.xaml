@@ -1,0 +1,21 @@
+﻿<Window x:Class="CPSC_481_Horizontal_Prototype.Screens.OrderPlacedScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
+        mc:Ignorable="d"
+        Title="OrderPlacedScreen"  Height="400" Width="995" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="0" Background="White">
+    <Grid>
+        <WrapPanel Margin="0" Height="70"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FF213F57" >
+            <Label x:Name="lbl_warning" Content="Order Placed" VerticalContentAlignment="Center" FontSize="34" Foreground="White" Margin="26,0,0,0" Height="70" />
+        </WrapPanel>
+        <Image x:Name="logo" Width="100" Source="/CPSC-481-Horizontal-Prototype;component/Resources/Images/placedOrder.png" HorizontalAlignment="Left" Margin="50,162,0,138"/>
+        <TextBlock x:Name="textBlock" FontSize="24" Margin="214,216,25,148" Foreground="#FF213F57" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" Height="36" FontFamily="Segoe UI Light">
+            <Run Text="You order has been sent to the kitchen."  />
+
+        </TextBlock>
+
+
+    </Grid>
+</Window>

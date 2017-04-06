@@ -83,6 +83,9 @@
     <Compile Include="Screens\Max8TabsWarning.xaml.cs">
       <DependentUpon>Max8TabsWarning.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Screens\OrderPlacedScreen.xaml.cs">
+      <DependentUpon>OrderPlacedScreen.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Screens\PaymentScreen.xaml.cs">
       <DependentUpon>PaymentScreen.xaml</DependentUpon>
     </Compile>
@@ -152,6 +155,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Screens\Max8TabsWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Screens\OrderPlacedScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,6 +266,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Resource Include="Resources\Images\placedOrder.png" />
     <Resource Include="Resources\Images\new_tab.png" />
     <Resource Include="Resources\Images\btn_drinks_down_bg.png" />
     <Resource Include="Resources\Images\btn_food_down_bg.png" />

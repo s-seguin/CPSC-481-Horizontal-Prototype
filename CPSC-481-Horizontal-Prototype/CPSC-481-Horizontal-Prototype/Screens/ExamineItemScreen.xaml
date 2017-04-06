@@ -9,8 +9,15 @@
 
 
     <Grid >
-        <Label x:Name="lbl_sides" Content="Flavors:" HorizontalAlignment="Left" Margin="10,221,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Left" FontSize="16" Visibility="Collapsed"/>
-        <ComboBox x:Name="dd_sides" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30"  Width="120" Margin="10,252,0,0" SelectionChanged="dd_sides_SelectionChanged" Visibility="Collapsed" />
+        <Label x:Name="lbl_sides" Content="Flavors" Visibility="Collapsed"  HorizontalAlignment="Left" Margin="26,0,0,80" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="18" FontFamily="Segoe UI Light" />
+        <ComboBox x:Name="dd_sides"  Visibility="Collapsed"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30"  Width="199" Margin="26,0,0,50" SelectionChanged="dd_sides_SelectionChanged" BorderBrush="#FF213F57" Foreground="#FF213F57" FontSize="14"  >
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
 
         <Grid HorizontalAlignment="Stretch" Height="70" VerticalAlignment="Top" Background="#FF213F57">
             <Label x:Name="lbl_itemName" Content="Drink Label" HorizontalAlignment="Left"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="34" Foreground="White" Background="{x:Null}" Margin="25,0,0,0" Height="70"/>

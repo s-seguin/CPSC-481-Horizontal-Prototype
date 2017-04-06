@@ -30,8 +30,8 @@ namespace CPSC_481_Horizontal_Prototype
         {
             InitializeComponent();
             DateTime dt = DateTime.Now;
-            string day = dt.DayOfWeek.ToString();
-            //string day = "Saturday";
+            //string day = dt.DayOfWeek.ToString();
+            string day = "Tuesday";
             wingFlavors.Sort();
 
             switch (day)
@@ -239,6 +239,11 @@ namespace CPSC_481_Horizontal_Prototype
             wp_drinks.Children.Add(new MenuItem_Control("Platinum Blonde", gasLampPrice, "A preservative free, golden lager with a thick head and a malty smoothness. An easy drinking beer that is great for watching the game, long nights on the patio or the perfect pairing for wing night.", path + "platinum_blonde.jpeg"));
 
             wp_drinks.Children.Add(new MenuItem_Control("Gas Lamp \nPrairie Pale Ale", gasLampPrice, "A crisp copper coloured pale ale that perfectly balances a smooth and robust malt base with an aromatic hint of citrus hops.", path + "prairie_pale_ale.jpeg"));
+        }
+
+        private void sv_specials_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

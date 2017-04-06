@@ -9,7 +9,7 @@
         Title="AddTab" Height="450" Width="800" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" Background="{x:Null}" Foreground="{x:Null}">
     <Grid Background="White">
         <Label x:Name="lbl_name"  Content="Please enter your name below" HorizontalAlignment="Stretch"   FontSize="24" Foreground="#FF536472" FontFamily="Segoe UI Light" Margin="25,95,25,0" RenderTransformOrigin="0.469,0.902" VerticalAlignment="Top" Height="43"/>
-        <TextBox x:Name="txtbox_name" HorizontalAlignment="Stretch" Height="62" TextWrapping="Wrap" VerticalAlignment="Center"  TextChanged="textBox_TextChanged" FontSize="36" Background="{x:Null}" BorderBrush="#FF00BB97" Foreground="#FF536472" BorderThickness="0,0,0,2" Margin="30,0" SelectionBrush="#FF00BB97" FontFamily="Segoe UI Semilight"/>
+        <TextBox x:Name="txtbox_name" HorizontalAlignment="Stretch" Height="62" TextWrapping="Wrap" VerticalAlignment="Center"  TextChanged="textBox_TextChanged" MaxLength="20" FontSize="36" Background="{x:Null}" BorderBrush="#FF00BB97" Foreground="#FF536472" BorderThickness="0,0,0,2" Margin="30,0" SelectionBrush="#FF00BB97" FontFamily="Segoe UI Semilight"/>
         <WrapPanel x:Name="input_name" DockPanel.Dock="Top" VerticalAlignment="Center" HorizontalAlignment="Stretch"   Margin="10,0">
 
         </WrapPanel>

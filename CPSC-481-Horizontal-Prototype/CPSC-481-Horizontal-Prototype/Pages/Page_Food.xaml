@@ -76,7 +76,7 @@
             <Button Name="btn_desserts" Style="{StaticResource InformButton}" Click="navButton_Click" >Desserts</Button>
         </StackPanel>
 
-        <ScrollViewer x:Name="sv_food" HorizontalAlignment="Stretch" Margin="0,195,0,0" VerticalAlignment="Stretch">
+        <ScrollViewer x:Name="sv_food" HorizontalAlignment="Stretch" Margin="0,195,0,0" VerticalAlignment="Stretch" PanningMode="VerticalOnly" ManipulationBoundaryFeedback="sv_food_ManipulationBoundaryFeedback">
             <StackPanel >
                 <!-- Starters -->
                 <Label x:Name="header_starters" Content="Starters" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>

@@ -157,5 +157,9 @@ namespace CPSC_481_Horizontal_Prototype
             }
         }
 
+        private void sv_drinks_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

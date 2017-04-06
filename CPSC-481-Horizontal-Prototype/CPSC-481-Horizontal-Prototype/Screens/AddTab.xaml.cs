@@ -48,9 +48,9 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void btn_submit_Click(object sender, RoutedEventArgs e)
         {
-            string theText = txtbox_name.Text;
+            string theText = txtbox_name.Text.Trim();
 
-            if (theText.Equals("") || theText == null)
+            if (theText.Equals("") || theText == null )
             {
                 if (ms.allTabs == null)
                     theText = "0";
@@ -59,7 +59,6 @@ namespace CPSC_481_Horizontal_Prototype
             }
             else
             {
-                theText = theText.Trim();
                 theText =  theText.First().ToString().ToUpper() + String.Join("", theText.Skip(1));
             }
 

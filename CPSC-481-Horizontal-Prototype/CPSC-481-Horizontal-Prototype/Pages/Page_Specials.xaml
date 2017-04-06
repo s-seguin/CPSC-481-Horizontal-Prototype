@@ -82,7 +82,7 @@
             </Border>
         </DockPanel>
 
-        <ScrollViewer x:Name="sv_specials" HorizontalAlignment="Stretch" Margin="0,240,0,0" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible">
+        <ScrollViewer x:Name="sv_specials" HorizontalAlignment="Stretch" Margin="0,240,0,0" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible" PanningMode="VerticalOnly" ManipulationBoundaryFeedback="sv_specials_ManipulationBoundaryFeedback">
             <StackPanel >
                 <Label x:Name="lbl_info" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FF288DA7" FontSize="28" Visibility="Collapsed" />
 

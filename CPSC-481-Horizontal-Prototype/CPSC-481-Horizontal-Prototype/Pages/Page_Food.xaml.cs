@@ -127,5 +127,10 @@ namespace CPSC_481_Horizontal_Prototype
                 sv_food.ScrollToVerticalOffset(point.Y);
             }
         }
+
+        private void sv_food_ManipulationBoundaryFeedback(object sender, ManipulationBoundaryFeedbackEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }

@@ -64,6 +64,11 @@ namespace CPSC_481_Horizontal_Prototype.Classes
             }
             ms.sp_tray.Children.Clear();
             ms.focusedTab.LoadTray();
+
+            if (ms.sp_tray.Children.Count == 0)
+            {
+                ms.lbl_submitQueue.IsEnabled = false;
+            }
         }
 
 

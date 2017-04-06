@@ -5,16 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
         mc:Ignorable="d"
-        Title="LeavingTabWarning" Height="500" Width="750" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
-    <Grid Background="#FF344D61">
-        <WrapPanel Margin="10,10,0,0" Height="100" Width="278" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <Label x:Name="label" Content="&#x26A0;" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Segoe UI Symbol" FontSize="64" Foreground="#FFC1A10F"/>
-            <Label x:Name="lbl_warning" Content="Warning" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="48" Foreground="#FFC1A10F" />
+        Title="LeavingTabWarning" Height="400" Width="995" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="0" Background="White">
+    <Grid Background="White">
+        <WrapPanel Margin="0" Height="70"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FF213F57" >
+            <Label x:Name="lbl_warning" Content="Warning" VerticalContentAlignment="Center" FontSize="34" Foreground="White" Margin="26,0,0,0" Height="70" />
         </WrapPanel>
-        <TextBlock x:Name="textBlock" FontSize="24" Margin="55,121,55,159" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="216" FontFamily="Segoe UI Light" Text="Only a maximum of 8 tabs are allowed for one system. Ask waitress for another system, if your party is actually larger than 8 people." />
-        <Button x:Name="btn_yes" Content="Ok" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="100"  Width="746" Background="#FF536472" Foreground="#FF00BB97" BorderBrush="{x:Null}" FontSize="26.667" Click="btn_yes_Click" />
-
-        <Separator HorizontalAlignment="Stretch" Height="5" Margin="0,0,0,100" VerticalAlignment="Bottom" Background="White"/>
         
+        <Label x:Name="label" Content="&#x26A0;" HorizontalAlignment="Left" VerticalContentAlignment="Top" VerticalAlignment="Top" FontFamily="Segoe UI Symbol" FontSize="64" Foreground="#FF213F57" Margin="25,135,0,0"/>
+        <TextBlock x:Name="textBlock" FontSize="24" Margin="125,150,25,178" Foreground="#FF213F57" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" Height="72" FontFamily="Segoe UI Light">
+            <Run Text="Only a maximum of 8 tabs are allowed for one system."  />
+            <LineBreak />
+            <Run Text="Ask waitress for another system, if your party is actually larger than 8 people."  />
+        </TextBlock>
+        <Button x:Name="btn_yes" Content="Ok" Click="btn_yes_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="52"  Width="160" Background="#FF00BB97" Foreground="White" BorderBrush="{x:Null}" FontSize="20" Margin="25,0,0,52" BorderThickness="0"  />
+
     </Grid>
 </Window>

@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
         mc:Ignorable="d"
-        Title="ClosingScreen" Height="500" Width="750" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
-    <Grid Background="#FF344D61">
-        
-        <Label x:Name="lbl_warning" Content="Thank You" Width="Auto" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="48" Foreground="#FFC1A10F" VerticalAlignment="Top" Margin="10,10,0,0" />
-        
-        <TextBlock x:Name="textBlock" FontSize="24" Margin="55,121,55,159" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="216" FontFamily="Segoe UI Light" Text="Thank you for choosing Kilkenny's Ordering Kiosk. We hope you enjoyed your experience, and come back again." />
+        Title="ClosingScreen" Height="400" Width="995" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="0" Background="White">
+    <Grid>
+        <WrapPanel Margin="0" Height="70"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FF213F57" >
+            <Label x:Name="lbl_warning" Content="Thank You" VerticalContentAlignment="Center" FontSize="34" Foreground="White" Margin="26,0,0,0" Height="70" />
+        </WrapPanel>
+        <Image x:Name="logo" Width="125" Source="/Resources/Images/logo_sml.png" HorizontalAlignment="Left" Margin="25,162,0,112"/>
+        <TextBlock x:Name="textBlock" FontSize="24" Margin="214,183,25,138" Foreground="#FF213F57" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" Height="79" FontFamily="Segoe UI Light">
+            <Run Text="Thank you for choosing Kilkenny's Ordering Kiosk. "  />
+            <LineBreak />
+            <Run Text="We hope you enjoyed your experience, come back soon!"  />
+        </TextBlock>
 
 
     </Grid>

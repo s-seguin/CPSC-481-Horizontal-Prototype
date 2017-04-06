@@ -5,27 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
         mc:Ignorable="d"
-        Title="HelpScreen" Height="500" Width="750" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="2,2,2,2" BorderBrush="#FFF4F4F4">
-    <Grid Background="#FF344D61">
-        <WrapPanel Margin="10,10,0,0" Height="45" Width="119" HorizontalAlignment="Left" VerticalAlignment="Top" >
-            <Image Source="/Resources/Images/help_icon.png" Height="45" Width="45" VerticalAlignment="Center"  />
-            <Label x:Name="lbl_help" Content="Help" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="28" Foreground="White"/>
-        </WrapPanel>
-        <TextBlock x:Name="textBlock" FontSize="24" Margin="55,121,55,159" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Height="216" FontFamily="Segoe UI Light" ><Run/><LineBreak/><Run Text="A server has been notified and will be with you as soon as possible. "/><LineBreak/><Run Text="If you tapped the help button by accident or no longer require assistance, please hit the 'Cancel' button, otherwise tap 'Resume'  to continue ordering."/></TextBlock>
-        <Button x:Name="btn_cancel" Content="Cancel" Click="btn_cancel_Click" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="100"  Width="370" Background="#FF536472" Foreground="#FFC92440" BorderBrush="{x:Null}" FontSize="26.667" />
-        <Button x:Name="btn_resume" Content="Resume" HorizontalAlignment="LEft" VerticalAlignment="Bottom" Height="100"  Width="370" Background="#FF536472" Foreground="#FF00BB97" BorderBrush="{x:Null}" FontSize="26.667" Click="btn_resume_Click" />
+        Title="HelpScreen" Height="540" Width="990" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="0" BorderBrush="White" Background="White">
+    <Grid>
+        <WrapPanel  Height="70" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FF213F57" >
 
-        <Separator HorizontalAlignment="Stretch" Height="5" Margin="0,0,0,100" VerticalAlignment="Bottom" Background="White"/>
-        <Separator HorizontalAlignment="Center" Height="1" VerticalAlignment="Bottom" Width="104" Background="White" Margin="373,0,269,-3" >
-            <Separator.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-90"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Separator.RenderTransform>
-        </Separator>
+            <Label x:Name="lbl_help" Content="Help" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="34" Foreground="White" Height="70" Margin="25,0,0,0"/>
+        </WrapPanel>
+
+        <Image Source="/Resources/Images/help_icon.png" Height="66" VerticalAlignment="Top" Margin="40,146,0,0" HorizontalAlignment="Left"  />
+
+        <TextBlock x:Name="textBlock2" FontSize="22" Margin="150,146,25,328" Foreground="#FF213F57" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" Height="66">
+            <Run Text="You have called for help!"  />
+            <LineBreak />
+            <Run Text="A server has been notified and will be with you as soon as possible."  />
+        </TextBlock>
+        <TextBlock x:Name="textBlock1" FontSize="20" Margin="25,330,25,147" Foreground="#FF213F57" HorizontalAlignment="Stretch" TextWrapping="Wrap" VerticalAlignment="Center" Height="63" FontFamily="Segoe UI Light" TextAlignment="Center"  >
+            <Run Text="If you tapped the help button by accident or no longer require assistance, please hit the 'Cancel' button, otherwise tap 'Resume'  to continue ordering."/>
+        </TextBlock>
+
+        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Stretch" Height="2" Margin="150,263,150,0" VerticalAlignment="Top" />
+
+        <Button x:Name="btn_cancel" Content="Cancel" Click="btn_cancel_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="52"  Width="160"  Background="White" Foreground="#FF213F57" BorderBrush="#FF213F57" FontSize="20" Margin="210,0,0,52" BorderThickness="1" />
+        <Button x:Name="btn_resume" Content="Resume" Click="btn_resume_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="52"  Width="160" Background="#FF00BB97" Foreground="White" BorderBrush="{x:Null}" FontSize="20" Margin="25,0,0,52" BorderThickness="0" />
+
+
+
 
     </Grid>
 </Window>

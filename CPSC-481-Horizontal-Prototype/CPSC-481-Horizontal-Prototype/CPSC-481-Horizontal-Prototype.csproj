@@ -267,6 +267,7 @@
   <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\Images\placedOrder.png" />
+    <Resource Include="Screens\btn_exit.png" />
     <Resource Include="Resources\Images\new_tab.png" />
     <Resource Include="Resources\Images\btn_drinks_down_bg.png" />
     <Resource Include="Resources\Images\btn_food_down_bg.png" />

@@ -141,7 +141,7 @@
             </StackPanel>
 
             <!-- Exit button-->
-            <Button x:Name="btn_exit" Width="55" Margin="10" Height="75" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="btn_exit_Click" Style="{StaticResource Special_btn}">
+            <Button x:Name="btn_exit" Width="75" Margin="0" Height="75" BorderThickness="0,0,0,0" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="btn_exit_Click" Style="{StaticResource Special_btn}">
                 <Button.Background >
                     <ImageBrush ImageSource="/Resources/Images/btn_exit.png" />
                 </Button.Background>

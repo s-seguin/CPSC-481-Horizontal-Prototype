@@ -160,9 +160,9 @@ namespace CPSC_481_Horizontal_Prototype.Classes
                 //update order queue total
 
             }
-            ps.subVal.Content = "$" + queueTotal;
-            ps.gstVal.Content = "$" + queueTotal * .05;
-            ps.totalVal.Content = "$" + queueTotal * 1.05;
+            ps.subVal.Content = "$" + queueTotal.ToString("F");
+            ps.gstVal.Content = "$" + (queueTotal * .05).ToString("F");
+            ps.totalVal.Content = "$" + (queueTotal * 1.05).ToString("F");
         }
 
 

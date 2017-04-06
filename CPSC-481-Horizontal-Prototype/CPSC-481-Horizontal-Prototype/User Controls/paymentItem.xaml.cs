@@ -42,7 +42,7 @@ namespace CPSC_481_Horizontal_Prototype.User_Controls
             InitializeComponent();
             item_name.Content = name;
             item_quantity.Content += quantity.ToString();
-            item_price.Content += price.ToString(); ;
+            item_price.Content += price.ToString("F");
 
             
         }

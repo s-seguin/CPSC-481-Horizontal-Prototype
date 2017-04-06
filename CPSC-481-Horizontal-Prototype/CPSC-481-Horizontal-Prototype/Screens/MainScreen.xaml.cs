@@ -278,8 +278,27 @@ namespace CPSC_481_Horizontal_Prototype
             }
             if (allEmpty)
             {
-                MainScreen ms = new MainScreen();
-                this.Close();
+                GrayedOutWindow gw = new GrayedOutWindow();
+                ExitScreen es = new ExitScreen(this);
+
+                es.textBlock.Text = "You are about to return to the main menu. This will close all your open tabs.\nAre you sure you want to continue?";
+                es.btn_yes.Content = "Yes";
+                es.btn_yes.Width = 160;
+                es.btn_no.Content = "No";
+                es.btn_no.Width = 160;
+                es.btn_no.Margin = new Thickness(210, 0, 0, 52);
+
+                gw.Show();
+                es.ShowDialog();
+                gw.Close();
+            }
+            else
+            {
+                GrayedOutWindow gw = new GrayedOutWindow();
+                ExitScreen es = new ExitScreen(this);
+                gw.Show();
+                es.ShowDialog();
+                gw.Close();
             }
         }
 

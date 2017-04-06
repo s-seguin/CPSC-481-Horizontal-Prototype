@@ -122,6 +122,13 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_vodka.Children.Add(new MenuItem_Control("Smirnoff \nFlavored", "$8.00", "", path + "smirnoff_flavored.jpeg"));
 
+            //Init Non-Alcholic Beverages
+            wp_nonAlc.Children.Add(new MenuItem_Control("Water", "$0.00", "H20", path + "water.png"));
+
+            wp_nonAlc.Children.Add(new MenuItem_Control("Coca Cola", "$2.50", "Coca-Cola is the most popular and biggest-selling soft drink in history, as well as one of the most recognizable brands in the world.", path + "coke.png"));
+
+            wp_nonAlc.Children.Add(new MenuItem_Control("Sprite", "$2.50", "Introduced in 1961, Sprite is the world's leading lemon-lime flavored soft drink. Sprite is sold in more than 190 countries and ranks as the No. 3 soft drink worldwide.", path + "sprite.png"));
+
         }
 
         private void navButton_Click(object sender, RoutedEventArgs e)
@@ -151,6 +158,12 @@ namespace CPSC_481_Horizontal_Prototype
                 sv_drinks.ScrollToVerticalOffset(point.Y);
             }
             else if (btn_wine.IsFocused)
+            {
+                var point = header_wine.TranslatePoint(new Point(0, 0), header_beer);
+                sv_drinks.ScrollToVerticalOffset(point.Y);
+            }
+
+            else if (btn_nonAlc.IsFocused)
             {
                 var point = header_wine.TranslatePoint(new Point(0, 0), header_beer);
                 sv_drinks.ScrollToVerticalOffset(point.Y);

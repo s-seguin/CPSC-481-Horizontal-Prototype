@@ -72,6 +72,7 @@
             <Button  x:Name="btn_cocktails" Style="{StaticResource InformButton}" Click="navButton_Click" >Cocktails</Button>
             <Button  x:Name="btn_martinis" Style="{StaticResource InformButton}" Click="navButton_Click" >Martinis</Button>
             <Button  x:Name="btn_wine" Style="{StaticResource InformButton}" Click="navButton_Click" >Wine</Button>
+            <Button  x:Name="btn_nonAlc" Style="{StaticResource InformButton}" Click="navButton_Click" Width="160" >Non-Alcoholic</Button>
         </StackPanel>
 
         <ScrollViewer x:Name="sv_drinks" HorizontalAlignment="Stretch" Margin="0,195,0,0" VerticalAlignment="Stretch" PanningMode="VerticalOnly" ManipulationBoundaryFeedback="sv_drinks_ManipulationBoundaryFeedback">
@@ -130,6 +131,9 @@
                 <Label x:Name="header_martinis" Content="Martinis" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
                 <!--Wines-->
                 <Label x:Name="header_wine" Content="Wine" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <!--Non Alcholic Beverages-->
+                <Label x:Name="header_nonAlc" Content="Non Alcholic Beverages" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <WrapPanel x:Name="wp_nonAlc" Orientation="Horizontal" Margin="60,10,200,10"/>
             </StackPanel>
         </ScrollViewer>
 

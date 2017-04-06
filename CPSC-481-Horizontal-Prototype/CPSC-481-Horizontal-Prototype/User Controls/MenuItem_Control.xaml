@@ -4,8 +4,39 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype" >
+    
+    <UserControl.Resources>
+    <Style x:Key="style_MenuItem" TargetType="Button">
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border"
+        				    Background="{TemplateBinding Background}">
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" >
+                                    <Setter.Value>
+                                        <ImageBrush x:Name="specials_background" ImageSource="/Resources/Images/btn_specials_down_bg.png"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
     <Grid Height="165" Width="165" Margin="20">
-        <Button x:Name="btn_viewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="150" Click="btn_viewItem_Click" BorderBrush="#FFEEEEEE" BorderThickness="1">
+        <Button x:Name="btn_viewItem" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Height="150" Click="btn_viewItem_Click" BorderBrush="#FFEEEEEE" BorderThickness="1" Style="{StaticResource style_MenuItem}" >
             <Button.Background>
                 <ImageBrush x:Name="background" ImageSource="../Resources/Images/beer.png"/>
             </Button.Background>

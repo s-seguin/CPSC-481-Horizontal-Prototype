@@ -47,10 +47,10 @@
             </GridSplitter.RenderTransform>
         </GridSplitter>
 
-        <WrapPanel Height="60" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,25,100" Width="250">
+        <WrapPanel Height="60" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,25,100" Width="260">
             <Label x:Name="lbl_quantity"  VerticalContentAlignment="Center" Content="Quantity" FontSize="22" FontFamily="Segoe UI Light"/>
             <Button x:Name="btn_decrease" Content="&#xE012;" Width="60" VerticalContentAlignment="Top" FontFamily="Segoe UI Symbol" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}" Click="btn_decrease_Click" FontWeight="Bold" Foreground="#FF00BB97"/>
-            <TextBlock x:Name="tb_numItems" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="40" FontSize="40" TextAlignment="Center" FontFamily="Segoe UI Light" Height="60" Margin="0,3,0,0" HorizontalAlignment="Left"/>
+            <TextBlock x:Name="tb_numItems" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="50" FontSize="40" TextAlignment="Center" FontFamily="Segoe UI Light" Height="60" Margin="0,3,0,0" HorizontalAlignment="Left"/>
             <Button x:Name="btn_increase" Content="&#xE013;" Width="60"  VerticalContentAlignment="Top"  FontFamily="Segoe UI Symbol" FontSize="36" BorderBrush="{x:Null}" Background="{x:Null}" Click="btn_increase_Click" FontWeight="Bold" Foreground="#FF00BB97" HorizontalAlignment="Right" VerticalAlignment="Top" Height="60"/>
         </WrapPanel>
         <Button x:Name="btn_addToTray" Content="Add to Tray" HorizontalAlignment="Right" Margin="0,0,25,25" VerticalAlignment="Bottom" Height="52"  Width="250"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="btn_addToTray_Click" Background="#FF00BB97" Foreground="White" FontFamily="Segoe UI Light" FontSize="20" BorderBrush="{x:Null}"/>

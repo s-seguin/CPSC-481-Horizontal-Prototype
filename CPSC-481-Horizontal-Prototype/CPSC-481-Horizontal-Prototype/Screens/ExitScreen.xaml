@@ -1,0 +1,19 @@
+﻿<Window x:Class="CPSC_481_Horizontal_Prototype.Screens.ExitScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CPSC_481_Horizontal_Prototype.Screens"
+        mc:Ignorable="d"
+        Height="400" Width="995" WindowStyle="None" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" BorderThickness="0" Background="White">
+    <Grid>
+        <WrapPanel Margin="0" Height="70"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#FF213F57" >
+            <Label x:Name="lbl_warning" Content="Warning" VerticalContentAlignment="Center" FontSize="34" Foreground="White" Margin="26,0,0,0" Height="70" />
+        </WrapPanel>
+        <Label x:Name="label" Content="&#x26A0;" HorizontalAlignment="Left" VerticalContentAlignment="Top" VerticalAlignment="Top" FontFamily="Segoe UI Symbol" FontSize="64" Foreground="#FF213F57" Margin="25,135,0,0"/>
+        <TextBlock x:Name="textBlock" FontSize="24" Margin="122,109,28,141" Foreground="#FF213F57" HorizontalAlignment="Stretch" TextWrapping="WrapWithOverflow" VerticalAlignment="Center" Height="150" FontFamily="Segoe UI Light"><Run Text="You are trying to return to the main menu while one or more tabs still have a balance owing."/><LineBreak/><Run Text="Do you want to go directly to the payment screen?"/></TextBlock>
+        <Button x:Name="btn_no" Content="No, take me back" Click="btn_no_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="52"  Width="180"  Background="White" Foreground="#FF213F57" BorderBrush="#FF213F57" FontSize="20" Margin="220,0,0,52" BorderThickness="1"/>
+        <Button x:Name="btn_yes" Content="Yes, I want to pay" Click="btn_yes_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="52"  Width="180" Background="#FF00BB97" Foreground="White" BorderBrush="{x:Null}" FontSize="20" Margin="25,0,0,52" BorderThickness="0"/>
+
+    </Grid>
+</Window>

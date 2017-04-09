@@ -71,16 +71,6 @@
             <Button x:Name="btn_food" Style="{StaticResource InformButton}" Click="navButton_Click">Food</Button>
         </StackPanel>
 
-        <DockPanel Width="700" Height="200" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="0,25,250,0">
-            <Border CornerRadius="5" BorderBrush="#FF344D61" Background="White" BorderThickness="5" DockPanel.Dock="Top">
-                <StackPanel>
-                    <Label Content="$3.99 HAPPY HOUR" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="White" FontSize="32" Focusable="False" Width="696" Background="#FF344D61" FontWeight="Bold" Margin="-1,-1,-1,0" />
-                    <Label Content="14 oz. Lamp Draught | Domestic Bottles |" HorizontalAlignment="Center" Foreground="#FF344D61" FontSize="28" />
-                    <Label Content="Domestic Caesars | 6 oz. House Wine | Highball" HorizontalAlignment="Center" Foreground="#FF344D61" FontSize="28" />
-                    <Label Content="MONDAY TO FRIDAY 2PM-6PM AND 4PM-6PM ON WEEKENDS" HorizontalAlignment="Center" Foreground="#FF344D61" FontSize="24" />
-                </StackPanel>
-            </Border>
-        </DockPanel>
 
         <ScrollViewer x:Name="sv_specials" HorizontalAlignment="Stretch" Margin="0,240,0,0" VerticalAlignment="Stretch" VerticalScrollBarVisibility="Visible" PanningMode="VerticalOnly" ManipulationBoundaryFeedback="sv_specials_ManipulationBoundaryFeedback">
             <StackPanel >

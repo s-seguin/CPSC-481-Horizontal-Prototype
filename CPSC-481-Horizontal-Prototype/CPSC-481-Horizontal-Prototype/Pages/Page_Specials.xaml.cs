@@ -129,7 +129,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Tacos", "$2.50", "Try our sabroso meat, chicken or fish tacos!\n\nMinimum order of 3.", foodPath + "tacos.jpg", true));
+            wp_food.Children.Add(new MenuItem_Control("Tacos", "$2.50", "Try our sabroso meat, chicken or fish tacos!", foodPath + "tacos.jpg", true));
         }
 
         private void wedSpecials()
@@ -164,12 +164,7 @@ namespace CPSC_481_Horizontal_Prototype
 
         private void thurSpecials()
         {
-            lbl_info.Content = "Bottles of wine - 51% off \nGlasses of wine 6 oz. - $7.50 | 9 oz. - $11";
-            lbl_info.Visibility = Visibility.Visible;
-
-            string winePrice = "51% off";
-
-            wp_food.Children.Add(new MenuItem_Control("Steak Sandwich", "$8.99", "marinated 28 day aged Certified Angus Beef sirloin, grilled Italian filone, buttermilk beer battered onion ring, Montreal steak spice infused compound butter", foodPath + "steak_sandwich_special.png", sides, true));
+           wp_food.Children.Add(new MenuItem_Control("Steak Sandwich", "$8.99", "marinated 28 day aged Certified Angus Beef sirloin, grilled Italian filone, buttermilk beer battered onion ring, Montreal steak spice infused compound butter", foodPath + "steak_sandwich_special.png", sides, true));
 
         }
 

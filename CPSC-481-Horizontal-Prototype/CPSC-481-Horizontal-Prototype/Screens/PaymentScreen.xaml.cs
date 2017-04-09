@@ -56,11 +56,19 @@ namespace CPSC_481_Horizontal_Prototype.Screens
             ms.newTabThickness -= 75;
             int marginTop = 150;
             int i = 0;
+            bool foundButton = false;
             foreach (Button btn  in ms.tabButtonsList)
             {
-                btn.Margin = new Thickness(0, marginTop, 0, 0);
-                i++;
-                marginTop -= 75;
+                //if (btn == ms.focusedTab.GetTabButton())
+                //{
+                //    foundButton = true;
+                //}
+                //if (foundButton)
+                //{
+                    btn.Margin = new Thickness(0, marginTop, 0, 0);
+                    i++;
+                    marginTop += 75;
+                //}
             }
             if (ms.allTabs.GetTabs().Count > 0)
             {

@@ -25,6 +25,7 @@ namespace CPSC_481_Horizontal_Prototype
         String name { get; set; }
         String price { get; set; }
         String description { get; set; }
+        bool isFood = false;
 
         List<string> cbOptions { get; set; }
 
@@ -61,7 +62,7 @@ namespace CPSC_481_Horizontal_Prototype
 
 
         //wing menu item because it contains flavors
-        public MenuItem_Control(string name, string price, string description, string path, List <string> cbOptions)
+        public MenuItem_Control(string name, string price, string description, string path, List <string> cbOptions, bool isFood)
         {
             InitializeComponent();
             this.lbl_itemName.Content = name;
@@ -71,6 +72,32 @@ namespace CPSC_481_Horizontal_Prototype
             this.description = description;
             this.background.ImageSource = new BitmapImage(new Uri(path, UriKind.Relative));
             this.cbOptions = cbOptions;
+            this.isFood = isFood;
+
+            //change price format
+            string tempPrice = this.price.TrimStart('$');
+            if (tempPrice.Contains('/'))
+                tempPrice = tempPrice.Replace("/oz.", "");
+            double priceInt = Convert.ToDouble(tempPrice);
+
+            //change item name to fit on one line
+            string name1 = Regex.Replace(this.name, @"\n", "");
+
+            //initialize MenuItem object
+            mi = new Classes.MenuItem(name1, this.getDesription(), priceInt);
+        }
+
+        //wing menu item because it contains flavors
+        public MenuItem_Control(string name, string price, string description, string path, bool isFood)
+        {
+            InitializeComponent();
+            this.lbl_itemName.Content = name;
+            this.name = name;
+            this.lbl_itemPrice.Content = price;
+            this.price = price;
+            this.description = description;
+            this.background.ImageSource = new BitmapImage(new Uri(path, UriKind.Relative));
+            this.isFood = isFood;
 
             //change price format
             string tempPrice = this.price.TrimStart('$');
@@ -122,6 +149,12 @@ namespace CPSC_481_Horizontal_Prototype
                 eis.dd_sides.SelectedIndex = 0;
                 eis.lbl_sides.Visibility = Visibility.Visible;
                 eis.dd_sides.Visibility = Visibility.Visible;
+            }
+
+            if (this.isFood)
+            {
+                eis.lbl_notes.Visibility = Visibility.Visible;
+                eis.txtbox_notes.Visibility = Visibility.Visible;
             }
 
             //change overlay dimensions

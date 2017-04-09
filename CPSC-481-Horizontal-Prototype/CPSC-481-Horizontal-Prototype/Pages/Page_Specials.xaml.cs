@@ -95,7 +95,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Chicken Wings", "$2.40", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip\n\nCome in orders of 10.", foodPath + "wings_special.jpg", wingFlavors));
+            wp_food.Children.Add(new MenuItem_Control("Chicken Wings", "$2.40", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip\n\nCome in orders of 10.", foodPath + "wings_special.jpg", wingFlavors, true));
         }
 
         private void tueSpecials()
@@ -120,7 +120,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Tacos", "$2.50", "Try our sabroso meat, chicken or fish tacos!\n\nMinimum order of 3.", foodPath + "tacos.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Tacos", "$2.50", "Try our sabroso meat, chicken or fish tacos!\n\nMinimum order of 3.", foodPath + "tacos.jpg", true));
         }
 
         private void wedSpecials()
@@ -148,9 +148,9 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Big Pub Burger", "$6.50", "house-made beef patty, bacon, grilled onions, sautéed mushrooms, signature burger sauce, green leaf lettuce, tomato, red onion, pickle, Swiss, mozzarella or Canadian cheddar cheese, fresh brioche bun", foodPath + "big_pub_special.png"));
+            wp_food.Children.Add(new MenuItem_Control("Big Pub Burger", "$6.50", "house-made beef patty, bacon, grilled onions, sautéed mushrooms, signature burger sauce, green leaf lettuce, tomato, red onion, pickle, Swiss, mozzarella or Canadian cheddar cheese, fresh brioche bun", foodPath + "big_pub_special.png", true));
 
-            wp_food.Children.Add(new MenuItem_Control("Wings", "$6.50", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip.\n\nCome in orders of 10.", foodPath + "wings.jpg", wingFlavors));
+            wp_food.Children.Add(new MenuItem_Control("Wings", "$6.50", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip.\n\nCome in orders of 10.", foodPath + "wings.jpg", wingFlavors, true));
         }
 
         private void thurSpecials()
@@ -160,7 +160,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             string winePrice = "51% off";
 
-            wp_food.Children.Add(new MenuItem_Control("Steak Sandwich", "$8.99", "marinated 28 day aged Certified Angus Beef sirloin, grilled Italian filone, buttermilk beer battered onion ring, Montreal steak spice infused compound butter", foodPath + "steak_sandwich_special.png"));
+            wp_food.Children.Add(new MenuItem_Control("Steak Sandwich", "$8.99", "marinated 28 day aged Certified Angus Beef sirloin, grilled Italian filone, buttermilk beer battered onion ring, Montreal steak spice infused compound butter", foodPath + "steak_sandwich_special.png", true));
 
         }
 
@@ -189,7 +189,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Mussels", "$9.99", "1 pound of Atlantic mussels, garlic and white wine broth, grilled Italian filone", foodPath + "mussels.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Mussels", "$9.99", "1 pound of Atlantic mussels, garlic and white wine broth, grilled Italian filone", foodPath + "mussels.jpg", true));
         }
 
         private void satSpecials()
@@ -223,11 +223,11 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Smirnoff \nFlavored", "$8.00", "", path + "smirnoff_flavored.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Spicy Carnivore", "$9.00", "Italian sausage, Montréal smoked meat, chopped bacon, Sriracha tomato sauce, mixed three cheese blend", foodPath + "flatbread_spicy.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Spicy Carnivore", "$9.00", "Italian sausage, Montréal smoked meat, chopped bacon, Sriracha tomato sauce, mixed three cheese blend", foodPath + "flatbread_spicy.jpg", true));
 
-            wp_food.Children.Add(new MenuItem_Control("Prociutto and Arugula", "$9.00", "thin sliced prosciutto, mixed three cheese blend, house-made tomato sauce, fresh arugula", foodPath + "flatbread_prosciutto.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Prociutto and Arugula", "$9.00", "thin sliced prosciutto, mixed three cheese blend, house-made tomato sauce, fresh arugula", foodPath + "flatbread_prosciutto.jpg", true));
 
-            wp_food.Children.Add(new MenuItem_Control("Spinach and Feta", "$9.00", "fresh spinach, red onion, diced tomato, feta and mozzarella cheese, signature tomato sauce", foodPath + "flatbread_spinach.jpg"));
+            wp_food.Children.Add(new MenuItem_Control("Spinach and Feta", "$9.00", "fresh spinach, red onion, diced tomato, feta and mozzarella cheese, signature tomato sauce", foodPath + "flatbread_spinach.jpg", true));
         }
 
         private void sunSpecials()

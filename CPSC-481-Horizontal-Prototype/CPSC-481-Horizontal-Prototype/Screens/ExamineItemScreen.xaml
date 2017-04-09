@@ -9,8 +9,8 @@
 
 
     <Grid >
-        <Label x:Name="lbl_sides" Content="Flavors" Visibility="Collapsed"  HorizontalAlignment="Left" Margin="26,0,0,80" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="18" FontFamily="Segoe UI Light" />
-        <ComboBox x:Name="dd_sides"  Visibility="Collapsed"  HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30"  Width="199" Margin="26,0,0,50" SelectionChanged="dd_sides_SelectionChanged" BorderBrush="#FF213F57" Foreground="#FF213F57" FontSize="14"  >
+        <Label x:Name="lbl_sides" Content="Flavors" Visibility="Collapsed"  HorizontalAlignment="Left" Margin="25,0,0,123" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="18" FontFamily="Segoe UI Light" />
+        <ComboBox x:Name="dd_sides" Visibility="Collapsed" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30"  Width="199" Margin="25,0,0,93" SelectionChanged="dd_sides_SelectionChanged" BorderBrush="#FF213F57" Foreground="#FF213F57" FontSize="14"  >
             <ComboBox.Background>
                 <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                     <GradientStop Color="#FFF0F0F0" Offset="0"/>
@@ -18,6 +18,9 @@
                 </LinearGradientBrush>
             </ComboBox.Background>
         </ComboBox>
+
+        <Label x:Name="lbl_notes" Content="Notes" Visibility="Collapsed"  HorizontalAlignment="Left" Margin="316,0,0,136" VerticalAlignment="Bottom" HorizontalContentAlignment="Left" FontSize="18" FontFamily="Segoe UI Light" />
+        <TextBox x:Name="txtbox_notes" Visibility="Collapsed" HorizontalAlignment="Left" Height="111" Margin="316,0,0,25" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="340" BorderBrush="#FFE2E0E0"/>
 
         <Grid HorizontalAlignment="Stretch" Height="70" VerticalAlignment="Top" Background="#FF213F57">
             <Label x:Name="lbl_itemName" Content="Drink Label" HorizontalAlignment="Left"  HorizontalContentAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Top" FontSize="34" Foreground="White" Background="{x:Null}" Margin="25,0,0,0" Height="70"/>

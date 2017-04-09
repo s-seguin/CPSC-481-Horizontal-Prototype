@@ -147,7 +147,8 @@ namespace CPSC_481_Horizontal_Prototype
                 var point = header_topShelf.TranslatePoint(new Point(0, 0), header_beer);
                 sv_drinks.ScrollToVerticalOffset(point.Y);
             }
-            else if (btn_cocktails.IsFocused)
+            /*  Removed as we do not have the proper photos yet
+             * else if (btn_cocktails.IsFocused)
             {
                 var point = header_cocktails.TranslatePoint(new Point(0, 0), header_beer);
                 sv_drinks.ScrollToVerticalOffset(point.Y);
@@ -161,11 +162,11 @@ namespace CPSC_481_Horizontal_Prototype
             {
                 var point = header_wine.TranslatePoint(new Point(0, 0), header_beer);
                 sv_drinks.ScrollToVerticalOffset(point.Y);
-            }
+            }*/
 
             else if (btn_nonAlc.IsFocused)
             {
-                var point = header_wine.TranslatePoint(new Point(0, 0), header_beer);
+                var point = header_nonAlc.TranslatePoint(new Point(0, 0), header_beer);
                 sv_drinks.ScrollToVerticalOffset(point.Y);
             }
         }

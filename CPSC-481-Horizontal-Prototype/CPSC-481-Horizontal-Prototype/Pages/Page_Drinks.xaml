@@ -69,9 +69,9 @@
             <Button  x:Name="btn_beer" Style="{StaticResource InformButton}" Click="navButton_Click" >Beer</Button>
             <Button  x:Name="btn_whiskey" Style="{StaticResource InformButton}" Click="navButton_Click" >Whiskey</Button>
             <Button  x:Name="btn_topShelf" Style="{StaticResource InformButton}" Click="navButton_Click" >Top Shelf</Button>
-            <Button  x:Name="btn_cocktails" Style="{StaticResource InformButton}" Click="navButton_Click" >Cocktails</Button>
+            <!--<Button  x:Name="btn_cocktails" Style="{StaticResource InformButton}" Click="navButton_Click" >Cocktails</Button>
             <Button  x:Name="btn_martinis" Style="{StaticResource InformButton}" Click="navButton_Click" >Martinis</Button>
-            <Button  x:Name="btn_wine" Style="{StaticResource InformButton}" Click="navButton_Click" >Wine</Button>
+            <Button  x:Name="btn_wine" Style="{StaticResource InformButton}" Click="navButton_Click" >Wine</Button>-->
             <Button  x:Name="btn_nonAlc" Style="{StaticResource InformButton}" Click="navButton_Click" Width="160" >Non-Alcoholic</Button>
         </StackPanel>
 
@@ -126,11 +126,11 @@
                 <WrapPanel x:Name="wp_vodka" Orientation="Horizontal" Margin="60,10,200,10"/>
 
                 <!--Cocktails-->
-                <Label x:Name="header_cocktails" Content="Cocktails" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <!-- <Label x:Name="header_cocktails" Content="Cocktails" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/> -->
                 <!-- Martinis-->
-                <Label x:Name="header_martinis" Content="Martinis" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <!--<Label x:Name="header_martinis" Content="Martinis" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/> -->
                 <!--Wines-->
-                <Label x:Name="header_wine" Content="Wine" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
+                <!--<Label x:Name="header_wine" Content="Wine" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/> -->
                 <!--Non Alcholic Beverages-->
                 <Label x:Name="header_nonAlc" Content="Non Alcholic Beverages" HorizontalAlignment="Left" VerticalAlignment="Top"  Foreground="#FF288DA7" FontSize="28" Margin="25,25,0,0"/>
                 <WrapPanel x:Name="wp_nonAlc" Orientation="Horizontal" Margin="60,10,200,10"/>

@@ -26,10 +26,17 @@ namespace CPSC_481_Horizontal_Prototype
 
             string starters_price = "$15.00";
             string desserts_price = "$8.50";
-            List<string> wingFlavors = new List<string> { "Mango Chipotle", "Salt & Vinegar", "Parmesan Herb", "Dill Pickle", "Salt & Pepper", "Ketchup", "Asian Sweet Ginger", "Hot Teriyaki", "Baja Chipotle", "Buffalo Bleu Cheese",
+            // the first item in the list is the label name
+            List<string> wingFlavors = new List<string> {"Mango Chipotle", "Salt & Vinegar", "Parmesan Herb", "Dill Pickle", "Salt & Pepper", "Ketchup", "Asian Sweet Ginger", "Hot Teriyaki", "Baja Chipotle", "Buffalo Bleu Cheese",
                 "Sweet Chili", "Crown Royal Whiskey BBQ", "Spicy Parmesan", "Honey Garlic", "Teriyaki", "Red Cream Ale", "Poblano Chili and Lime", "Red Thai", "Sweet Szechwan", "Honey Hot", "Sri Lanken",
                 "Philippine Adobo Pepper", "Buffalo Mild", "Buffalo Medium", "Buffalo Hot", "Buffalo Hotter" };
             wingFlavors.Sort();
+            wingFlavors.Insert(0, "Flavours");
+
+            // the first item in the list is the label name
+            List<string> sides = new List<string> {"Sea Salted Fries", "Caesar Salad", "Celtic Greens", "Lager Chips", "Baked Potato", "Tater Tots", "Carrots & Celery", "Roasted Vegetables", "Mashed Potatoes", "Tomato Soup", "Soup Of The Day","Sweet Potato Fries", "Poutine"  };
+            sides.Sort();
+            sides.Insert(0, "Sides");
             string path = "../../Resources/Images/Food/";
 
             //init Starters
@@ -59,18 +66,18 @@ namespace CPSC_481_Horizontal_Prototype
             wp_salads.Children.Add(new MenuItem_Control("Quinoa & Kale", "$15.50", "tomato, onion, pepper, quinoa, red & curly kale, citrus dressing, goat's cheese, flatbread wedges", path + "salad_quinoa_kale.jpg", true));
 
             //init Burgers
-            wp_burgers.Children.Add(new MenuItem_Control("Big Pub Burger", "$15.50", "house-made beef patty, bacon, grilled onions, sautéed mushrooms, signature burger sauce, green leaf lettuce, tomato, red onion, pickle, Swiss, mozzarella or Canadian cheddar cheese, fresh brioche bun", path + "burger_big_pub.jpg", true));
-            wp_burgers.Children.Add(new MenuItem_Control("Jalapeño & Bacon", "$16.75", "house-made beef patty, double smoked thick cut bacon, spicy aioli, jalapeño rings, jalapeño jack cheddar cheese, lettuce, tomato, red onion, dill pickle, onion infused bun", path + "burger_jalapeno_bacon.jpg", true));
-            wp_burgers.Children.Add(new MenuItem_Control("Stuffed Bacon\nCheddar Burger", "$17.25", "6oz patty stuffed with bacon and cheddar, avocado aioli, back bacon, smoked cheddar, mango avocado salsa, red onion, sliced tomato, leaf lettuce, fried egg, fresh brioche bun", path + "burger_stuffed.jpg", true));
-            wp_burgers.Children.Add(new MenuItem_Control("Bison Burger", "$17.50", "Alberta free range bison patty, ripe avocado, bleu cheese BBQ sauce, tomato relish, green leaf lettuce, fresh brioche bun", path + "burger_bison.png", true));
-            wp_burgers.Children.Add(new MenuItem_Control("Lamb Burger", "$17.25", "house-made lamb burger, imported Guinness cheddar cheese, red onion marmalade, buttermilk beer battered onion ring, multi - grain bun", path + "burger_lamb.jpg", true));
-            wp_burgers.Children.Add(new MenuItem_Control("Malibu Garden Burger", "$15.00", "vegetarian burger with organic vegetables and grains, avocado aioli, lettuce, red onion, tomato, fresh mango avocado salsa, multi - grain bun", path + "burger_malibu.jpg", true));
+            wp_burgers.Children.Add(new MenuItem_Control("Big Pub Burger", "$15.50", "house-made beef patty, bacon, grilled onions, sautéed mushrooms, signature burger sauce, green leaf lettuce, tomato, red onion, pickle, Swiss, mozzarella or Canadian cheddar cheese, fresh brioche bun", path + "burger_big_pub.jpg", sides, true));
+            wp_burgers.Children.Add(new MenuItem_Control("Jalapeño & Bacon", "$16.75", "house-made beef patty, double smoked thick cut bacon, spicy aioli, jalapeño rings, jalapeño jack cheddar cheese, lettuce, tomato, red onion, dill pickle, onion infused bun", path + "burger_jalapeno_bacon.jpg", sides, true));
+            wp_burgers.Children.Add(new MenuItem_Control("Stuffed Bacon\nCheddar Burger", "$17.25", "6oz patty stuffed with bacon and cheddar, avocado aioli, back bacon, smoked cheddar, mango avocado salsa, red onion, sliced tomato, leaf lettuce, fried egg, fresh brioche bun", path + "burger_stuffed.jpg", sides, true));
+            wp_burgers.Children.Add(new MenuItem_Control("Bison Burger", "$17.50", "Alberta free range bison patty, ripe avocado, bleu cheese BBQ sauce, tomato relish, green leaf lettuce, fresh brioche bun", path + "burger_bison.png", sides, true));
+            wp_burgers.Children.Add(new MenuItem_Control("Lamb Burger", "$17.25", "house-made lamb burger, imported Guinness cheddar cheese, red onion marmalade, buttermilk beer battered onion ring, multi - grain bun", path + "burger_lamb.jpg", sides, true));
+            wp_burgers.Children.Add(new MenuItem_Control("Malibu Garden Burger", "$15.00", "vegetarian burger with organic vegetables and grains, avocado aioli, lettuce, red onion, tomato, fresh mango avocado salsa, multi - grain bun", path + "burger_malibu.jpg", sides, true));
 
             //init Sandwiches
-            wp_sandwiches.Children.Add(new MenuItem_Control("Montreal Reuben", "$17.00", "thick marble rye bread, sliced Montréal smoked meat, melted Swiss cheese, pickles, braised red cabbage, house - made beer mustard sauce", path + "sw_montreal_reuben.jpg", true));
-            wp_sandwiches.Children.Add(new MenuItem_Control("Brisket Dip", "$17.00", "slow cooked smoked brisket, grilled Italian filone, horseradish mayo, au jus", path + "sw_brisket_dip.jpg", true));
-            wp_sandwiches.Children.Add(new MenuItem_Control("Steak Sandwich", "$18.00", "marinated 28 day aged Certified Angus Beef sirloin, grilled Italian filone, buttermilk beer battered onion ring, Montreal steak spice infused compound butter ADD AN EXTRA 5oz STE", path + "sw_steak.jpg", true));
-            wp_sandwiches.Children.Add(new MenuItem_Control("Gourmet Grilled Cheese", "$16.00", "Canadian cheddar, Swiss cheese, smoked bacon, ripe avocado, sliced tomato, 1” thick sourdough, side of Sriracha balsamic ketchup", path + "sw_grilled_cheese.jpg", true));
+            wp_sandwiches.Children.Add(new MenuItem_Control("Montreal Reuben", "$17.00", "thick marble rye bread, sliced Montréal smoked meat, melted Swiss cheese, pickles, braised red cabbage, house - made beer mustard sauce", path + "sw_montreal_reuben.jpg", sides, true));
+            wp_sandwiches.Children.Add(new MenuItem_Control("Brisket Dip", "$17.00", "slow cooked smoked brisket, grilled Italian filone, horseradish mayo, au jus", path + "sw_brisket_dip.jpg", sides, true));
+            wp_sandwiches.Children.Add(new MenuItem_Control("Steak Sandwich", "$18.00", "marinated 28 day aged Certified Angus Beef sirloin, grilled Italian filone, buttermilk beer battered onion ring, Montreal steak spice infused compound butter ADD AN EXTRA 5oz STE", path + "sw_steak.jpg", sides, true));
+            wp_sandwiches.Children.Add(new MenuItem_Control("Gourmet Grilled Cheese", "$16.00", "Canadian cheddar, Swiss cheese, smoked bacon, ripe avocado, sliced tomato, 1” thick sourdough, side of Sriracha balsamic ketchup", path + "sw_grilled_cheese.jpg", sides, true));
 
             //init Flatbreads
             wp_flatbreads.Children.Add(new MenuItem_Control("Spicy Carnivore", "$14.50", "Italian sausage, Montréal smoked meat, chopped bacon, Sriracha tomato sauce, mixed three cheese blend", path + "flatbread_spicy.jpg", true));

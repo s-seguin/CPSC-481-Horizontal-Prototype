@@ -22,18 +22,27 @@ namespace CPSC_481_Horizontal_Prototype
     {
         string path = "../../Resources/Images/Drinks/";
         string foodPath = "../../Resources/Images/Food/";
+        // the first item in the list is the label name
         List<string> wingFlavors = new List<string> { "Mango Chipotle", "Salt & Vinegar", "Parmesan Herb", "Dill Pickle", "Salt & Pepper", "Ketchup", "Asian Sweet Ginger", "Hot Teriyaki", "Baja Chipotle", "Buffalo Bleu Cheese",
                 "Sweet Chili", "Crown Royal Whiskey BBQ", "Spicy Parmesan", "Honey Garlic", "Teriyaki", "Red Cream Ale", "Poblano Chili and Lime", "Red Thai", "Sweet Szechwan", "Honey Hot", "Sri Lanken",
                 "Philippine Adobo Pepper", "Buffalo Mild", "Buffalo Medium", "Buffalo Hot", "Buffalo Hotter" };
+       
+        // the first item in the list is the label name
+        List<string> sides = new List<string> { "Sea Salted Fries", "Caesar Salad", "Celtic Greens", "Lager Chips", "Baked Potato", "Tater Tots", "Carrots & Celery", "Roasted Vegetables", "Mashed Potatoes", "Tomato Soup", "Soup Of The Day", "Sweet Potato Fries", "Poutine" };
+        
 
         public Page_Specials()
         {
             InitializeComponent();
             DateTime dt = DateTime.Now;
-            //string day = dt.DayOfWeek.ToString();
-            string day = "Tuesday";
+            // automatically set day
+            string day = dt.DayOfWeek.ToString();
+            // manually set day
+            // string day = "Wednesday";
             wingFlavors.Sort();
-
+            wingFlavors.Insert(0, "Flavours");
+            sides.Sort();
+            sides.Insert(0, "Sides");
             switch (day)
             {
                 case "Tuesday":
@@ -148,7 +157,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             wp_drinks.Children.Add(new MenuItem_Control("Belgian White Mist", gasLampPrice, "This is a true Belgian style wit beer, brewed with Canadian wheat. It is unfiltered and finished with just a hint of grapefruit zest. Served in a traditional Belgian abby glass with a wedge of grapefruit", path + "belgian_white.jpg"));
 
-            wp_food.Children.Add(new MenuItem_Control("Big Pub Burger", "$6.50", "house-made beef patty, bacon, grilled onions, sautéed mushrooms, signature burger sauce, green leaf lettuce, tomato, red onion, pickle, Swiss, mozzarella or Canadian cheddar cheese, fresh brioche bun", foodPath + "big_pub_special.png", true));
+            wp_food.Children.Add(new MenuItem_Control("Big Pub Burger", "$6.50", "house-made beef patty, bacon, grilled onions, sautéed mushrooms, signature burger sauce, green leaf lettuce, tomato, red onion, pickle, Swiss, mozzarella or Canadian cheddar cheese, fresh brioche bun", foodPath + "big_pub_special.png", sides, true));
 
             wp_food.Children.Add(new MenuItem_Control("Wings", "$6.50", "1 pound of lightly floured Canadian chicken wings, crisp carrots & celery, house-made Greek yogurt ranch or creamy bleu cheese dip.\n\nCome in orders of 10.", foodPath + "wings.jpg", wingFlavors, true));
         }
@@ -160,7 +169,7 @@ namespace CPSC_481_Horizontal_Prototype
 
             string winePrice = "51% off";
 
-            wp_food.Children.Add(new MenuItem_Control("Steak Sandwich", "$8.99", "marinated 28 day aged Certified Angus Beef sirloin, grilled Italian filone, buttermilk beer battered onion ring, Montreal steak spice infused compound butter", foodPath + "steak_sandwich_special.png", true));
+            wp_food.Children.Add(new MenuItem_Control("Steak Sandwich", "$8.99", "marinated 28 day aged Certified Angus Beef sirloin, grilled Italian filone, buttermilk beer battered onion ring, Montreal steak spice infused compound butter", foodPath + "steak_sandwich_special.png", sides, true));
 
         }
 

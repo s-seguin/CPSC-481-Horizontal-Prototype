@@ -142,11 +142,13 @@ namespace CPSC_481_Horizontal_Prototype
 
             if (this.cbOptions != null)
             {
-                for (int i =0; i < this.cbOptions.Count; i++)
+                for (int i =1; i < this.cbOptions.Count; i++)
                 {
                     eis.dd_sides.Items.Add(cbOptions[i]);
                 }
                 eis.dd_sides.SelectedIndex = 0;
+                // the first item in the list is the label name
+                eis.lbl_sides.Content = cbOptions[0];
                 eis.lbl_sides.Visibility = Visibility.Visible;
                 eis.dd_sides.Visibility = Visibility.Visible;
             }

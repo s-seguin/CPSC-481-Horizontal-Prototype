@@ -5,7 +5,7 @@ CPSC 481 Group 2 Final Project
 Creators: Stuart Seguin, Walter Alvarez and Zach Aries
 
 ## Screenshots, Wireframes, User Flows, etc.
-Please see `CPSC481 Portfolio.pdf`.
+Please see https://github.com/s-seguin/CPSC-481-Horizontal-Prototype/blob/master/CPSC481%20Portfolio.pdf
 
 ## About:
 This is a high-fidelity prototype for an ondering kiosk to be implemented at the Kilkenny Irish Pub.
